@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% set title = 'Products — XocialAI & XPreOrder' %}
+{% set description = 'Software built and run by Xubitar: XocialAI, the AI social media manager, and XPreOrder, the Shopify pre-order app.' %}
+{% set page_id = 'products' %}
+{% set nav = 'products' %}
+{% block content %}
+
+<section class="page-hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="container" style="position:relative">
+    <div class="hero-copy" style="max-width:820px">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a>{{ icon('chevron-right', 14) }}<span>Products</span></nav>
+      <span class="eyebrow">Our products</span>
+      <h1 class="balance">Software we build, run and support ourselves.</h1>
+      <p class="lead">Our products are used by real businesses every day. Running them keeps us honest about what matters after launch: reliability, support and steady improvement — the same standard we bring to client work.</p>
+    </div>
+  </div>
+</section>
+
+{# ---------- XocialAI ---------- #}
+<section class="section" id="xocialai">
+  <div class="container">
+    <div class="split" data-note="XocialAI gets a full feature block. Copy is taken from xocialai.com so the two sites stay consistent.">
+      <div class="stack-lg">
+        <div class="product-logo"><span class="pl pl-xocial">X</span><div><span class="eyebrow">New · AI social media manager</span><h2 style="font-size:clamp(2rem,3.4vw,2.8rem)">XocialAI</h2></div></div>
+        <p class="lead">Social media on autopilot. XocialAI writes posts that sound like you, makes the images, and publishes them on the days you choose. Want to check each one first? Turn on email approval.</p>
+        <ul class="check-list">
+          <li>{{ icon('check', 18) }}<span><b>Captions that sound like you</b> — written from your products, customers and tone of voice.</span></li>
+          <li>{{ icon('check', 18) }}<span><b>Images made for each network</b> — cropped to the right size for every platform.</span></li>
+          <li>{{ icon('check', 18) }}<span><b>Publishes everywhere</b> — Facebook, Instagram, LinkedIn, Threads, Pinterest, X, TikTok, Bluesky and Google Business; videos to YouTube and TikTok.</span></li>
+          <li>{{ icon('check', 18) }}<span><b>About 5 minutes to set up</b> — describe your business, connect your pages, pick a schedule.</span></li>
+        </ul>
+        <div class="row"><a class="btn btn-primary btn-lg" href="{{ SITE.xocialai_url }}" target="_blank" rel="noopener">Start free {{ icon('arrow-up-right', 18) }}</a><span class="small muted">Free plan · No card needed</span></div>
+      </div>
+      <div class="product-card reveal" style="border-color:var(--line)">
+        <div class="product-visual pv-xocial" style="aspect-ratio:4/3.4">
+          <div class="pm-panel" style="width:min(100%,380px)">
+            <div class="row-between"><b style="font-size:.85rem">Your bot · Running</b><span class="badge badge-success" style="height:22px"><i class="dot"></i> Live</span></div>
+            <div class="pm-post">
+              <div class="pp-head"><i></i><div><b style="font-size:.8rem">Your business</b><div class="muted" style="font-size:.68rem">Tue 10:00 · hands-free</div></div></div>
+              <div style="font-size:.8rem">New rye sourdough, on the counter now. Crackly crust, soft middle. It usually sells out by noon.</div>
+              <div class="pp-img" style="height:96px"></div>
+              <div class="pm-nets"><span>Facebook ✓</span><span>Instagram ✓</span><span>LinkedIn ✓</span><span>Threads ✓</span><span>Pinterest ✓</span><span>+4</span></div>
+            </div>
+            <div class="flow" style="justify-content:space-between;font-size:.7rem">
+              <span class="badge badge-success" style="height:22px">Topic ✓</span><span class="badge badge-success" style="height:22px">Caption ✓</span><span class="badge badge-success" style="height:22px">Image ✓</span><span class="badge badge-success" style="height:22px">Posted ✓</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ---------- XPreOrder ---------- #}
+<section class="section section-surface" id="xpreorder">
+  <div class="container">
+    <div class="split">
+      <div class="product-card reveal" style="border-color:var(--line)">
+        <div class="product-visual pv-xpre" style="aspect-ratio:4/3.4">
+          <div class="pm-panel">
+            <div class="pm-product"><i></i><div><b>Trail Runner GTX</b><div class="muted">$149.00</div><div class="pm-note" style="margin-top:4px">{{ icon('clock', 13) }} Expected to ship 12 Dec</div></div></div>
+            <span class="pm-btn">Pre-order now</span>
+            <div class="plan-specs" style="font-size:.74rem;padding:10px">
+              <div><span>Stock</span><b>0 available</b></div>
+              <div><span>Pre-orders</span><b>128 reserved</b></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="stack-lg">
+        <div class="product-logo"><span class="pl pl-xpre">{{ icon('shopping-bag', 20) }}</span><div><span class="eyebrow">Shopify app</span><h2 style="font-size:clamp(2rem,3.4vw,2.8rem)">XPreOrder</h2></div></div>
+        <p class="lead">The Shopify pre-order app that keeps your sales going even when stock runs out. Configurable, works with your theme, and built for conversion.</p>
+        <ul class="check-list" data-ph>
+          <li>{{ icon('check', 18) }}<span>Turn out-of-stock products into pre-orders automatically</span></li>
+          <li>{{ icon('check', 18) }}<span>Custom button text, badges and shipping messages</span></li>
+          <li>{{ icon('check', 18) }}<span>Works with your existing Shopify theme</span></li>
+          <li>{{ icon('check', 18) }}<span>Support from the team that builds it</span></li>
+        </ul>
+        <div class="row"><a class="btn btn-dark btn-lg" href="{{ SITE.xpreorder_url }}" target="_blank" rel="noopener">View on Shopify App Store {{ icon('arrow-up-right', 18) }}</a><span class="row small muted" style="gap:6px" data-ph>{{ m.stars(5, 13) }} 4.9 rating</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="split">
+      {{ m.section_head('Need something custom?', 'Want a product like these, built for your business?', 'We build private Shopify apps, internal tools and SaaS products for clients — with the same care we put into our own.', cls='mb-0') }}
+      <div class="row" style="justify-content:flex-end"><a class="btn btn-primary btn-lg" href="service-shopify-development.html">Custom app development {{ icon('arrow-right', 18) }}</a><a class="btn btn-outline btn-lg" href="contact.html">Start a project</a></div>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% set title = 'Careers at Xubitar' %}
+{% set description = 'Join Xubitar: build reliable Shopify solutions, AI automations and websites with a small, senior team.' %}
+{% set page_id = 'careers' %}
+{% set nav = 'careers' %}
+{% block content %}
+
+<section class="page-hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="container page-hero-grid">
+    <div class="hero-copy">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a>{{ icon('chevron-right', 14) }}<span>Careers</span></nav>
+      <span class="eyebrow">Careers</span>
+      <h1 class="balance">Do the best work of your career — and ship it.</h1>
+      <p class="lead">We're a small team that takes on hard technical problems for real businesses. You'll work directly with clients, own your work from scope to launch, and learn fast.</p>
+      <div class="hero-cta"><a class="btn btn-primary btn-lg" href="#roles">See open roles {{ icon('arrow-right', 18) }}</a></div>
+    </div>
+    <div class="grid grid-2 reveal" data-ph>
+      {% for ic, t, d in [('globe','Remote-friendly','Work from home or our office.'),('book','Learning budget','Courses, books and conferences.'),('heart','Health cover','For you and your family.'),('coffee','Flexible hours','Focus time that fits your life.')] %}
+      <div class="card stack-sm" style="padding:22px"><span class="icon-box">{{ icon(ic, 20) }}</span><h4 class="mt-1">{{ t }}</h4><p class="small muted">{{ d }}</p></div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="roles">
+  <div class="container">
+    <div class="section-head-row">
+      {{ m.section_head('Open roles', 'Current openings', 'Roles are published from the admin panel. This layout replaces the current job list.', cls='mb-0') }}
+      <div class="filters" style="margin:0">
+        <button class="chip is-active">All teams</button><button class="chip">Engineering</button><button class="chip">Automation</button><button class="chip">Growth</button>
+      </div>
+    </div>
+    <div class="job-list" data-ph data-note="Job list keeps the existing careers feature (admin-managed jobs, apply form) with a cleaner row layout: title, tags, team, type and location.">
+      {% for j in JOBS %}
+      <a class="job" href="#">
+        <div><h3>{{ j.title }}</h3><div class="pills">{% for t in j.tags %}<span class="pill">{{ t }}</span>{% endfor %}</div></div>
+        <span class="meta hide-sm">{{ icon('briefcase', 16) }} {{ j.team }} · {{ j.type }}</span>
+        <span class="meta hide-sm">{{ icon('map-pin', 16) }} {{ j.location }}</span>
+        <span class="btn btn-outline btn-sm">Apply {{ icon('arrow-right', 15) }}</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-surface">
+  <div class="container">
+    {{ m.section_head('Hiring process', 'Clear, respectful and quick', 'We reply to every application, usually within a week.') }}
+    {{ m.process([
+      ('01','Apply','Send your CV and a short note about work you’re proud of.'),
+      ('02','Intro call','30 minutes to get to know each other.'),
+      ('03','Practical task','A small, paid task that mirrors real work.'),
+      ('04','Team interview','Meet the people you’ll work with.'),
+      ('05','Offer','A clear offer, usually within a week.'),
+    ]) }}
+  </div>
+</section>
+
+<section class="section-sm">
+  <div class="container">
+    <div class="cta-band">
+      <div><h2 class="balance">Don’t see the right role?</h2><p class="lead">We’re always happy to hear from great Shopify developers, automation engineers and SEO specialists.</p></div>
+      <div class="cta-side"><a class="btn btn-primary btn-lg" href="mailto:{{ SITE.email }}">Send an open application {{ icon('arrow-right', 18) }}</a></div>
+    </div>
+  </div>
+</section>
+{% endblock %}

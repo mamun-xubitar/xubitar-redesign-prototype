@@ -1,0 +1,157 @@
+{% extends 'base.html' %}
+{% set title = 'Start a project' %}
+{% set description = 'Tell Xubitar about your Shopify, automation, SEO or website project. We reply within one business day.' %}
+{% set page_id = 'contact' %}
+{% set nav = 'contact' %}
+{% block content %}
+
+<section class="page-hero" style="padding-bottom:40px;border-bottom:0">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="container" style="position:relative">
+    <div class="hero-copy" style="max-width:760px">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a>{{ icon('chevron-right', 14) }}<span>Start a project</span></nav>
+      <span class="eyebrow">Start a project</span>
+      <h1 class="balance">Tell us what you need. We’ll reply within one business day.</h1>
+      <p class="lead">Three short steps, about two minutes. The more context you share, the more useful our first reply will be.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="split split-7-5" style="align-items:start;gap:clamp(32px,4vw,56px)">
+
+      <form class="form-card" data-steps novalidate data-note="3-step enquiry form. It collects the lead details listed in the 6-month plan (project type, store URL, problem, budget, timing, role, lead source) without feeling like a long form. Validated with Zod + Turnstile in the build.">
+        <ol class="stepper">
+          <li class="is-active" data-step-marker><span class="sn">1</span> What you need</li>
+          <li data-step-marker><span class="sn">2</span> Project details</li>
+          <li data-step-marker><span class="sn">3</span> About you</li>
+        </ol>
+        <div class="form-body">
+
+          {# STEP 1 #}
+          <div class="form-step is-active" data-step>
+            <div class="form-step-head"><h3>What can we help with?</h3><p>Choose all that apply.</p></div>
+            <div class="choice-grid">
+              {% for v, ic, t, d in [
+                ('shopify-dev','code','Shopify development','Custom apps, integrations, themes'),
+                ('support','life-buoy','Support & maintenance','Fixes and ongoing improvements'),
+                ('ai','sparkles','AI automation','Workflows, CRM, support, reporting'),
+                ('seo','search','SEO & AI search','Be found on Google and in AI answers'),
+                ('web','monitor','Custom website','Websites and web apps'),
+                ('agency','handshake','Agency partnership','White-label development capacity'),
+              ] %}
+              <div class="choice">
+                <input type="checkbox" id="t-{{ v }}" name="type" value="{{ v }}" {{ 'required' if loop.first }}>
+                <label for="t-{{ v }}"><span class="icon-box">{{ icon(ic, 18) }}</span><div><strong>{{ t }}</strong><span>{{ d }}</span></div><span class="tick">{{ icon('check', 14, stroke_width=2.5) }}</span></label>
+              </div>
+              {% endfor %}
+            </div>
+            <p class="small" style="color:var(--danger)" data-group-error hidden>Please choose at least one option.</p>
+            <div class="form-actions">
+              <span class="note">{{ icon('lock', 14) }} Your details stay private. NDA available.</span>
+              <button type="button" class="btn btn-primary" data-next>Continue {{ icon('arrow-right', 16) }}</button>
+            </div>
+          </div>
+
+          {# STEP 2 #}
+          <div class="form-step" data-step>
+            <div class="form-step-head"><h3>Tell us about the project</h3><p>A few sentences is plenty — we’ll ask follow-up questions on the call.</p></div>
+            <div class="form-grid">
+              <div class="field full">
+                <label for="f-url">Store or website URL <span class="opt">(optional)</span></label>
+                <div class="input-prefix"><span>https://</span><input class="input" id="f-url" placeholder="yourstore.com"></div>
+              </div>
+              <div class="field full">
+                <label for="f-problem">What’s the problem or goal?</label>
+                <textarea class="textarea" id="f-problem" required placeholder="e.g. Our inventory in NetSuite and Shopify are out of sync, and we oversell during busy weeks…"></textarea>
+                <span class="err">Please describe what you need.</span>
+              </div>
+              <div class="field full">
+                <span class="label">When do you want to start?</span>
+                <div class="seg">
+                  {% for t in ['As soon as possible','Within a month','1–3 months','Just exploring'] %}<input type="radio" name="timing" id="tm{{ loop.index }}" {{ 'checked' if loop.index == 2 }}><label for="tm{{ loop.index }}">{{ t }}</label>{% endfor %}
+                </div>
+              </div>
+              <div class="field full" data-ph>
+                <span class="label">Estimated budget <span class="opt">— helps us suggest the right approach</span></span>
+                <div class="seg">
+                  {% for t in ['Under $2k','$2k – $5k','$5k – $15k','$15k+','Monthly plan','Not sure yet'] %}<input type="radio" name="budget" id="bd{{ loop.index }}"><label for="bd{{ loop.index }}">{{ t }}</label>{% endfor %}
+                </div>
+              </div>
+              <div class="field full">
+                <span class="label">Attachments <span class="opt">(optional)</span></span>
+                <label class="input" style="display:flex;align-items:center;gap:10px;cursor:pointer;border-style:dashed;color:var(--muted);height:56px">{{ icon('upload', 18) }} Add a brief, screenshots or specs (PDF, PNG, up to 10 MB)<input type="file" hidden></label>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button type="button" class="btn btn-ghost" data-back>{{ icon('arrow-left', 16) }} Back</button>
+              <button type="button" class="btn btn-primary" data-next>Continue {{ icon('arrow-right', 16) }}</button>
+            </div>
+          </div>
+
+          {# STEP 3 #}
+          <div class="form-step" data-step>
+            <div class="form-step-head"><h3>How can we reach you?</h3><p>We’ll reply from a real engineer’s inbox — never a no-reply address.</p></div>
+            <div class="form-grid">
+              <div class="field"><label for="f-name">Full name</label><input class="input" id="f-name" required autocomplete="name" placeholder="Jane Cooper"><span class="err">Please enter your name.</span></div>
+              <div class="field"><label for="f-email">Work email</label><input class="input" id="f-email" type="email" required autocomplete="email" placeholder="jane@company.com"><span class="err">Please enter a valid email.</span></div>
+              <div class="field"><label for="f-company">Company</label><input class="input" id="f-company" autocomplete="organization" placeholder="Company name"></div>
+              <div class="field"><label for="f-role">Your role</label>
+                <select class="select" id="f-role"><option>Founder / owner</option><option>Ecommerce or operations manager</option><option>Agency owner / consultant</option><option>Marketing</option><option>Developer</option><option>Other</option></select>
+              </div>
+              <div class="field full"><label for="f-source">How did you hear about us? <span class="opt">(optional)</span></label>
+                <select class="select" id="f-source"><option value="">Choose one</option><option>Referral or partner</option><option>LinkedIn</option><option>Google search</option><option>AI assistant (ChatGPT, Perplexity…)</option><option>Shopify Partner Directory</option><option>Shopify App Store</option><option>Other</option></select>
+              </div>
+              <div class="field full">
+                <div class="turnstile"><span class="box"></span> Verify you are human <span style="margin-left:auto;font-size:.7rem">Cloudflare Turnstile</span></div>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button type="button" class="btn btn-ghost" data-back>{{ icon('arrow-left', 16) }} Back</button>
+              <button type="submit" class="btn btn-primary">Send enquiry {{ icon('send', 16) }}</button>
+            </div>
+          </div>
+
+          <div class="form-success" data-success>
+            <span class="success-icon">{{ icon('check', 30, stroke_width=2.4) }}</span>
+            <h3 style="font-size:1.6rem">Thanks<span data-success-name></span> — we’ve got it.</h3>
+            <p class="muted" style="max-width:440px">A Xubitar engineer will review your request and reply within one business day. A copy has been sent to your inbox.</p>
+            <div class="row" style="justify-content:center"><a class="btn btn-dark" href="#book">{{ icon('calendar', 16) }} Skip the wait — book a call</a><a class="btn btn-ghost" href="work.html">Browse case studies</a></div>
+          </div>
+        </div>
+      </form>
+
+      <aside class="stack-lg">
+        <div class="card" data-note="'What happens next' reduces anxiety about submitting a form: visitors know exactly what to expect and how fast.">
+          <h4>What happens next</h4>
+          <ol class="next-steps mt-3">
+            <li><span class="n">1</span><div><b>We reply within 1 business day</b><span>With questions or a suggested next step.</span></div></li>
+            <li><span class="n">2</span><div><b>30-minute discovery call</b><span>Free, with an engineer — not a salesperson.</span></div></li>
+            <li><span class="n">3</span><div><b>Written scope & quote</b><span>Deliverables, price, timeline and responsibilities.</span></div></li>
+          </ol>
+        </div>
+
+        <div class="card" id="book" data-note="Booking widget placeholder — in the build, embed Cal.com or Calendly so prospects can book a discovery call directly.">
+          <div class="row-between"><h4>Prefer to talk? Book a call</h4><span class="badge">30 min</span></div>
+          <div class="cal mt-2">
+            <div class="cal-days">
+              {% for d, n in [('Mon',17),('Tue',18),('Wed',19),('Thu',20),('Fri',21)] %}<button type="button" data-cal-day class="{{ 'is-active' if loop.index == 2 }}">{{ d }}<b>{{ n }}</b></button>{% endfor %}
+            </div>
+            <div class="cal-slots">
+              {% for t in ['9:00','10:30','13:00','14:30','16:00','17:30'] %}<button type="button" data-cal-slot>{{ t }}</button>{% endfor %}
+            </div>
+            <p class="xs subtle" data-cal-out>Times shown in your time zone · Google Meet</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="contact-line"><span class="icon-box">{{ icon('mail', 18) }}</span><div><b>Email</b><a class="link small" href="mailto:{{ SITE.email }}">{{ SITE.email }}</a></div></div>
+          <div class="contact-line"><span class="icon-box">{{ icon('message-circle', 18) }}</span><div><b>Live chat</b><span>Ask Toki, bottom-right — engineers join when needed</span></div></div>
+          <div class="contact-line" data-ph><span class="icon-box">{{ icon('map-pin', 18) }}</span><div><b>Office</b><span>Address to be confirmed · Mon–Fri</span></div></div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+{% endblock %}

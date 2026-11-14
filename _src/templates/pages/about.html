@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% set title = 'About Xubitar' %}
+{% set description = 'Xubitar is a software team building reliable Shopify solutions, AI automations and websites — and running our own products.' %}
+{% set page_id = 'about' %}
+{% set nav = 'about' %}
+{% block content %}
+
+<section class="page-hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="container page-hero-grid">
+    <div class="hero-copy">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a>{{ icon('chevron-right', 14) }}<span>About</span></nav>
+      <span class="eyebrow">About Xubitar</span>
+      <h1 class="balance">We build software that businesses rely on.</h1>
+      <p class="lead">Xubitar Soft is a focused team of engineers working with Shopify merchants, startups and agencies. We take on fewer projects than a typical agency, so each one gets senior attention — and a team that's still there after launch.</p>
+    </div>
+    <div class="grid grid-2 reveal" data-ph data-note="Team photo grid placeholder. Real photos of the team are one of the strongest trust signals for a services company — strongly recommended.">
+      <div class="team-photo" style="aspect-ratio:3/4">Team photo</div>
+      <div class="stack"><div class="team-photo" style="aspect-ratio:4/3">Office</div><div class="team-photo" style="aspect-ratio:4/3;background:var(--ink);color:#fff">Workshop</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="split split-5-7" style="align-items:start">
+      <div class="section-head" style="margin:0"><span class="eyebrow">Our story</span><h2 class="balance">From app studio to long-term technical partner</h2></div>
+      <div class="prose lead" style="color:var(--text-2)" data-note="The story frames the niche change positively: from building our own Shopify apps to a broader technical partner. It explains the change without saying work dried up.">
+        <p>Xubitar started by building our own Shopify apps. Shipping and supporting software that merchants depend on taught us what actually matters: reliable integrations, honest communication and fast fixes when something breaks.</p>
+        <p>As the market changed, so did our clients' needs. Many businesses no longer want large agency teams — they want a dependable partner who can solve hard technical problems, automate repetitive work and help them get found. So that's what we focus on today: Shopify development and support, AI automation, search visibility and websites that win clients.</p>
+        <p>We still build our own products, including <a class="link" href="products.html#xocialai">XocialAI</a> and <a class="link" href="products.html#xpreorder">XPreOrder</a>. It keeps us close to the reality of running software every day.</p>
+      </div>
+    </div>
+    <div class="stats stats-light mt-8" data-ph>
+      <div class="stat"><div class="stat-num">2018</div><div class="stat-label">founded</div></div>
+      <div class="stat"><div class="stat-num">120+</div><div class="stat-label">projects delivered</div></div>
+      <div class="stat"><div class="stat-num">12</div><div class="stat-label">engineers & specialists</div></div>
+      <div class="stat"><div class="stat-num">2</div><div class="stat-label">products in the market</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-surface">
+  <div class="container">
+    {{ m.section_head('What we value', 'How we work, in four principles', None) }}
+    <div class="grid grid-4">
+      {% for t, d in [
+        ('Reliability over hype', 'We recommend the simplest solution that will keep working — even when it’s less exciting.'),
+        ('Clear communication', 'Plain language, written scope, weekly updates. You always know where things stand.'),
+        ('Ownership', 'We treat your store and systems like our own, and tell you about problems before you find them.'),
+        ('Practical AI', 'AI where it saves real time, with human approval where it matters. No AI for its own sake.'),
+      ] %}
+      <div class="card value-card reveal {{ 'reveal-d%d' % loop.index0 if loop.index0 }}"><span class="n">0{{ loop.index }}</span><h4>{{ t }}</h4><p class="small muted">{{ d }}</p></div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head-row">
+      {{ m.section_head('The team', 'The people you’ll actually work with', 'No account-manager layers. You talk directly with the engineers building your project.') }}
+      <a class="btn btn-outline" href="careers.html">Join the team {{ icon('arrow-right', 16) }}</a>
+    </div>
+    <div class="team-grid" data-ph data-note="Team cards with real names, roles and photos (placeholders). Optional: LinkedIn links per person.">
+      {% for p in TEAM %}
+      <div class="team-card reveal {{ 'reveal-d%d' % (loop.index0 % 3) if loop.index0 % 3 }}">
+        <div class="team-photo">{{ p.initials }}</div>
+        <div><b>{{ p.name }}</b><span>{{ p.role }}</span></div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-surface">
+  <div class="container">
+    {{ m.section_head('How we work', 'A clear process for every client', None) }}
+    {{ m.process(PROCESS) }}
+  </div>
+</section>
+
+{{ m.cta_band() }}
+{% endblock %}

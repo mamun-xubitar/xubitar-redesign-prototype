@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% set title = 'Services' %}
+{% set description = 'Shopify development & integrations, technical support, AI automation, SEO & AI search visibility and custom web solutions.' %}
+{% set page_id = 'services' %}
+{% set nav = 'services' %}
+{% set engage_for = {
+  'shopify-development': 'Fixed-scope project',
+  'shopify-support': 'Monthly support plan',
+  'ai-automation': 'Fixed-scope project + optional support',
+  'seo-ai-search': 'Audit, then monthly optimisation',
+  'custom-web': 'Fixed-scope project',
+} %}
+{% block content %}
+
+<section class="page-hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="container page-hero-grid">
+    <div class="hero-copy">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a>{{ icon('chevron-right', 14) }}<span>Services</span></nav>
+      <span class="eyebrow">Services</span>
+      <h1 class="balance">Five focused services. One accountable team.</h1>
+      <p class="lead">From custom Shopify apps to AI workflows and websites that win clients — every service comes with written scope, weekly previews and a team that stays after launch.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary btn-lg" href="contact.html">Start a project {{ icon('arrow-right', 18) }}</a>
+        <a class="btn btn-outline btn-lg" href="#goal">Help me choose</a>
+      </div>
+    </div>
+    <nav class="card stack-sm reveal" aria-label="Services on this page" style="padding:12px" data-note="Jump list: lets visitors go straight to the service they came for without scrolling the whole page.">
+      {% for s in SERVICES %}
+      <a class="menu-link" href="#{{ s.slug }}"><span class="icon-box">{{ icon(s.icon, 18) }}</span><div><strong>{{ s.short }}</strong><span>{{ s.nav_desc }}</span></div></a>
+      {% endfor %}
+    </nav>
+  </div>
+</section>
+
+{# ---------- Goal picker ---------- #}
+<section class="section-sm section-surface" id="goal">
+  <div class="container">
+    {{ m.section_head('Start from your goal', 'Not sure which service you need?', 'Pick the sentence that sounds most like you.') }}
+    <div class="grid grid-3" data-note="'Start from your goal' helps buyers who don't know the technical name of what they need (common for startups). Each goal maps to one service.">
+      {% for goal, s_slug, href in [
+        ('I need a feature no Shopify app provides', 'shopify-development', None),
+        ('I want my store fixed and kept healthy', 'shopify-support', None),
+        ('My team wastes hours on repetitive work', 'ai-automation', None),
+        ('I want to be found on Google and in AI answers', 'seo-ai-search', None),
+        ('I need a website that wins clients', 'custom-web', None),
+        ('My agency needs extra development capacity', None, 'agencies.html'),
+      ] %}
+      {% set s = SERVICES_BY_SLUG[s_slug] if s_slug else None %}
+      <a class="card card-hover row-between reveal {{ 'reveal-d%d' % (loop.index0 % 3) if loop.index0 % 3 }}" href="{{ href if href else '#' + s_slug }}" style="align-items:center">
+        <div class="stack-sm"><strong style="font-size:1.02rem;letter-spacing:-.01em">“{{ goal }}”</strong><span class="small muted">{{ s.short if s else 'Agency partnership' }}</span></div>
+        <span class="icon-box icon-box-line" style="width:38px;height:38px;border-radius:50%">{{ icon('arrow-right', 16) }}</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# ---------- Service rows ---------- #}
+{% for s in SERVICES %}
+<section class="section {{ 'section-line' if not loop.first }}" id="{{ s.slug }}">
+  <div class="container">
+    <div class="split" style="align-items:center">
+      <div class="stack-lg {{ '' if loop.index is odd else 'order-2' }}">
+        <div class="stack">
+          <span class="svc-num">0{{ loop.index }} / 05</span>
+          <h2 class="balance" style="font-size:clamp(1.8rem,3vw,2.5rem)">{{ s.name }}</h2>
+          <p class="lead">{{ s.hero_sub }}</p>
+        </div>
+        <ul class="check-list" style="grid-template-columns:1fr 1fr;column-gap:24px">
+          {% for i in s.included[:6] %}<li>{{ icon('check', 17) }}<span>{{ i[1] }}</span></li>{% endfor %}
+        </ul>
+        <div class="row">
+          <a class="btn btn-dark" href="{{ s.file }}">Explore {{ s.short }} {{ icon('arrow-right', 16) }}</a>
+          <a class="btn btn-ghost" href="contact.html">Get a quote</a>
+        </div>
+      </div>
+      <div class="svc-hero-card reveal">
+        <div class="row-between"><span class="icon-box">{{ icon(s.icon, 22) }}</span><span class="badge badge-soft">{{ s.tagline }}</span></div>
+        {{ m.svc_visual(s.visual) }}
+        <div class="plan-specs">
+          <div><span>Best for</span><b>{{ s.audience }}</b></div>
+          <div><span>Typical engagement</span><b>{{ engage_for[s.slug] }}</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endfor %}
+
+{# ---------- Engagement models ---------- #}
+<section class="section section-dark">
+  <div class="container">
+    {{ m.section_head('Ways to work together', 'Pick the engagement that fits how you work', 'Every engagement starts with a free discovery call and a written scope.') }}
+    <div class="grid grid-3" data-note="Engagement models make buying easier: a buyer can see how they'd pay before they contact us. Matches the plan's fixed scope / monthly plan / agency partner offers.">
+      {% for e in ENGAGEMENTS %}
+      <div class="card engage reveal {{ 'reveal-d%d' % loop.index0 if loop.index0 }}">
+        <span class="icon-box">{{ icon(e.icon, 22) }}</span>
+        <h3>{{ e.name }}</h3>
+        <p class="best" style="color:var(--on-dark-muted)">Best for: <b style="color:#fff">{{ e.best }}</b></p>
+        <ul class="check-list small">{% for p in e.points %}<li>{{ icon('check', 16) }}<span>{{ p }}</span></li>{% endfor %}</ul>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    {{ m.section_head('How we work', 'The same clear process for every service', None) }}
+    {{ m.process(PROCESS) }}
+  </div>
+</section>
+
+{{ m.cta_band() }}
+{% endblock %}

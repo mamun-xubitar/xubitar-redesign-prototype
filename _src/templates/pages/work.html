@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% set title = 'Work & case studies' %}
+{% set description = 'Case studies from Xubitar: Shopify integrations, store renovations, ongoing support, AI automation, SEO and custom websites.' %}
+{% set page_id = 'work' %}
+{% set nav = 'work' %}
+{% block content %}
+
+<section class="page-hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="container page-hero-grid">
+    <div class="hero-copy">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a>{{ icon('chevron-right', 14) }}<span>Work</span></nav>
+      <span class="eyebrow">Case studies</span>
+      <h1 class="balance">The problem, the work, and what changed.</h1>
+      <p class="lead">Every case study follows the same honest format: the situation, what we built, and measured results — shared with our clients' permission.</p>
+    </div>
+    <div class="card card-surface reveal" data-ph data-note="Aggregate proof at the top of the Work page. Numbers are placeholders.">
+      <div class="stats stats-light" style="grid-template-columns:1fr 1fr;border-top:0">
+        <div class="stat" style="padding-top:0"><div class="stat-num" style="font-size:2.4rem">120+</div><div class="stat-label">projects delivered</div></div>
+        <div class="stat" style="padding-top:0"><div class="stat-num" style="font-size:2.4rem">40+</div><div class="stat-label">active Shopify stores we support</div></div>
+        <div class="stat" style="padding-left:0;border-left:0;border-top:1px solid var(--line)"><div class="stat-num" style="font-size:2.4rem">9</div><div class="stat-label">agency partners</div></div>
+        <div class="stat" style="border-top:1px solid var(--line)"><div class="stat-num" style="font-size:2.4rem">4.9/5</div><div class="stat-label">average client rating</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:clamp(40px,5vw,64px)">
+  <div class="container">
+    <div class="filters" role="toolbar" aria-label="Filter case studies" data-note="Filters let each audience find relevant proof quickly: merchants look for integrations/renovation, startups for web, agencies for white-label work.">
+      {% for key, label in CASE_FILTERS %}
+      {% set n = CASES | length if key == 'all' else CASES | selectattr('cat', 'equalto', key) | list | length %}
+      <button class="chip {{ 'is-active' if key == 'all' }}" data-filter="{{ key }}">{{ label }}<span class="count">{{ n }}</span></button>
+      {% endfor %}
+    </div>
+    <div class="case-grid">
+      {% for c in CASES %}
+        {{ m.case_card(c, feature=loop.first, delay=(loop.index0 % 2)) }}
+      {% endfor %}
+    </div>
+    <p class="center muted mt-4" data-filter-empty hidden>No case studies in this category yet.</p>
+  </div>
+</section>
+
+<section class="section section-surface">
+  <div class="container">
+    <div class="split">
+      <div class="section-head" style="margin:0">
+        <span class="eyebrow">Can’t share everything</span>
+        <h2 class="balance">Much of our best work is under NDA</h2>
+        <p class="lead">As a white-label partner to agencies, a lot of what we build carries someone else's name. Ask us on a call — we're happy to walk you through relevant examples privately.</p>
+        <div class="row mt-2"><a class="btn btn-dark" href="contact.html#book">{{ icon('calendar', 16) }} Book a walkthrough</a></div>
+      </div>
+      <div class="grid grid-2" data-note="Addresses a real trust gap: agency (white-label) work can't be shown publicly. Offering a private walkthrough turns that into a reason to book a call.">
+        {% for ic, t, d in [('lock','NDA by default','Signed before we see any client data or code.'),('eye','Private walkthroughs','See relevant work on a call, screen-shared.'),('users','References on request','Speak with a past client in your industry.'),('file-text','Written results','Every project ends with a short results summary.')] %}
+        <div class="card stack-sm"><span class="icon-box">{{ icon(ic, 20) }}</span><h4 class="mt-1">{{ t }}</h4><p class="small muted">{{ d }}</p></div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ m.cta_band(title='Want results like these for your business?', lead='Tell us what you’re trying to fix or build. We’ll reply within one business day.') }}
+{% endblock %}

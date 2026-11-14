@@ -1,0 +1,231 @@
+{%- import 'macros.html' as m with context -%}
+<!doctype html>
+<html lang="en" data-accent="blue" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title }}{% if page_id != 'home' %} — Xubitar{% endif %}</title>
+<meta name="description" content="{{ description }}">
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400..600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<script>document.documentElement.classList.remove('no-js');try{var a=localStorage.getItem('xb-accent');if(a)document.documentElement.dataset.accent=a;}catch(e){}</script>
+</head>
+<body class="page-{{ page_id }}">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="announce" data-note="Announcement bar promotes the newest product (XocialAI). Can be switched to any campaign, e.g. 'Now booking Q1 projects'.">
+  <a href="products.html#xocialai"><span class="badge badge-accent">New</span> <span><strong>XocialAI</strong> by Xubitar — social media on autopilot.<span class="hide-sm"> Write, design and publish posts automatically.</span></span> {{ icon('arrow-right', 16) }}</a>
+</div>
+
+<header class="site-header" data-header>
+  <div class="container header-inner">
+    <a href="index.html" class="brand" aria-label="Xubitar home"><img src="assets/xubitar-logo.png" alt="Xubitar" width="91" height="26"></a>
+    <nav class="main-nav" aria-label="Main">
+      <ul class="nav-list">
+        <li class="nav-item" data-dropdown>
+          <button class="nav-link" aria-expanded="false" aria-haspopup="true" {% if nav == 'services' %}aria-current="page"{% endif %}>Services {{ icon('chevron-down', 15) }}</button>
+          <div class="mega" role="menu" data-note="Mega menu: every service is one click from any page. Right panel pushes the agency partner offer and the free discovery call.">
+            <div class="grid" style="grid-template-columns:1fr 1fr;gap:2px">
+              {% for s in SERVICES %}
+              <a class="menu-link" href="{{ s.file }}" role="menuitem">
+                <span class="icon-box">{{ icon(s.icon, 18) }}</span>
+                <div><strong>{{ s.short }}</strong><span>{{ s.nav_desc }}</span></div>
+              </a>
+              {% endfor %}
+              <a class="menu-link" href="services.html" role="menuitem">
+                <span class="icon-box icon-box-line">{{ icon('layers', 18) }}</span>
+                <div><strong>All services</strong><span>Compare services & ways to work together</span></div>
+              </a>
+            </div>
+            <div class="mega-side">
+              <span class="eyebrow">For agencies</span>
+              <h4>Need white-label development capacity?</h4>
+              <p class="small muted">We deliver Shopify and automation work under your brand.</p>
+              <a class="link small" href="agencies.html">Partner with us {{ icon('arrow-right', 15) }}</a>
+              <hr style="border:0;border-top:1px solid var(--line);margin:4px 0;width:100%">
+              <div class="row" style="gap:10px"><span class="icon-box icon-box-line" style="width:34px;height:34px">{{ icon('calendar', 16) }}</span><div class="small"><strong style="display:block">Free 30-min discovery call</strong><a class="link xs" href="contact.html#book">Pick a time {{ icon('arrow-right', 13) }}</a></div></div>
+            </div>
+          </div>
+        </li>
+        <li><a class="nav-link" href="work.html" {% if nav == 'work' %}aria-current="page"{% endif %}>Work</a></li>
+        <li class="nav-item" data-dropdown>
+          <button class="nav-link" aria-expanded="false" aria-haspopup="true" {% if nav == 'products' %}aria-current="page"{% endif %}>Products {{ icon('chevron-down', 15) }}</button>
+          <div class="dropdown" role="menu">
+            <a class="menu-link" href="products.html#xocialai" role="menuitem"><span class="icon-box" style="background:linear-gradient(135deg,#6c4dff,#c04dff);color:#fff">{{ icon('sparkles', 18) }}</span><div><strong>XocialAI <span class="badge badge-soft" style="display:inline-flex;height:20px;margin-left:4px;font-size:.66rem">New</span></strong><span>AI social media manager — posts on autopilot</span></div></a>
+            <a class="menu-link" href="products.html#xpreorder" role="menuitem"><span class="icon-box" style="background:#e9f3dc;color:#3d6b1f">{{ icon('shopping-bag', 18) }}</span><div><strong>XPreOrder</strong><span>Shopify pre-order app — keep selling when stock runs out</span></div></a>
+            <div class="mega-foot"><span>Built & maintained by Xubitar</span><a class="link" href="products.html">All products {{ icon('arrow-right', 14) }}</a></div>
+          </div>
+        </li>
+        <li><a class="nav-link" href="agencies.html" {% if nav == 'agencies' %}aria-current="page"{% endif %}>For agencies</a></li>
+        <li><a class="nav-link" href="about.html" {% if nav == 'about' %}aria-current="page"{% endif %}>About</a></li>
+        <li class="hide-lg"><a class="nav-link" href="careers.html" {% if nav == 'careers' %}aria-current="page"{% endif %}>Careers</a></li>
+      </ul>
+    </nav>
+    <div class="header-cta">
+      <a class="btn btn-ghost btn-sm hide-md" href="contact.html#book">{{ icon('calendar', 16) }} Book a call</a>
+      <a class="btn btn-primary btn-sm" href="contact.html">Start a project {{ icon('arrow-right', 16) }}</a>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" data-menu-toggle>{{ icon('menu', 20) }}</button>
+    </div>
+  </div>
+  <div class="mobile-menu" data-mobile-menu hidden>
+    <div class="m-group">
+      <div class="m-title">Services</div>
+      {% for s in SERVICES %}<a class="m-link" href="{{ s.file }}">{{ s.short }} {{ icon('chevron-right', 18) }}</a>{% endfor %}
+      <a class="m-link" href="services.html">All services {{ icon('chevron-right', 18) }}</a>
+    </div>
+    <div class="m-group">
+      <div class="m-title">Company</div>
+      <a class="m-link" href="work.html">Work {{ icon('chevron-right', 18) }}</a>
+      <a class="m-link" href="products.html">Products {{ icon('chevron-right', 18) }}</a>
+      <a class="m-link" href="agencies.html">For agencies {{ icon('chevron-right', 18) }}</a>
+      <a class="m-link" href="about.html">About {{ icon('chevron-right', 18) }}</a>
+      <a class="m-link" href="careers.html">Careers {{ icon('chevron-right', 18) }}</a>
+    </div>
+    <div class="m-cta">
+      <a class="btn btn-primary btn-lg" href="contact.html">Start a project {{ icon('arrow-right', 18) }}</a>
+      <a class="btn btn-outline btn-lg" href="contact.html#book">{{ icon('calendar', 18) }} Book a 30-min call</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+{% block content %}{% endblock %}
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand brand-invert"><img src="assets/xubitar-logo.png" alt="Xubitar" width="98" height="28" style="height:28px"></a>
+        <p>Shopify development, technical support, AI automation, search visibility and custom web solutions — for merchants, startups and agencies.</p>
+        <div class="footer-contact">
+          <a href="mailto:{{ SITE.email }}">{{ icon('mail', 16) }} {{ SITE.email }}</a>
+          <span data-ph>{{ icon('map-pin', 16) }} Office address — to be confirmed</span>
+          <span><span class="dot dot-pulse"></span> Replies within one business day</span>
+        </div>
+        <div class="socials" data-ph>
+          <a href="#" aria-label="LinkedIn">{{ icon('linkedin', 17) }}</a>
+          <a href="#" aria-label="X">{{ icon('x-social', 16) }}</a>
+          <a href="#" aria-label="Facebook">{{ icon('facebook', 17) }}</a>
+          <a href="#" aria-label="YouTube">{{ icon('youtube', 18) }}</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>{% for s in SERVICES %}<li><a href="{{ s.file }}">{{ s.short }}</a></li>{% endfor %}</ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="agencies.html">For agencies</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Products</h5>
+        <ul>
+          <li><a href="products.html#xocialai">XocialAI</a></li>
+          <li><a href="products.html#xpreorder">XPreOrder</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Get started</h5>
+        <ul>
+          <li><a href="contact.html">Start a project</a></li>
+          <li><a href="contact.html#book">Book a call</a></li>
+          <li><a href="service-shopify-support.html#plans">Support plans</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 {{ SITE.legal }}. All rights reserved.</span>
+      <nav><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a></nav>
+    </div>
+  </div>
+  <div class="footer-wordmark" aria-hidden="true"><img src="assets/xubitar-logo.png" alt=""></div>
+</footer>
+
+{# ---------------- Toki live chat ---------------- #}
+<div class="chat" data-chat data-note="Toki live chat (AI assistant with human handoff). Quick replies route visitors to the right service or to a human. This is a visual demo; the real widget comes from the Toki embed script.">
+  <div class="chat-panel" role="dialog" aria-label="Chat with Xubitar" hidden data-chat-panel>
+    <div class="chat-head">
+      <div class="row-between">
+        <div class="chat-id">
+          <span class="chat-av">T</span>
+          <div><b>Toki · Xubitar assistant</b><span><i class="dot"></i> Online — team replies in minutes</span></div>
+        </div>
+        <button class="chat-close" aria-label="Close chat" data-chat-close>{{ icon('x', 18) }}</button>
+      </div>
+      <div class="chat-team">
+        <div class="avatar-stack"><span class="avatar av-1">MA</span><span class="avatar av-3">RK</span><span class="avatar av-2">SN</span></div>
+        <span>Real engineers join when you need them</span>
+      </div>
+    </div>
+    <div class="chat-body" data-chat-body>
+      <div class="msg system">Today</div>
+      <div class="msg bot">Hi, I'm Toki. I can answer questions about Xubitar's services, pricing and process — or connect you with an engineer.</div>
+      <div class="msg bot">What can I help you with?</div>
+      <div class="quick" data-quick>
+        <button>I need Shopify development</button>
+        <button>Ongoing support plans</button>
+        <button>AI automation idea</button>
+        <button>Agency partnership</button>
+        <button>Talk to a human</button>
+      </div>
+    </div>
+    <form class="chat-input" data-chat-form>
+      <input type="text" placeholder="Type your message…" aria-label="Message">
+      <button type="submit" aria-label="Send">{{ icon('send', 18) }}</button>
+    </form>
+    <div class="chat-foot">Powered by Toki · AI assistant with human handoff</div>
+  </div>
+  <button class="chat-launcher" data-chat-toggle aria-label="Chat with us" aria-expanded="false">
+    <span class="cl-icon">{{ icon('message-circle', 20) }}</span>
+    <span class="cl-label">Chat with us</span>
+  </button>
+</div>
+
+{# ---------------- Review toolbar (prototype only) ---------------- #}
+<div class="review" data-review>
+  <div class="review-panel" hidden data-review-panel>
+    <div class="row-between"><strong style="font-size:.95rem">Design review</strong><span class="badge">{{ SITE.version }}</span></div>
+    <div>
+      <h6>Jump to page</h6>
+      <select data-page-jump aria-label="Jump to page">
+        <option value="start-here.html">← Overview & review guide</option>
+        {% for p in PAGES %}<option value="{{ p.file }}" {% if p.file == out_file %}selected{% endif %}>{{ p.group }} — {{ p.title }}</option>{% endfor %}
+      </select>
+    </div>
+    <div>
+      <div class="switch-row"><span>Show design notes</span><label class="switch"><input type="checkbox" data-toggle-notes><span></span></label></div>
+      <div class="switch-row"><span>Highlight sample content</span><label class="switch"><input type="checkbox" data-toggle-ph><span></span></label></div>
+    </div>
+    <div>
+      <h6>Accent colour option</h6>
+      <div class="swatches">
+        <button class="swatch" data-accent-set="blue"><i style="background:#2950ff"></i>Signal blue</button>
+        <button class="swatch" data-accent-set="emerald"><i style="background:#0b8a5e"></i>Emerald</button>
+        <button class="swatch" data-accent-set="volt"><i style="background:#c6f135"></i>Volt</button>
+      </div>
+    </div>
+    <div data-notes-wrap>
+      <h6>Notes on this page</h6>
+      <div class="notes-list" data-notes-list></div>
+    </div>
+    <div class="review-meta"><span>Prototype only — not the live site</span><span>{{ SITE.date }}</span></div>
+  </div>
+  <button class="review-fab" data-review-toggle aria-expanded="false">{{ icon('eye', 16) }} <span class="lbl">Review</span> <span class="cnt" data-notes-count>0</span></button>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/review.js"></script>
+</body>
+</html>

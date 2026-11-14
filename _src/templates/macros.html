@@ -1,0 +1,189 @@
+{# ======================================================================
+   Reusable building blocks — each maps to a future React component.
+   ====================================================================== #}
+
+{% macro section_head(eyebrow, title, lead=None, center=False, cls='') -%}
+<div class="section-head {{ 'center' if center }} {{ cls }}">
+  {% if eyebrow %}<span class="eyebrow">{{ eyebrow }}</span>{% endif %}
+  <h2 class="balance">{{ title | safe }}</h2>
+  {% if lead %}<p class="lead pretty">{{ lead | safe }}</p>{% endif %}
+</div>
+{%- endmacro %}
+
+{% macro stars(n=5, size=15) -%}
+<span class="stars" aria-label="{{ n }} out of 5 stars">{% for i in range(n) %}{{ icon('star', size) }}{% endfor %}</span>
+{%- endmacro %}
+
+{# ---------- Case study cover art (pure CSS mock-ups) ---------- #}
+{% macro case_cover(c, cls='case-cover') -%}
+<div class="{{ cls }} {{ c.tone }}" style="background: {{ c.color }}{% if c.tone == 'dark' %}; background-image: radial-gradient(circle at 80% 0%, rgba(255,255,255,.12), transparent 55%){% endif %}">
+  {% if cls == 'case-cover' %}<span class="client-tag">{{ c.client }}</span>{% endif %}
+  {% if c.mock == 'sync' %}
+    <div class="cm">
+      <div class="cm-sync">
+        <div class="cm-sys"><span class="icon-box" style="background:#e9f3dc;color:#3d6b1f">{{ icon('shopping-bag', 20) }}</span><b>Shopify Plus</b><span>Orders · Products</span></div>
+        <div class="cm-link">{{ icon('refresh', 22) }}<span>real-time</span></div>
+        <div class="cm-sys"><span class="icon-box" style="background:#e6eefc;color:#1f4fa8">{{ icon('database', 20) }}</span><b>NetSuite ERP</b><span>Inventory · 3 warehouses</span></div>
+      </div>
+      <div class="row" style="justify-content:center;gap:8px"><span class="cm-chip"><i class="dot"></i> Sync healthy</span><span class="cm-chip">1,284 events today</span></div>
+    </div>
+  {% elif c.mock == 'store' %}
+    <div class="cm"><div class="cm-store">
+      <div class="s-nav"><b>{{ c.client.split(' ')[0] | upper }}</b><span>Shop · About · Journal</span></div>
+      <div class="s-hero">New season, slower mornings</div>
+      <div class="s-grid"><i></i><i></i><i></i><i></i></div>
+    </div></div>
+  {% elif c.mock == 'chat' %}
+    <div class="cm cm-chat">
+      <div class="cm-msg"><span class="tag">Incoming · Email</span><br>Hi, my subscription renewed but I wanted to pause it this month…</div>
+      <div class="cm-msg ai"><span class="tag">AI draft · Subscription › Pause</span><br>Of course — I've paused your next delivery. You won't be charged until…</div>
+      <div class="row" style="justify-content:flex-end;gap:6px"><span class="cm-chip">{{ icon('check', 13) }} Approved by Ana · 38s</span></div>
+    </div>
+  {% elif c.mock == 'app' %}
+    <div class="cm"><div class="cm-panel" style="display:grid;gap:10px">
+      <div class="row-between"><b style="font-size:.85rem">Bundle builder</b><span class="badge badge-success" style="height:22px">Active on 6 stores</span></div>
+      <div class="grid" style="grid-template-columns:repeat(3,1fr);gap:6px">
+        <div style="aspect-ratio:1;border-radius:8px;background:#eef0f6"></div><div style="aspect-ratio:1;border-radius:8px;background:#e7ebf3"></div><div style="aspect-ratio:1;border-radius:8px;background:#eef0f6"></div>
+      </div>
+      <div class="row-between small"><span class="muted">Bundle discount</span><b>−15% · Shopify Function</b></div>
+    </div></div>
+  {% elif c.mock == 'tickets' %}
+    <div class="cm"><div class="cm-panel">
+      <div class="row-between" style="margin-bottom:10px"><b style="font-size:.85rem">Support board · This month</b><span class="badge" style="height:22px">14 done</span></div>
+      <ul class="ticket-mini">
+        <li><span class="t"><span class="tag tag-fix" style="font-size:.62rem;padding:2px 6px;border-radius:5px">Fix</span><span>Cart drawer price rounding</span></span><span class="mono">2h 10m</span></li>
+        <li><span class="t"><span class="tag tag-int" style="font-size:.62rem;padding:2px 6px;border-radius:5px">Int</span><span>Klaviyo back-in-stock flow</span></span><span class="mono">1d</span></li>
+        <li><span class="t"><span class="tag tag-imp" style="font-size:.62rem;padding:2px 6px;border-radius:5px">Imp</span><span>Faster collection filters</span></span><span class="mono">3d</span></li>
+      </ul>
+    </div></div>
+  {% elif c.mock == 'browser' %}
+    <div class="cm"><div class="browser-mock" style="box-shadow:0 18px 40px -16px rgba(0,0,0,.5)">
+      <div class="bm-top"><i></i><i></i><i></i></div>
+      <div class="bm-body" style="padding:18px">
+        <div class="bm-h"></div><div class="bm-l" style="width:85%"></div><div class="bm-l" style="width:60%"></div>
+        <div class="row" style="gap:6px;margin-top:4px"><div class="bm-btn"></div><div class="bm-btn" style="background:var(--surface-2)"></div></div>
+        <div class="bm-row"><i></i><i></i><i></i></div>
+      </div>
+    </div></div>
+  {% elif c.mock == 'answer' %}
+    <div class="cm"><div class="cm-panel answer-mock">
+      <div class="answer-q">{{ icon('sparkles', 14) }} best breathable workwear for summer sites</div>
+      <div class="answer-a"><div class="ln" style="width:92%"></div><div class="ln" style="width:80%"></div><div class="ln" style="width:64%"></div>
+        <div class="answer-src"><span class="me">peaksupply.co</span><span>reviews.com</span><span>forum</span></div></div>
+    </div></div>
+  {% endif %}
+</div>
+{%- endmacro %}
+
+{% macro case_card(c, feature=False, delay=0) -%}
+<article class="case-card {{ 'case-feature' if feature }} reveal {{ 'reveal-d%d' % delay if delay }}" data-cat="{{ c.cat }}" data-ph>
+  {{ case_cover(c) }}
+  <div class="case-body">
+    <div class="case-meta"><span class="badge">{{ c.service }}</span><span class="badge badge-outline">{{ c.industry }}</span></div>
+    <h3 class="balance"><a class="card-link" href="case-study.html">{{ c.title }}</a></h3>
+    <p class="muted small">{{ c.summary }}</p>
+    <div class="case-metrics">
+      {% for v, l in c.metrics %}<div><b>{{ v }}</b><span>{{ l }}</span></div>{% endfor %}
+    </div>
+    {% if feature %}<span class="link mt-1">Read the case study {{ icon('arrow-right', 16) }}</span>{% endif %}
+  </div>
+</article>
+{%- endmacro %}
+
+{# ---------- Service mini visuals ---------- #}
+{% macro svc_visual(kind) -%}
+{% if kind == 'sync' %}
+<div class="mini-visual">
+  <div class="flow" style="justify-content:space-between">
+    <span class="flow-node">{{ icon('shopping-bag', 14) }} Shopify</span>
+    <span class="flow-arrow">{{ icon('refresh', 16) }}</span>
+    <span class="flow-node ai">{{ icon('code', 14) }} Custom app</span>
+    <span class="flow-arrow">{{ icon('refresh', 16) }}</span>
+    <span class="flow-node">{{ icon('database', 14) }} ERP / CRM</span>
+  </div>
+</div>
+{% elif kind == 'tickets' %}
+<div class="mini-visual">
+  <ul class="ticket-mini">
+    <li><span class="t"><span class="dot"></span><span>Checkout script conflict fixed</span></span><span class="mono">3h 12m</span></li>
+    <li><span class="t"><span class="dot"></span><span>Webhook retries resolved</span></span><span class="mono">1h 40m</span></li>
+    <li><span class="t"><span class="dot" style="background:var(--warn)"></span><span>Theme update on staging</span></span><span class="mono">in review</span></li>
+  </ul>
+</div>
+{% elif kind == 'flow' %}
+<div class="mini-visual">
+  <div class="flow" style="justify-content:space-between">
+    <span class="flow-node">{{ icon('mail', 14) }} New lead</span>
+    <span class="flow-arrow">{{ icon('arrow-right', 14) }}</span>
+    <span class="flow-node ai">{{ icon('sparkles', 14) }} AI qualify</span>
+    <span class="flow-arrow">{{ icon('arrow-right', 14) }}</span>
+    <span class="flow-node">{{ icon('users', 14) }} CRM + Slack</span>
+  </div>
+</div>
+{% elif kind == 'answer' %}
+<div class="mini-visual answer-mock">
+  <div class="answer-q">{{ icon('sparkles', 14) }} Who builds custom Shopify integrations?</div>
+  <div class="answer-a">
+    <div class="ln" style="width:94%"></div><div class="ln" style="width:78%"></div>
+    <div class="answer-src"><span class="me">yourbrand.com</span><span>google.com</span><span>reddit.com</span></div>
+  </div>
+</div>
+{% elif kind == 'browser' %}
+<div class="browser-mock">
+  <div class="bm-top"><i></i><i></i><i></i></div>
+  <div class="bm-body"><div class="bm-h"></div><div class="bm-l" style="width:88%"></div><div class="bm-l" style="width:62%"></div><div class="bm-btn"></div><div class="bm-row"><i></i><i></i><i></i></div></div>
+</div>
+{% endif %}
+{%- endmacro %}
+
+{% macro testimonial(t, delay=0, loop_index=1) -%}
+<figure class="card t-card reveal {{ 'reveal-d%d' % delay if delay }}" data-ph>
+  <div class="row-between">{{ stars() }}<span class="q-icon">{{ icon('quote', 22) }}</span></div>
+  <blockquote>“{{ t.quote }}”</blockquote>
+  <figcaption class="who"><span class="avatar av-{{ loop_index if loop_index else 1 }}">{{ t.initials }}</span><div><b>{{ t.name }}</b><span>{{ t.role }}, {{ t.company }}</span></div></figcaption>
+</figure>
+{%- endmacro %}
+
+{% macro faq(items, open_first=True) -%}
+<div class="faq">
+  {% for q, a in items %}
+  <details {% if open_first and loop.first %}open{% endif %}>
+    <summary>{{ q }}<span class="pm">{{ icon('plus', 16) }}</span></summary>
+    <div class="ans">{{ a }}</div>
+  </details>
+  {% endfor %}
+</div>
+{%- endmacro %}
+
+{% macro process(steps) -%}
+<ol class="process">
+  {% for n, t, d in steps %}
+  <li class="step reveal reveal-d{{ loop.index0 if loop.index0 < 5 else 4 }}">
+    <span class="step-num">{{ n }}</span>
+    <h4>{{ t }}</h4>
+    <p>{{ d }}</p>
+  </li>
+  {% endfor %}
+</ol>
+{%- endmacro %}
+
+{% macro cta_band(title='Have a Shopify problem, an automation idea or a website to build?', lead='Tell us what you need. We reply within one business day with honest next steps — no obligation, no hard sell.', primary='Start a project', secondary='Book a 30-min call') -%}
+<section class="section-sm">
+  <div class="container">
+    <div class="cta-band reveal" data-note="Closing CTA appears on every page: one primary action (Start a project), one low-commitment action (Book a call), plus the response-time promise.">
+      <div>
+        <h2 class="balance">{{ title }}</h2>
+        <p class="lead">{{ lead }}</p>
+      </div>
+      <div class="cta-side">
+        <a class="btn btn-primary btn-lg" href="contact.html">{{ primary }} {{ icon('arrow-right', 18) }}</a>
+        <a class="btn btn-outline btn-lg" href="contact.html#book">{{ icon('calendar', 18) }} {{ secondary }}</a>
+        <div class="cta-meta">
+          <div class="avatar-stack"><span class="avatar av-1">MA</span><span class="avatar av-3">RK</span><span class="avatar av-2">SN</span></div>
+          <span>You'll speak directly with the engineers who do the work.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{%- endmacro %}

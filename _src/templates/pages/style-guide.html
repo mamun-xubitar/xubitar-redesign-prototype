@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% set title = 'Style guide' %}
+{% set description = 'Xubitar design system: colours, typography, components.' %}
+{% set page_id = 'styleguide' %}
+{% set nav = '' %}
+{% block content %}
+
+<section class="page-hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="container" style="position:relative">
+    <div class="hero-copy" style="max-width:780px">
+      <span class="eyebrow">Design system · v1</span>
+      <h1>Style guide</h1>
+      <p class="lead">The building blocks behind every page. Tokens map one-to-one to Tailwind v4 <code class="mono">@theme</code> variables, and components map to the existing <code class="mono">components/ui</code> primitives.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container stack-lg" style="gap:72px">
+
+    <div class="stack-lg">
+      {{ m.section_head('01 · Logo', 'Logo usage', 'Keep the existing wordmark. Use black on light backgrounds and white on dark. Minimum height 22px on screen.', cls='mb-0') }}
+      <div class="grid grid-2">
+        <div class="card" style="display:grid;place-items:center;min-height:200px"><img src="assets/xubitar-logo.png" alt="Xubitar logo on light" style="height:48px"></div>
+        <div class="card" style="display:grid;place-items:center;min-height:200px;background:var(--ink)"><img src="assets/xubitar-logo.png" alt="Xubitar logo on dark" style="height:48px;filter:invert(1)"></div>
+      </div>
+    </div>
+
+    <div class="stack-lg">
+      {{ m.section_head('02 · Colour', 'Colour palette', 'A monochrome base taken from the logo, with one accent colour for actions and highlights. Three accent options are offered for review.', cls='mb-0') }}
+      <div class="grid grid-4">
+        {% for name, var, hex in [('Ink','--ink','#0B0C0F'),('Ink 2','--ink-2','#15171C'),('Paper','--paper','#FFFFFF'),('Surface','--surface','#F7F7F4'),('Surface 2','--surface-2','#EFEFEA'),('Line','--line','#E7E7E1'),('Muted text','--muted','#5F626A'),('Subtle text','--subtle','#8B8E96')] %}
+        <div class="card" style="padding:0;overflow:hidden"><div style="height:88px;background:var({{ var }});border-bottom:1px solid var(--line)"></div><div style="padding:14px 16px"><b class="small">{{ name }}</b><div class="mono xs muted">{{ var }} · {{ hex }}</div></div></div>
+        {% endfor %}
+      </div>
+      <div class="grid grid-3">
+        {% for name, hex, note in [('Signal blue (default)','#2950FF','Trust, clarity, strong contrast on white (AA).'),('Emerald','#0B8A5E','Growth & commerce; calm and premium.'),('Volt','#C6F135','Bold & modern; used with ink text only.')] %}
+        <div class="card" style="padding:0;overflow:hidden"><div style="height:110px;background:{{ hex }}"></div><div style="padding:16px"><b>{{ name }}</b><div class="mono xs muted">{{ hex }}</div><p class="small muted mt-1">{{ note }}</p></div></div>
+        {% endfor %}
+      </div>
+      <div class="row"><span class="badge badge-success"><i class="dot"></i> Success #0F9D58</span><span class="badge" style="background:var(--warn-soft);color:var(--warn)">Warning #B7700A</span><span class="badge" style="background:#fde8e8;color:var(--danger)">Danger #D93636</span></div>
+    </div>
+
+    <div class="stack-lg">
+      {{ m.section_head('03 · Typography', 'Type scale', 'Geist (sans) for everything, Geist Mono for small labels and data. Both are free and built into Next.js via next/font.', cls='mb-0') }}
+      <div class="card stack-lg">
+        <div class="row-between" style="align-items:baseline;flex-wrap:wrap"><span class="display" style="font-size:3.9rem">Display / H1</span><span class="mono xs muted">62px · 620 · −4.2%</span></div>
+        <div class="row-between" style="align-items:baseline;flex-wrap:wrap"><span class="h2">Heading 2</span><span class="mono xs muted">48px · 600 · −3.5%</span></div>
+        <div class="row-between" style="align-items:baseline;flex-wrap:wrap"><span class="h3">Heading 3 — card titles</span><span class="mono xs muted">21px · 600</span></div>
+        <div class="row-between" style="align-items:baseline;flex-wrap:wrap"><span class="lead">Lead paragraph for section intros and hero copy.</span><span class="mono xs muted">19px · 400</span></div>
+        <div class="row-between" style="align-items:baseline;flex-wrap:wrap"><span>Body text used for most paragraphs on the site.</span><span class="mono xs muted">16px · 400 · 1.6</span></div>
+        <div class="row-between" style="align-items:baseline;flex-wrap:wrap"><span class="eyebrow">Eyebrow label</span><span class="mono xs muted">Geist Mono 12px · uppercase</span></div>
+      </div>
+    </div>
+
+    <div class="stack-lg">
+      {{ m.section_head('04 · Components', 'Buttons, badges & links', None, cls='mb-0') }}
+      <div class="card stack-lg">
+        <div class="row"><a class="btn btn-primary btn-lg" href="#">Primary large {{ icon('arrow-right', 18) }}</a><a class="btn btn-primary" href="#">Primary</a><a class="btn btn-dark" href="#">Dark</a><a class="btn btn-outline" href="#">Outline</a><a class="btn btn-ghost" href="#">Ghost</a><a class="btn btn-primary btn-sm" href="#">Small</a></div>
+        <div class="row"><span class="badge">Default</span><span class="badge badge-accent">Accent</span><span class="badge badge-soft">Soft</span><span class="badge badge-success">Success</span><span class="badge badge-dark">Dark</span><span class="badge badge-outline">Outline</span><span class="pill">Pill / tag</span><a class="link" href="#">Text link {{ icon('arrow-right', 15) }}</a></div>
+      </div>
+    </div>
+
+    <div class="stack-lg">
+      {{ m.section_head('05 · Forms', 'Form fields', None, cls='mb-0') }}
+      <div class="card"><div class="form-grid">
+        <div class="field"><label>Default input</label><input class="input" placeholder="Placeholder text"></div>
+        <div class="field has-error"><label>With error</label><input class="input" value="not-an-email"><span class="err">Please enter a valid email.</span></div>
+        <div class="field"><label>Select</label><select class="select"><option>Founder / owner</option></select></div>
+        <div class="field"><span class="label">Segmented choice</span><div class="seg"><input type="radio" name="sg" id="sg1" checked><label for="sg1">Selected</label><input type="radio" name="sg" id="sg2"><label for="sg2">Option</label></div></div>
+      </div></div>
+    </div>
+
+    <div class="stack-lg">
+      {{ m.section_head('06 · Cards & icons', 'Cards and iconography', 'Icons follow the Lucide style already used in the codebase (1.75px stroke).', cls='mb-0') }}
+      <div class="grid grid-3">
+        <div class="card stack"><span class="icon-box">{{ icon('code', 22) }}</span><h4>Default card</h4><p class="small muted">White, 1px line, 20px radius.</p></div>
+        <div class="card card-hover stack"><span class="icon-box">{{ icon('sparkles', 22) }}</span><h4>Hover card</h4><p class="small muted">Lifts 3px with a soft shadow.</p></div>
+        <div class="card card-surface stack"><span class="icon-box icon-box-line">{{ icon('layers', 22) }}</span><h4>Surface card</h4><p class="small muted">For quotes and secondary content.</p></div>
+      </div>
+      <div class="card"><div class="row" style="gap:22px">
+        {% for n in ['code','life-buoy','sparkles','search','monitor','shopping-bag','store','rocket','briefcase','users','workflow','database','plug','refresh','shield-check','clock','file-text','lock','calendar','mail','message-circle','trending-up','gauge','layers','package','bot','target','handshake'] %}
+        <span title="{{ n }}" style="color:var(--text-2)">{{ icon(n, 24) }}</span>
+        {% endfor %}
+      </div></div>
+    </div>
+
+    <div class="stack-lg">
+      {{ m.section_head('07 · Layout', 'Spacing, radius & grid', None, cls='mb-0') }}
+      <div class="grid grid-3">
+        <div class="card stack-sm"><b>Container</b><span class="small muted">1200px max + 20–32px gutters</span></div>
+        <div class="card stack-sm"><b>Section spacing</b><span class="small muted">72–120px vertical (fluid)</span></div>
+        <div class="card stack-sm"><b>Radius</b><span class="small muted">10 · 14 · 20 · 28px · full for buttons</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

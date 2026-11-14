@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% set title = 'For agencies — white-label development partner' %}
+{% set description = 'White-label Shopify, integration and AI automation development for agencies. Your brand, your process, NDA by default.' %}
+{% set page_id = 'agencies' %}
+{% set nav = 'agencies' %}
+{% block content %}
+
+<section class="page-hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="container page-hero-grid">
+    <div class="hero-copy" data-note="Dedicated agency page. In the discussion, agencies and high-end merchants were named as the remaining strong source of work, so they get their own landing page for LinkedIn/email outreach.">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a>{{ icon('chevron-right', 14) }}<span>For agencies</span></nav>
+      <span class="eyebrow">Agency partner program</span>
+      <h1 class="balance">Your white-label Shopify &amp; automation dev team.</h1>
+      <p class="lead">Say yes to custom apps, integrations and complex store work without hiring. We deliver under your brand, inside your process — and we never contact your clients unless you ask us to.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary btn-lg" href="contact.html?type=agency">Become a partner {{ icon('arrow-right', 18) }}</a>
+        <a class="btn btn-outline btn-lg" href="contact.html#book">{{ icon('calendar', 18) }} Book an intro call</a>
+      </div>
+      <ul class="hero-assurances">
+        <li>{{ icon('check-circle', 17) }} NDA before kickoff</li>
+        <li>{{ icon('check-circle', 17) }} Your brand, your tools</li>
+        <li>{{ icon('check-circle', 17) }} Start with a small pilot task</li>
+      </ul>
+    </div>
+    <div class="svc-hero-card reveal" data-note="Visual shows how we plug into an agency's workflow: their client, their PM tool, our engineers behind the scenes.">
+      <div class="row-between"><strong>How the partnership looks</strong><span class="badge badge-soft">White-label</span></div>
+      <div class="arch" style="grid-template-columns:1fr;gap:8px;padding:16px">
+        <div class="arch-node" style="grid-template-columns:auto 1fr;justify-items:start;text-align:left;align-items:center;column-gap:12px"><span class="icon-box" style="grid-row:span 2">{{ icon('store', 18) }}</span><b>Your client</b><span>Sees only your agency</span></div>
+        <div class="arch-arrow" style="transform:none">{{ icon('arrow-down', 16) }}</div>
+        <div class="arch-node" style="grid-template-columns:auto 1fr;justify-items:start;text-align:left;align-items:center;column-gap:12px"><span class="icon-box" style="grid-row:span 2">{{ icon('briefcase', 18) }}</span><b>Your agency</b><span>Owns the relationship & strategy</span></div>
+        <div class="arch-arrow" style="transform:none">{{ icon('arrow-down', 16) }}</div>
+        <div class="arch-node core" style="grid-template-columns:auto 1fr;justify-items:start;text-align:left;align-items:center;column-gap:12px"><span class="icon-box" style="grid-row:span 2">{{ icon('code', 18) }}</span><b>Xubitar engineers</b><span>Build, test & document — in your Slack, Jira or Linear</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    {{ m.section_head('Why agencies partner with us', 'Capacity you can plan around — without the hiring risk', 'Many agencies are running leaner teams than they used to. We help you keep saying yes to high-value technical work.') }}
+    <div class="grid grid-4">
+      {% for ic, t, d in [
+        ('users', 'Capacity on demand', 'Scale up for a big launch, scale down after — no hiring or layoffs.'),
+        ('shield-check', 'White-label by default', 'NDA, your branding, your email signatures. We stay invisible.'),
+        ('code', 'Deep technical skills', 'Custom apps, Shopify Functions, APIs, ERP/CRM integrations and AI workflows.'),
+        ('file-text', 'Clean handoffs', 'Documented code, clear estimates and status updates you can forward to clients.'),
+      ] %}
+      <div class="card stack reveal {{ 'reveal-d%d' % loop.index0 if loop.index0 }}"><span class="icon-box">{{ icon(ic, 22) }}</span><h4 class="mt-1">{{ t }}</h4><p class="small muted">{{ d }}</p></div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-surface">
+  <div class="container">
+    <div class="split" style="align-items:start">
+      <div class="stack-lg">
+        {{ m.section_head('What we take on', 'Work you can hand over with confidence', None, cls='mb-0') }}
+        <ul class="check-list">
+          {% for t in ['Custom Shopify apps & app extensions','Shopify Functions: discounts, delivery, payments','ERP, CRM, 3PL and inventory integrations','Theme builds, rebuilds and complex customisations','Bug fixing and technical rescues on inherited stores','n8n and AI workflow automation for your clients','Technical SEO fixes and structured data','Ongoing maintenance across your client portfolio'] %}
+          <li>{{ icon('check', 18) }}<span>{{ t }}</span></li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="stack-lg">
+        {{ m.section_head('How it works', 'From intro call to steady capacity', None, cls='mb-0') }}
+        <ol class="next-steps" data-note="A low-risk path to partnership: a small paid pilot task first, so the agency can judge quality before committing.">
+          <li><span class="n">1</span><div><b>Intro call (30 min)</b><span>Your clients, your stack, your process and what “great” looks like for you.</span></div></li>
+          <li><span class="n">2</span><div><b>NDA & pilot task</b><span>We start with a small, well-defined task so you can judge quality and communication.</span></div></li>
+          <li><span class="n">3</span><div><b>Plug into your tools</b><span>Shared Slack channel, your PM tool, your Git workflow and naming.</span></div></li>
+          <li><span class="n">4</span><div><b>Ongoing capacity</b><span>Per-project quotes or a monthly block of hours you can plan around.</span></div></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    {{ m.section_head('Partnership models', 'Choose how you want to work', 'Sample models for discussion — final terms agreed per agency.', center=True) }}
+    <div class="plans" data-ph data-note="Partnership models with sample terms. Xubitar to confirm minimums, rates and notice periods.">
+      {% for name, price, unit, best, feats, pop in [
+        ('Per project', 'Fixed quote', 'per project', 'Occasional technical projects', ['Written scope & fixed price','Weekly previews on staging','Documented handoff'], False),
+        ('Monthly hours block', 'From 40 hrs', 'per month', 'Agencies with steady technical work', ['Reserved capacity every month','Priority over new clients','Shared Slack channel','Monthly usage report'], True),
+        ('Overflow support', 'On demand', 'as needed', 'Peaks, launches and emergencies', ['Fast estimates','Short-notice availability','Same white-label terms'], False),
+      ] %}
+      <div class="card plan {{ 'popular' if pop }} reveal {{ 'reveal-d%d' % loop.index0 if loop.index0 }}">
+        {% if pop %}<span class="badge badge-dark plan-tag">Most agencies choose</span>{% endif %}
+        <div><h3>{{ name }}</h3><p class="muted small mt-1">Best for: {{ best }}</p></div>
+        <div class="plan-price"><b style="font-size:2rem">{{ price }}</b><span>{{ unit }}</span></div>
+        <ul class="check-list small">{% for f in feats %}<li>{{ icon('check', 16) }}<span>{{ f }}</span></li>{% endfor %}</ul>
+        <a class="btn {{ 'btn-primary' if pop else 'btn-outline' }} btn-block" href="contact.html?type=agency">Discuss this model {{ icon('arrow-right', 16) }}</a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-surface">
+  <div class="container">
+    <div class="split" style="align-items:start">
+      <div class="stack-lg">
+        <figure class="card t-card" style="padding:clamp(28px,3vw,40px)" data-ph>
+          <div class="row-between">{{ m.stars() }}<span class="q-icon">{{ icon('quote', 24) }}</span></div>
+          <blockquote class="quote-xl">“{{ TESTIMONIALS[2].quote }}”</blockquote>
+          <figcaption class="who"><span class="avatar av-3">{{ TESTIMONIALS[2].initials }}</span><div><b>{{ TESTIMONIALS[2].name }}</b><span>{{ TESTIMONIALS[2].role }}, {{ TESTIMONIALS[2].company }}</span></div></figcaption>
+        </figure>
+        <div class="case-grid" style="grid-template-columns:1fr">{{ m.case_card(CASES_BY_SLUG['atlas']) }}</div>
+      </div>
+      <div>
+        {{ m.section_head('Agency FAQ', 'Questions agencies ask us', None) }}
+        {{ m.faq([
+          ('Will you ever contact our clients directly?', 'No. We only speak with your clients if you invite us — and then under your agency’s name.'),
+          ('Who owns the code we deliver to clients?', 'Your agency, or your client — whichever you specify. We transfer repositories and credentials at handoff.'),
+          ('Can you join client calls?', 'Yes, as part of your team, when it helps. Many partners bring us in for technical discovery.'),
+          ('What time zones do you cover?', 'To be confirmed by Xubitar — e.g. overlap with UK/EU mornings and US East Coast hours.'),
+          ('How do you estimate work?', 'We send a written estimate with assumptions and risks, so you can price confidently for your client.'),
+        ]) }}
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ m.cta_band(title='Ready to add a reliable dev team to your agency?', lead='Book a 30-minute intro call. We’ll talk about your clients, your process and a small pilot task.', primary='Become a partner', secondary='Book an intro call') }}
+{% endblock %}

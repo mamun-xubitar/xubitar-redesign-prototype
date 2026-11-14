@@ -1,0 +1,364 @@
+{% extends 'base.html' %}
+{% set title = 'Xubitar — Reliable Shopify, AI automation & web development' %}
+{% set description = 'Xubitar builds custom Shopify apps, integrations, AI automations and websites — and keeps them running. For Shopify merchants, startups and agencies.' %}
+{% set page_id = 'home' %}
+{% set nav = 'home' %}
+{% block content %}
+
+{# ======================= HERO ======================= #}
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="container hero-grid">
+    <div class="hero-copy" data-note="Headline leads with the main promise from the discussion: reliability and trust, not just code. It names all three target audiences (merchants, startups, agencies).">
+      <span class="eyebrow reveal">Shopify · AI automation · Web · Search visibility</span>
+      <h1 class="balance reveal reveal-d1"><em class="hl">Reliable</em> engineering for Shopify brands, startups &amp; agencies.</h1>
+      <p class="lead reveal reveal-d2">We build custom Shopify apps, integrations, AI automations and websites — and keep them running after launch. Clear written scope, honest timelines and a reply from a real engineer within one business day.</p>
+      <div class="hero-cta reveal reveal-d3">
+        <a class="btn btn-primary btn-lg" href="contact.html">Start a project {{ icon('arrow-right', 18) }}</a>
+        <a class="btn btn-outline btn-lg" href="work.html">See our work</a>
+      </div>
+      <ul class="hero-assurances reveal reveal-d3">
+        <li>{{ icon('check-circle', 17) }} Written scope before we start</li>
+        <li>{{ icon('check-circle', 17) }} You own the code</li>
+        <li>{{ icon('check-circle', 17) }} NDA & white-label ready</li>
+      </ul>
+      <div class="hero-proof reveal reveal-d4" data-ph>
+        <div class="row" style="gap:12px">
+          <div class="avatar-stack"><span class="avatar av-1">DR</span><span class="avatar av-2">SL</span><span class="avatar av-3">MH</span><span class="avatar av-4">PN</span></div>
+          <div class="hero-proof-text">{{ m.stars(5, 13) }}<br><strong>4.9/5</strong> from 60+ client reviews</div>
+        </div>
+        <div class="partner-mark"><span class="icon-box">{{ icon('shopping-bag', 16) }}</span><div><strong>Shopify Partner</strong><span class="muted">Apps on the App Store</span></div></div>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal reveal-d2" data-note="Hero visual is an illustrative 'store health' console. It shows integrations running, support tickets resolved and performance scores, so the visual itself says 'we keep things running'.">
+      <div class="console" aria-hidden="true">
+        <div class="console-top"><span class="traffic"><i></i><i></i><i></i></span><span class="console-url">care.xubitar.com / northwind-outdoor</span></div>
+        <div class="console-body">
+          <div class="console-head">
+            <div><p>Store health · Live</p><h4>Northwind Outdoor</h4></div>
+            <span class="status-ok"><span class="dot dot-pulse"></span> All systems normal</span>
+          </div>
+          <ul class="console-rows">
+            <li>{{ icon('refresh', 17) }}<span>NetSuite inventory sync</span><span class="val">2 min ago</span><span class="dot"></span></li>
+            <li>{{ icon('zap', 17) }}<span>Order webhooks</span><span class="val">99.98% delivered</span><span class="dot"></span></li>
+            <li>{{ icon('layers', 17) }}<span>Checkout extension</span><span class="val">v2.4 · live</span><span class="dot"></span></li>
+            <li>{{ icon('sparkles', 17) }}<span>AI support triage</span><span class="val">38 drafts today</span><span class="dot"></span></li>
+          </ul>
+          <div class="console-chart">
+            <div class="row-between"><span>Orders synced · last 14 days</span><span class="mono">+18%</span></div>
+            <div class="bars">{% for h in [38,52,44,60,48,66,58,72,63,70,78,68,84,92] %}<i class="{{ 'on' if loop.index > 10 }}" style="height:{{ h }}%"></i>{% endfor %}</div>
+          </div>
+        </div>
+      </div>
+      <div class="float-card fc-ticket" aria-hidden="true">
+        <span class="icon-box" style="background:var(--success-soft);color:var(--success)">{{ icon('check', 18) }}</span>
+        <div><strong>#482 Bundle discount not applying</strong><span>Resolved in 3h 12m · root cause documented</span></div>
+      </div>
+      <div class="float-card fc-score" aria-hidden="true">
+        <span class="ring" style="--p:96"><b>96</b></span>
+        <div><strong>Mobile performance</strong><span>after store renovation</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ======================= LOGOS ======================= #}
+<section class="logos" aria-label="Clients" data-note="Client logo strip. Replace with real logos only where the client has given permission (per the 6-month plan).">
+  <div class="container">
+    <p class="logos-label">Trusted by Shopify merchants, startups and agencies</p>
+    <div class="logo-row" data-ph>
+      {% for l in LOGOS %}<span class="logo-word lw-{{ loop.index }}">{{ l }}</span>{% endfor %}
+    </div>
+  </div>
+</section>
+
+{# ======================= AUDIENCES ======================= #}
+<section class="section" id="who">
+  <div class="container">
+    {{ m.section_head('Who we work with', 'Built for teams who can’t afford unreliable developers', 'Many development shops only write code. We take responsibility for the result — whether you run a store, launch a startup or deliver for your own clients.') }}
+    <div class="grid grid-3" data-note="Audience split based on the new strategy: merchants, startups / direct clients, and agencies. Each card links to the most relevant page, so visitors pick their own path.">
+      <article class="card card-hover audience-card reveal">
+        <div class="audience-top"><span class="icon-box">{{ icon('store', 22) }}</span><span class="badge">Merchants & brands</span></div>
+        <p class="q">“We’ve outgrown off-the-shelf apps.”</p>
+        <p>Custom features, integrations and fixes for Shopify and Shopify Plus stores — plus ongoing support so your store keeps running smoothly.</p>
+        <a class="link card-link" href="service-shopify-development.html">Shopify development {{ icon('arrow-right', 16) }}</a>
+      </article>
+      <article class="card card-hover audience-card reveal reveal-d1">
+        <div class="audience-top"><span class="icon-box">{{ icon('rocket', 22) }}</span><span class="badge">Startups & founders</span></div>
+        <p class="q">“We need to launch — without hiring a full team.”</p>
+        <p>Professional websites, web apps and AI automations that help you look credible, win clients and save time from day one.</p>
+        <a class="link card-link" href="service-custom-web.html">Custom web solutions {{ icon('arrow-right', 16) }}</a>
+      </article>
+      <article class="card card-hover audience-card reveal reveal-d2">
+        <div class="audience-top"><span class="icon-box">{{ icon('briefcase', 22) }}</span><span class="badge">Agencies</span></div>
+        <p class="q">“We need dependable development capacity.”</p>
+        <p>White-label Shopify, integration and automation development, delivered under your brand and inside your process.</p>
+        <a class="link card-link" href="agencies.html">Partner with us {{ icon('arrow-right', 16) }}</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+{# ======================= SERVICES ======================= #}
+<section class="section section-surface" id="services">
+  <div class="container">
+    <div class="section-head-row">
+      {{ m.section_head('Services', 'Everything your store and business need to run well', 'Five focused services, delivered by one accountable team.') }}
+      <a class="btn btn-outline" href="services.html">Compare all services {{ icon('arrow-right', 16) }}</a>
+    </div>
+    <div class="bento" data-note="Services shown as a bento grid: the main revenue service (Shopify development) gets the largest tile. Each tile has a small visual hint of what the service does, plus a link to its own page.">
+      {% set s = SERVICES[0] %}
+      <article class="card card-hover svc-card span-4 reveal">
+        <div class="row-between"><span class="icon-box">{{ icon(s.icon, 22) }}</span><span class="svc-num">01</span></div>
+        <h3><a class="card-link" href="{{ s.file }}">{{ s.name }}</a></h3>
+        <p>{{ s.tagline }} Custom apps, storefront customisation, third-party integrations and complex workflow improvements.</p>
+        <ul class="svc-list">
+          {% for i in s.included[:6] %}<li>{{ icon('check', 15) }}{{ i[1] }}</li>{% endfor %}
+        </ul>
+        {{ m.svc_visual('sync') }}
+      </article>
+      {% set s = SERVICES[1] %}
+      <article class="card card-hover svc-card span-2 reveal reveal-d1">
+        <div class="row-between"><span class="icon-box">{{ icon(s.icon, 22) }}</span><span class="svc-num">02</span></div>
+        <h3><a class="card-link" href="{{ s.file }}">{{ s.short }}</a></h3>
+        <p>Monthly plans with agreed hours and response targets — a development partner without a full-time hire.</p>
+        <div class="svc-foot">{{ m.svc_visual('tickets') }}</div>
+      </article>
+      {% set s = SERVICES[2] %}
+      <article class="card card-hover svc-card span-2 half-md reveal">
+        <div class="row-between"><span class="icon-box">{{ icon(s.icon, 22) }}</span><span class="svc-num">03</span></div>
+        <h3><a class="card-link" href="{{ s.file }}">{{ s.short }}</a></h3>
+        <p>n8n and AI workflows for leads, support, orders and reporting.</p>
+        <div class="svc-foot">{{ m.svc_visual('flow') }}</div>
+      </article>
+      {% set s = SERVICES[3] %}
+      <article class="card card-hover svc-card span-2 half-md reveal reveal-d1">
+        <div class="row-between"><span class="icon-box">{{ icon(s.icon, 22) }}</span><span class="svc-num">04</span></div>
+        <h3><a class="card-link" href="{{ s.file }}">{{ s.short }}</a></h3>
+        <p>SEO, AEO, GEO and LLMO — be found on Google and in AI answers.</p>
+        <div class="svc-foot">{{ m.svc_visual('answer') }}</div>
+      </article>
+      {% set s = SERVICES[4] %}
+      <article class="card card-hover svc-card span-2 reveal reveal-d2">
+        <div class="row-between"><span class="icon-box">{{ icon(s.icon, 22) }}</span><span class="svc-num">05</span></div>
+        <h3><a class="card-link" href="{{ s.file }}">{{ s.short }}</a></h3>
+        <p>Professional websites and web apps that help you win clients.</p>
+        <div class="svc-foot">{{ m.svc_visual('browser') }}</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+{# ======================= PROOF / CASES ======================= #}
+<section class="section" id="work">
+  <div class="container">
+    <div class="section-head-row">
+      {{ m.section_head('Case studies', 'Proof, not promises', 'Real problems, the work we did, and what changed. Every result here is measured, not estimated.') }}
+      <a class="btn btn-outline" href="work.html">View all work {{ icon('arrow-right', 16) }}</a>
+    </div>
+    <div class="case-grid" data-note="Case studies are the main trust signal. Each card shows problem → result with 3 measured numbers. All content here is SAMPLE and must be replaced with approved client work (with permission for names/logos).">
+      {{ m.case_card(CASES_BY_SLUG['northwind'], feature=True) }}
+      {{ m.case_card(CASES_BY_SLUG['brightside']) }}
+      {{ m.case_card(CASES_BY_SLUG['fieldnote'], delay=1) }}
+    </div>
+  </div>
+</section>
+
+{# ======================= RENOVATION + MAINTENANCE ======================= #}
+<section class="section section-surface" id="care">
+  <div class="container">
+    {{ m.section_head('Store renovation & ongoing care', 'Renovate your store. Then keep it healthy.', 'From a full theme rebuild to the small fixes that never seem to get done — see the difference a renovation makes, and what a month of support actually looks like.', center=True) }}
+    <div class="split split-7-5" style="align-items:start;gap:clamp(32px,4vw,56px)">
+      <div class="stack reveal" data-note="Interactive before/after slider (drag it). Shows a store renovation at a glance, which was requested in the discussion. Swap these mock screens for real client screenshots.">
+        <div class="ba" data-ba>
+          <div class="ba-pane ba-after">
+            <div class="new-store">
+              <div class="ns-nav"><b>MONO HOME</b><nav><span>Living</span><span>Kitchen</span><span>Journal</span></nav><span>Cart (2)</span></div>
+              <div class="ns-hero"><small>Autumn collection</small><h5>Made for slow mornings</h5><em>Shop the collection</em></div>
+              <div class="ns-grid">
+                <div><i></i><b>Linen throw</b>$84</div><div><i></i><b>Stoneware mug</b>$22</div><div><i></i><b>Oak tray</b>$56</div><div><i></i><b>Wool cushion</b>$48</div>
+              </div>
+            </div>
+          </div>
+          <div class="ba-pane ba-before" data-ba-before>
+            <div class="old-store">
+              <div class="os-bar">!!! MEGA SALE 50% OFF EVERYTHING — FREE SHIPPING OVER $50 — USE CODE SAVE50 !!!</div>
+              <div class="os-nav"><b>Mono Home Store</b><span>Home</span><span>Shop All</span><span>Sale</span><span>Blog</span><span>About Us</span><span>Contact</span></div>
+              <div class="os-hero"><h5>Welcome To Our Online Store!!</h5><p>The best home products at the best prices on the internet</p><em>SHOP NOW &gt;&gt;</em></div>
+              <div class="os-grid">
+                <div><i></i>Throw <b>$84</b></div><div><i></i>Mug <b>$22</b></div><div><i></i>Tray <b>$56</b></div><div><i></i>Cushion <b>$48</b></div><div><i></i>Vase <b>$39</b></div>
+              </div>
+            </div>
+          </div>
+          <div class="ba-metric l"><span class="ba-label l">Before</span><span class="bad">Load 6.8s</span><span class="bad">Mobile 31</span></div>
+          <div class="ba-metric r"><span class="good">Load 1.9s</span><span class="good">Mobile 94</span><span class="ba-label r">After</span></div>
+          <div class="ba-handle">{{ icon('chevrons-lr', 18) }}</div>
+          <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after" data-ba-range>
+        </div>
+        <p class="xs subtle center">Drag to compare · Sample renovation for illustration</p>
+      </div>
+
+      <div class="stack-lg reveal reveal-d1">
+        <div class="log" data-ph data-note="A 'maintenance log' makes ongoing support tangible: real task types, time to resolve and a monthly summary. This mirrors the monthly report clients on a support plan would receive.">
+          <div class="log-head">
+            <div><span class="eyebrow">Support plan · October</span><h4 style="margin-top:6px">This month at Mono Home</h4></div>
+            <span class="badge badge-success"><i class="dot"></i> Healthy</span>
+          </div>
+          <ul class="log-list">
+            <li><span class="tag tag-fix">Fix</span><span>Cart drawer showed rounded prices on multi-currency</span><span class="time">2h 10m</span></li>
+            <li><span class="tag tag-int">Integration</span><span>Klaviyo back-in-stock flow reconnected after app update</span><span class="time">1 day</span></li>
+            <li><span class="tag tag-imp">Improvement</span><span>Collection filters now load 3× faster</span><span class="time">3 days</span></li>
+            <li><span class="tag tag-rev">Review</span><span>Monthly app audit — removed 2 unused apps</span><span class="time">4h</span></li>
+            <li><span class="tag tag-fix">Fix</span><span>Order webhook retries to 3PL resolved</span><span class="time">1h 40m</span></li>
+          </ul>
+          <div class="log-foot">
+            <div><b>14</b><span>tasks completed</span></div>
+            <div><b>3.1h</b><span>avg. first response</span></div>
+            <div><b>0</b><span>checkout outages</span></div>
+          </div>
+        </div>
+        <div class="row" style="gap:12px">
+          <a class="btn btn-dark" href="service-shopify-support.html#plans">See support plans {{ icon('arrow-right', 16) }}</a>
+          <a class="btn btn-ghost" href="case-study.html">Read the renovation story</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ======================= STATS (dark) ======================= #}
+<section class="section section-dark" id="why">
+  <div class="container">
+    <div class="split" style="align-items:end;margin-bottom:56px">
+      <div class="section-head" style="margin:0">
+        <span class="eyebrow">Why Xubitar</span>
+        <h2 class="balance">Writing code is the easy part. Being <em class="hl">dependable</em> is the job.</h2>
+      </div>
+      <p class="lead">Plenty of development shops write code and then disappear. We build our own software products too, so we know what it takes to keep software working long after launch. That's the standard we bring to every client.</p>
+    </div>
+    <div class="stats" data-ph data-note="Key numbers. All four values are placeholders and need confirming against Xubitar's real data before launch.">
+      <div class="stat reveal"><div class="stat-num" data-count="120" data-suffix="+">120+</div><div class="stat-label">projects delivered</div></div>
+      <div class="stat reveal reveal-d1"><div class="stat-num">&lt;1 day</div><div class="stat-label">first response to every enquiry</div></div>
+      <div class="stat reveal reveal-d2"><div class="stat-num">4.9/5</div><div class="stat-label">average client rating</div></div>
+      <div class="stat reveal reveal-d3"><div class="stat-num" data-count="2">2</div><div class="stat-label">SaaS products we build & run</div></div>
+    </div>
+  </div>
+</section>
+
+{# ======================= COMMITMENTS ======================= #}
+<section class="section">
+  <div class="container">
+    {{ m.section_head('What you can count on', 'Six commitments we put in writing', 'These are the things clients tell us they couldn’t get from previous developers. They’re part of every project and support plan.') }}
+    <div class="commit-grid" data-note="Trust commitments turn 'reliability' into specific promises a buyer can check. Taken from the plan: written scope, response within one business day, clear handoffs.">
+      {% for ic, t, d in COMMITMENTS %}
+      <div class="commit reveal {{ 'reveal-d%d' % (loop.index0 % 3) if loop.index0 % 3 }}">
+        <span class="icon-box">{{ icon(ic, 22) }}</span>
+        <h4>{{ t }}</h4>
+        <p>{{ d }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# ======================= PROCESS ======================= #}
+<section class="section section-surface" id="process">
+  <div class="container">
+    {{ m.section_head('How we work', 'A clear process from first call to long-term support', 'No surprises. You always know what’s happening, what it costs and what comes next.') }}
+    {{ m.process(PROCESS) }}
+  </div>
+</section>
+
+{# ======================= TESTIMONIALS ======================= #}
+<section class="section" id="reviews">
+  <div class="container">
+    {{ m.section_head('Client reviews', 'What clients say about working with us', None) }}
+    <div class="t-grid" data-note="Reviews from clients plus a summary card with the overall rating and review sources. Placeholder names; link to real review sources (Shopify App Store, Clutch, Google) when available.">
+      {{ m.testimonial(TESTIMONIALS[0], loop_index=1) }}
+      {{ m.testimonial(TESTIMONIALS[1], 1, loop_index=2) }}
+      <div class="card t-summary reveal reveal-d2" data-ph>
+        <div>
+          <div class="big">4.9</div>
+          <div class="mt-1">{{ m.stars(5, 16) }}</div>
+          <p class="mt-2">Average rating across client reviews and our apps on the Shopify App Store.</p>
+        </div>
+        <ul class="review-src">
+          <li><span>Shopify App Store</span><b>4.9 ★</b></li>
+          <li><span>Clutch</span><b>5.0 ★</b></li>
+          <li><span>Google</span><b>4.8 ★</b></li>
+        </ul>
+      </div>
+      {{ m.testimonial(TESTIMONIALS[2], 0, loop_index=3) }}
+      <figure class="card t-card t-wide reveal reveal-d1" data-ph>
+        <div class="row-between">{{ m.stars() }}<span class="q-icon">{{ icon('quote', 22) }}</span></div>
+        <blockquote class="quote-xl">“{{ TESTIMONIALS[3].quote }}”</blockquote>
+        <figcaption class="who"><span class="avatar av-4">{{ TESTIMONIALS[3].initials }}</span><div><b>{{ TESTIMONIALS[3].name }}</b><span>{{ TESTIMONIALS[3].role }}, {{ TESTIMONIALS[3].company }}</span></div></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+{# ======================= PRODUCTS ======================= #}
+<section class="section section-dark" id="products">
+  <div class="container">
+    <div class="section-head-row">
+      {{ m.section_head('Our products', 'We build and run our own software, too', 'Running our own products keeps us sharp on the things clients care about: uptime, support and steady improvement.') }}
+      <a class="btn btn-outline" href="products.html">Explore products {{ icon('arrow-right', 16) }}</a>
+    </div>
+    <div class="grid grid-2" data-note="Products moved from a single XPreOrder card to a two-product showcase including the new XocialAI. Owning products is used as proof of long-term reliability.">
+      <article class="product-card reveal" id="xocialai">
+        <div class="product-visual pv-xocial">
+          <div class="pm-panel">
+            <div class="pm-post">
+              <div class="pp-head"><i></i><div><b style="font-size:.8rem">Kitefield Studio</b><div class="muted" style="font-size:.68rem">Scheduled · Tue 10:00</div></div></div>
+              <div style="font-size:.78rem">We shipped a booking app for a clinic. Patients book in under a minute now.</div>
+              <div class="pp-img"></div>
+              <div class="pm-nets"><span>Facebook ✓</span><span>Instagram ✓</span><span>LinkedIn ✓</span><span>Threads ✓</span><span>+5</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="product-body">
+          <div class="product-logo"><span class="pl pl-xocial">X</span><div><h3>XocialAI</h3><span class="badge badge-accent" style="height:22px">New</span></div></div>
+          <p>An AI social media manager for your business. It writes posts that sound like you, creates the images and publishes them to Facebook, Instagram, LinkedIn, Threads, Pinterest, X, TikTok, Bluesky and Google Business — on the days you choose.</p>
+          <div class="row mt-1"><a class="btn btn-light" href="{{ SITE.xocialai_url }}" target="_blank" rel="noopener">Start free {{ icon('arrow-up-right', 16) }}</a><a class="link" href="products.html#xocialai">Learn more {{ icon('arrow-right', 15) }}</a></div>
+        </div>
+      </article>
+      <article class="product-card reveal reveal-d1" id="xpreorder">
+        <div class="product-visual pv-xpre">
+          <div class="pm-panel">
+            <div class="pm-product"><i></i><div><b>Trail Runner GTX</b><div class="muted">$149.00</div><div class="pm-note" style="margin-top:4px">{{ icon('clock', 13) }} Ships 12 Dec</div></div></div>
+            <span class="pm-btn">Pre-order now</span>
+            <div class="muted" style="font-size:.7rem;text-align:center">Out of stock — reserve yours today</div>
+          </div>
+        </div>
+        <div class="product-body">
+          <div class="product-logo"><span class="pl pl-xpre">{{ icon('shopping-bag', 20) }}</span><div><h3>XPreOrder</h3><span class="badge badge-outline" style="height:22px">Shopify app</span></div></div>
+          <p>The Shopify pre-order app that keeps your sales going even when stock runs out. Configurable, works with your theme, and built for conversion.</p>
+          <div class="row mt-1"><a class="btn btn-light" href="{{ SITE.xpreorder_url }}" target="_blank" rel="noopener">View on Shopify App Store {{ icon('arrow-up-right', 16) }}</a></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+{# ======================= FAQ ======================= #}
+<section class="section" id="faq">
+  <div class="container">
+    <div class="split split-5-7" style="align-items:start">
+      <div class="stack-lg" style="position:sticky;top:calc(var(--header-h) + 32px)">
+        {{ m.section_head('FAQ', 'Questions we hear often', 'Can’t find what you’re looking for? Ask Toki in the chat, or email us directly.', cls='mb-0') }}
+        <div class="row">
+          <a class="btn btn-outline" href="mailto:{{ SITE.email }}">{{ icon('mail', 16) }} {{ SITE.email }}</a>
+        </div>
+      </div>
+      <div data-note="FAQ answers the questions that block a first enquiry: price, ownership, white-label, response time, and an honest answer on SEO guarantees.">
+        {{ m.faq(HOME_FAQ) }}
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ m.cta_band() }}
+{% endblock %}

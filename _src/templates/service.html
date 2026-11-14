@@ -1,0 +1,221 @@
+{% extends 'base.html' %}
+{% set title = svc.name %}
+{% set description = svc.hero_sub[:155] %}
+{% set page_id = 'service' %}
+{% set nav = 'services' %}
+{% block content %}
+
+{# ---------- HERO ---------- #}
+<section class="page-hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="container page-hero-grid">
+    <div class="hero-copy">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a>{{ icon('chevron-right', 14) }}<a href="services.html">Services</a>{{ icon('chevron-right', 14) }}<span>{{ svc.short }}</span></nav>
+      <span class="eyebrow">{{ svc.name }}</span>
+      <h1 class="balance">{{ svc.hero_title }}</h1>
+      <p class="lead">{{ svc.hero_sub }}</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary btn-lg" href="contact.html">{{ 'Choose a plan' if svc.slug == 'shopify-support' else 'Discuss your project' }} {{ icon('arrow-right', 18) }}</a>
+        <a class="btn btn-outline btn-lg" href="contact.html#book">{{ icon('calendar', 18) }} Book a 30-min call</a>
+      </div>
+      <ul class="hero-assurances">
+        <li>{{ icon('check-circle', 17) }} Best for: {{ svc.audience }}</li>
+      </ul>
+    </div>
+    <aside class="svc-hero-card reveal" data-note="Hero summary card: a visual hint of the service plus the 4 most important deliverables, so a skimming visitor understands the offer in seconds.">
+      <div class="row-between"><span class="icon-box">{{ icon(svc.icon, 22) }}</span><span class="badge badge-soft">{{ svc.tagline }}</span></div>
+      {{ m.svc_visual(svc.visual) }}
+      <div>
+        <p class="eyebrow" style="margin-bottom:12px">What you get</p>
+        <ul class="check-list small">
+          {% for i in svc.included[:4] %}<li>{{ icon('check', 16) }}<span>{{ i[1] }}</span></li>{% endfor %}
+        </ul>
+      </div>
+    </aside>
+  </div>
+</section>
+
+{# ---------- PROBLEMS ---------- #}
+<section class="section section-surface">
+  <div class="container">
+    <div class="split split-5-7" style="align-items:start">
+      <div class="section-head" style="margin:0">
+        <span class="eyebrow">Sound familiar?</span>
+        <h2 class="balance">Problems we solve every week</h2>
+        <p class="lead">If any of these are slowing you down, you're in the right place.</p>
+        <a class="link mt-1" href="contact.html">Tell us about yours {{ icon('arrow-right', 16) }}</a>
+      </div>
+      <ul class="problem-list" data-note="Problem-first copy: visitors recognise their own situation before reading about features. Copy is written from the target personas in the 6-month plan.">
+        {% for p in svc.problems %}<li class="reveal {{ 'reveal-d%d' % loop.index0 if loop.index0 < 5 }}">{{ icon('alert', 18) }}<span>{{ p }}</span></li>{% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+{# ---------- SEO-specific explainer ---------- #}
+{% if svc.slug == 'seo-ai-search' %}
+<section class="section">
+  <div class="container">
+    {{ m.section_head('How people find you now', 'Search has split into four channels', 'Customers still search Google — but they also ask assistants and read AI summaries. We optimise for all four, on the same solid foundation.') }}
+    <div class="disc-grid" data-note="Plain-English explainer of SEO / AEO / GEO / LLMO. These acronyms are new to most buyers, so the page teaches before it sells.">
+      <div class="disc reveal"><span class="abbr">SEO</span><span class="where">Google · Bing</span><p>Rank in traditional search results for the queries your customers type.</p></div>
+      <div class="disc reveal reveal-d1"><span class="abbr">AEO</span><span class="where">Snippets · Voice</span><p>Give clear, direct answers that search engines can lift into answer boxes.</p></div>
+      <div class="disc reveal reveal-d2"><span class="abbr">GEO</span><span class="where">AI Overviews · Perplexity</span><p>Structure content so generative engines can understand and cite it.</p></div>
+      <div class="disc reveal reveal-d3"><span class="abbr">LLMO</span><span class="where">ChatGPT · Claude · Gemini</span><p>Help language models describe your brand, products and expertise accurately.</p></div>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{# ---------- INCLUDED ---------- #}
+<section class="section {{ 'section-surface' if svc.slug == 'seo-ai-search' }}" id="included">
+  <div class="container">
+    {{ m.section_head('What’s included', 'Our ' + svc.short + ' services', None) }}
+    <div class="included-grid">
+      {% for ic, t, d in svc.included %}
+      <div class="included-item reveal {{ 'reveal-d%d' % (loop.index0 % 3) if loop.index0 % 3 }}">
+        <span class="icon-box">{{ icon(ic, 20) }}</span>
+        <h4>{{ t }}</h4>
+        <p>{{ d }}</p>
+      </div>
+      {% endfor %}
+      {% set rem = svc.included | length % 3 %}
+      {% if rem %}
+      <div class="included-cta {{ 'span-2' if rem == 1 }} reveal">
+        <h4>Need something not listed?</h4>
+        <p>Every business is different. Tell us what you need and we'll tell you honestly if we're the right fit.</p>
+        <a class="btn btn-light btn-sm" href="contact.html">Ask us {{ icon('arrow-right', 15) }}</a>
+      </div>
+      {% endif %}
+    </div>
+    <div class="promise mt-6 reveal">
+      <span class="icon-box">{{ icon('shield-check', 22) }}</span>
+      <div>
+        <p>{{ svc.promise }}</p>
+        <p class="muted mt-1" style="font-size:1rem;font-weight:400">{{ svc.cta }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ---------- AI automation examples ---------- #}
+{% if svc.slug == 'ai-automation' %}
+<section class="section section-surface">
+  <div class="container">
+    {{ m.section_head('Example workflows', 'Automations our clients use every day', 'Every workflow is documented, monitored and has a human approval step where it matters.') }}
+    <div class="grid grid-2" data-note="Concrete automation examples help non-technical buyers picture the result. Each shows trigger → AI step → action, plus the time saved (sample figures).">
+      {% for title, nodes, saved in [
+        ('Lead qualification', [('mail','Website form'),('sparkles','AI scores & summarises'),('users','HubSpot + Slack alert')], '6 hrs / week'),
+        ('Support email triage', [('message-square','Support inbox'),('sparkles','AI tags & drafts reply'),('check-circle','Agent approves')], '62% drafted'),
+        ('Shopify low-stock alerts', [('shopping-bag','Inventory change'),('workflow','Rules check'),('mail','Supplier + team email')], '0 stock-outs missed'),
+        ('Weekly sales report', [('database','Shopify + GA4'),('sparkles','AI writes summary'),('message-square','Posted to Slack')], '3 hrs / week'),
+      ] %}
+      <div class="card reveal {{ 'reveal-d1' if loop.index is even }}" data-ph>
+        <div class="row-between"><h4>{{ title }}</h4><span class="badge badge-success">{{ saved }}</span></div>
+        <div class="flow mt-2" style="flex-wrap:wrap">
+          {% for ic, label in nodes %}
+            <span class="flow-node {{ 'ai' if ic == 'sparkles' }}">{{ icon(ic, 14) }} {{ label }}</span>
+            {% if not loop.last %}<span class="flow-arrow">{{ icon('arrow-right', 14) }}</span>{% endif %}
+          {% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{# ---------- SUPPORT PLANS ---------- #}
+{% if svc.slug == 'shopify-support' %}
+<section class="section section-surface" id="plans">
+  <div class="container">
+    {{ m.section_head('Monthly plans', 'Choose a plan based on your workload', 'Every plan includes agreed development hours, response targets and a monthly report. Change or cancel with 30 days’ notice.', center=True) }}
+    <div class="plans" data-ph data-note="Support plans with hours + response targets, as described in the service copy. Prices, hours and notice period are SAMPLE values for discussion — Xubitar to confirm.">
+      {% for p in SUPPORT_PLANS %}
+      <div class="card plan {{ 'popular' if p.popular }} reveal {{ 'reveal-d%d' % loop.index0 if loop.index0 }}">
+        {% if p.popular %}<span class="badge badge-dark plan-tag">Most popular</span>{% endif %}
+        <div><h3>{{ p.name }}</h3><p class="muted small mt-1">{{ p.for }}</p></div>
+        <div class="plan-price"><b>{{ p.price }}</b><span>/ month</span></div>
+        <div class="plan-specs">
+          <div><span>Development time</span><b>{{ p.hours }}</b></div>
+          <div><span>Response target</span><b>{{ p.response }}</b></div>
+        </div>
+        <ul class="check-list small">{% for f in p.features %}<li>{{ icon('check', 16) }}<span>{{ f }}</span></li>{% endfor %}</ul>
+        <a class="btn {{ 'btn-primary' if p.popular else 'btn-outline' }} btn-block" href="contact.html">Choose {{ p.name }} {{ icon('arrow-right', 16) }}</a>
+      </div>
+      {% endfor %}
+    </div>
+    <p class="center small muted mt-4">Need more hours or a custom setup for several stores? <a class="link" href="contact.html">Talk to us about a custom plan</a></p>
+  </div>
+</section>
+{% endif %}
+
+{# ---------- PROCESS ---------- #}
+<section class="section">
+  <div class="container">
+    {{ m.section_head('How it works', 'From first call to launch — and beyond', None) }}
+    {{ m.process(PROCESS) }}
+  </div>
+</section>
+
+{# ---------- RELATED CASE ---------- #}
+{% set c = CASES_BY_SLUG[svc.case] %}
+<section class="section section-surface">
+  <div class="container">
+    <div class="section-head-row">
+      {{ m.section_head('Case study', 'See it in practice', None) }}
+      <a class="btn btn-outline" href="work.html">All case studies {{ icon('arrow-right', 16) }}</a>
+    </div>
+    <div class="case-grid" data-note="Every service page links to a matching case study: proof sits right next to the promise.">
+      {{ m.case_card(c, feature=True) }}
+    </div>
+  </div>
+</section>
+
+{# ---------- STACK + QUOTE ---------- #}
+<section class="section">
+  <div class="container">
+    <div class="split" style="align-items:start">
+      <div class="stack-lg">
+        <div class="section-head" style="margin:0"><span class="eyebrow">Tools & platforms</span><h2 class="h2 balance">Technology we work with</h2><p class="lead">We choose proven tools that fit your business — and explain the trade-offs in plain language.</p></div>
+        <div class="pills">{% for t in svc.stack %}<span class="pill">{{ t }}</span>{% endfor %}</div>
+      </div>
+      {% set t = TESTIMONIALS[{'shopify-development':0,'shopify-support':1,'ai-automation':2,'seo-ai-search':1,'custom-web':3}[svc.slug]] %}
+      <figure class="card card-surface t-card" style="padding:clamp(28px,3vw,40px)" data-ph>
+        <div class="row-between">{{ m.stars() }}<span class="q-icon">{{ icon('quote', 24) }}</span></div>
+        <blockquote class="quote-xl">“{{ t.quote }}”</blockquote>
+        <figcaption class="who"><span class="avatar av-1">{{ t.initials }}</span><div><b>{{ t.name }}</b><span>{{ t.role }}, {{ t.company }}</span></div></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+{# ---------- FAQ ---------- #}
+<section class="section section-surface">
+  <div class="container">
+    <div class="split split-5-7" style="align-items:start">
+      {{ m.section_head('FAQ', 'Common questions', 'Something else on your mind? Ask Toki in the chat or email ' + SITE.email + '.') }}
+      {{ m.faq(svc.faq) }}
+    </div>
+  </div>
+</section>
+
+{# ---------- OTHER SERVICES ---------- #}
+<section class="section">
+  <div class="container">
+    {{ m.section_head('More services', 'Often combined with', None) }}
+    <div class="grid grid-4">
+      {% for s in SERVICES if s.slug != svc.slug %}
+      <a class="card card-hover stack" href="{{ s.file }}">
+        <span class="icon-box">{{ icon(s.icon, 20) }}</span>
+        <h4>{{ s.short }}</h4>
+        <p class="small muted">{{ s.nav_desc }}</p>
+        <span class="link small">Learn more {{ icon('arrow-right', 14) }}</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{{ m.cta_band(title=svc.cta, lead='Share a few details and we’ll reply within one business day with honest next steps.') }}
+{% endblock %}

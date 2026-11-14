@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en" data-accent="blue">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Xubitar website redesign — Prototype v1 for review</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400..600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<style>
+  .hub-hero { background: var(--ink); color: #fff; padding: clamp(48px,7vw,96px) 0 clamp(40px,6vw,72px); position: relative; overflow: hidden; }
+  .hub-hero::after { content:""; position:absolute; inset:0; background-image: linear-gradient(to right, rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,.05) 1px, transparent 1px); background-size: 56px 56px; mask-image: radial-gradient(ellipse 60% 80% at 85% 10%, #000, transparent 70%); -webkit-mask-image: radial-gradient(ellipse 60% 80% at 85% 10%, #000, transparent 70%); pointer-events:none; }
+  .hub-hero .container { position: relative; z-index: 1; display: grid; gap: 22px; }
+  .hub-hero h1 { color: #fff; max-width: 900px; }
+  .hub-hero .lead { color: var(--on-dark-muted); max-width: 760px; }
+  .hub-meta { display:flex; flex-wrap:wrap; gap: 10px 28px; color: var(--on-dark-muted); font-size: .9rem; }
+  .hub-meta b { color: #fff; font-weight: 560; }
+  .page-thumb { display:flex; flex-direction:column; border:1px solid var(--line); border-radius: var(--r-lg); overflow:hidden; background: var(--paper); transition: box-shadow .25s var(--ease), transform .25s var(--ease); }
+  .page-thumb:hover { box-shadow: var(--sh-md); transform: translateY(-3px); }
+  .page-thumb .shot { aspect-ratio: 16/10; background: var(--surface) center top / cover no-repeat; border-bottom: 1px solid var(--line); }
+  .page-thumb .body { padding: 16px 18px 18px; display:grid; gap:6px; }
+  .page-thumb .body b { font-weight: 600; letter-spacing:-.01em; }
+  .page-thumb .body span { font-size: .85rem; color: var(--muted); line-height: 1.45; }
+  .req { width:100%; border-collapse: collapse; font-size: .95rem; }
+  .req th, .req td { text-align:left; padding: 14px 16px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  .req th { font-family: var(--mono); font-size:.72rem; text-transform: uppercase; letter-spacing:.06em; color: var(--subtle); font-weight:500; background: var(--surface); }
+  .req td:first-child { font-weight: 560; width: 34%; }
+  .req td a { color: var(--accent-text); font-weight: 550; }
+  .q-list { counter-reset: q; display:grid; gap: 12px; }
+  .q-list li { counter-increment: q; display:grid; grid-template-columns: 36px 1fr; gap: 14px; padding: 18px; border:1px solid var(--line); border-radius: 14px; background: var(--paper); }
+  .q-list li::before { content: counter(q); width: 32px; height: 32px; border-radius: 50%; background: #ffd84d; color:#1a1400; display:grid; place-items:center; font-weight:700; font-size:.85rem; }
+  .q-list b { display:block; margin-bottom: 2px; }
+  .q-list span { color: var(--muted); font-size: .93rem; }
+  .how { display:grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
+  .how .card { display:grid; gap:10px; align-content:start; }
+  .fake-fab { display:inline-flex; align-items:center; gap:6px; height:28px; padding:0 10px; border-radius:999px; background:#ffd84d; color:#1a1400; font-size:.78rem; font-weight:650; }
+  .table-wrap { overflow-x: auto; border:1px solid var(--line); border-radius: var(--r-lg); }
+  @media (max-width: 960px) { .how { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 640px) { .how { grid-template-columns: 1fr; } .req td:first-child { width:auto; } }
+</style>
+</head>
+<body>
+
+<header class="hub-hero">
+  <div class="container">
+    <div class="row-between"><img src="assets/xubitar-logo.png" alt="Xubitar" style="height:28px;filter:invert(1)"><span class="badge" style="background:#ffd84d;color:#1a1400">Prototype v1 · For review</span></div>
+    <span class="eyebrow" style="margin-top:24px">Website redesign</span>
+    <h1 class="balance">A website that proves Xubitar is the reliable partner — not just another dev shop.</h1>
+    <p class="lead">This clickable prototype shows the proposed structure, content and visual design for the new xubitar.com. It covers the updated services, the new XocialAI product, the new target audiences, the trust content (case studies, reviews, store renovation and maintenance) and the Toki live chat.</p>
+    <div class="hub-meta"><span>Date <b>14 Nov 2026</b></span><span>Pages <b>15</b></span><span>Status <b>Awaiting feedback</b></span><span>Viewports <b>Desktop, tablet & mobile</b></span></div>
+    <div class="row mt-2"><a class="btn btn-primary btn-lg" href="index.html">Open the prototype <svg class="icon icon-arrow-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a><a class="btn btn-outline btn-lg" href="#questions" style="color:#fff;border-color:rgba(255,255,255,.25);background:transparent">Questions for you</a></div>
+  </div>
+</header>
+
+<main>
+<section class="section-sm">
+  <div class="container">
+    <div class="section-head  ">
+<span class="eyebrow">How to review</span>  <h2 class="balance">Four ways to review the prototype</h2>
+</div>
+    <div class="how">
+      <div class="card"><span class="icon-box"><svg class="icon icon-monitor" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8"/><path d="M12 16v4"/></svg></span><h4>1. Click through</h4><p class="small muted">Every page and link works. Try the menu, the before/after slider, the case-study filters, the enquiry form and the chat.</p></div>
+      <div class="card"><span class="icon-box"><svg class="icon icon-eye" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 12S6 5 12 5s9.5 7 9.5 7-3.5 7-9.5 7-9.5-7-9.5-7z"/><circle cx="12" cy="12" r="3"/></svg></span><h4>2. Read the design notes</h4><p class="small muted">Click the yellow <span class="fake-fab"><svg class="icon icon-eye" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 12S6 5 12 5s9.5 7 9.5 7-3.5 7-9.5 7-9.5-7-9.5-7z"/><circle cx="12" cy="12" r="3"/></svg> Review</span> button (bottom-left) and switch on <b>Show design notes</b>. Numbered pins explain each design decision.</p></div>
+      <div class="card"><span class="icon-box"><svg class="icon icon-alert" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5l9.5 16.5h-19z"/><path d="M12 10v4.5"/><path d="M12 17.4v.2"/></svg></span><h4>3. Spot sample content</h4><p class="small muted">Switch on <b>Highlight sample content</b>. Case studies, reviews, logos and numbers are placeholders until you share real, approved data.</p></div>
+      <div class="card"><span class="icon-box"><svg class="icon icon-target" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg></span><h4>4. Choose an accent colour</h4><p class="small muted">In the same panel, compare <b>Signal blue</b>, <b>Emerald</b> and <b>Volt</b>. Your choice is remembered across pages.</p></div>
+    </div>
+    <p class="small muted mt-3">Feedback format: <b>page name + note number + your comment</b> (for example “Home #4 — use our real NetSuite project here”). Screenshots of every page are in the <code class="mono">screens/</code> folder if you prefer to review offline.</p>
+  </div>
+</section>
+
+<section class="section-sm section-surface">
+  <div class="container">
+    <div class="section-head  ">
+<span class="eyebrow">Pages</span>  <h2 class="balance">All pages in the prototype</h2>
+<p class="lead pretty">Click any page to open it.</p></div>
+      <h3 class="eyebrow" style="margin:28px 0 14px">Core</h3>
+      <div class="grid grid-3">
+        <a class="page-thumb" href="index.html">
+          <div class="shot" style="background-image:url('screens/desktop-index.png')"></div>
+          <div class="body"><b>Home</b><span>Landing page focused on trust: audiences, services, proof, store renovation &amp; care, process, reviews, products, FAQ.</span></div>
+        </a>
+        <a class="page-thumb" href="agencies.html">
+          <div class="shot" style="background-image:url('screens/desktop-agencies.png')"></div>
+          <div class="body"><b>For agencies</b><span>White-label development partner page for agencies.</span></div>
+        </a>
+      </div>
+      <h3 class="eyebrow" style="margin:28px 0 14px">Services</h3>
+      <div class="grid grid-3">
+        <a class="page-thumb" href="services.html">
+          <div class="shot" style="background-image:url('screens/desktop-services.png')"></div>
+          <div class="body"><b>Services overview</b><span>All five services, engagement models and how to choose.</span></div>
+        </a>
+        <a class="page-thumb" href="service-shopify-development.html">
+          <div class="shot" style="background-image:url('screens/desktop-service-shopify-development.png')"></div>
+          <div class="body"><b>Shopify Custom Development &amp; Integrations</b><span>Service detail template (custom apps, APIs, ERP/CRM, themes).</span></div>
+        </a>
+        <a class="page-thumb" href="service-shopify-support.html">
+          <div class="shot" style="background-image:url('screens/desktop-service-shopify-support.png')"></div>
+          <div class="body"><b>Shopify Technical Support &amp; Maintenance</b><span>Service detail with monthly support plans and response targets.</span></div>
+        </a>
+        <a class="page-thumb" href="service-ai-automation.html">
+          <div class="shot" style="background-image:url('screens/desktop-service-ai-automation.png')"></div>
+          <div class="body"><b>AI Automation &amp; Workflow Integration</b><span>Service detail with automation examples (n8n, CRM, support).</span></div>
+        </a>
+        <a class="page-thumb" href="service-seo-ai-search.html">
+          <div class="shot" style="background-image:url('screens/desktop-service-seo-ai-search.png')"></div>
+          <div class="body"><b>SEO, AEO, GEO, LLMO &amp; AI SEO</b><span>Service detail explaining search + AI discovery, honest approach.</span></div>
+        </a>
+        <a class="page-thumb" href="service-custom-web.html">
+          <div class="shot" style="background-image:url('screens/desktop-service-custom-web.png')"></div>
+          <div class="body"><b>Custom Web Solutions</b><span>Service detail: professional websites that win clients.</span></div>
+        </a>
+      </div>
+      <h3 class="eyebrow" style="margin:28px 0 14px">Proof</h3>
+      <div class="grid grid-3">
+        <a class="page-thumb" href="work.html">
+          <div class="shot" style="background-image:url('screens/desktop-work.png')"></div>
+          <div class="body"><b>Work / Case studies</b><span>Filterable case-study library.</span></div>
+        </a>
+        <a class="page-thumb" href="case-study.html">
+          <div class="shot" style="background-image:url('screens/desktop-case-study.png')"></div>
+          <div class="body"><b>Case study detail</b><span>Problem, approach, result template with before/after and quote.</span></div>
+        </a>
+      </div>
+      <h3 class="eyebrow" style="margin:28px 0 14px">Company</h3>
+      <div class="grid grid-3">
+        <a class="page-thumb" href="products.html">
+          <div class="shot" style="background-image:url('screens/desktop-products.png')"></div>
+          <div class="body"><b>Products</b><span>XPreOrder and XocialAI.</span></div>
+        </a>
+        <a class="page-thumb" href="about.html">
+          <div class="shot" style="background-image:url('screens/desktop-about.png')"></div>
+          <div class="body"><b>About</b><span>Story, values, team, how we work.</span></div>
+        </a>
+        <a class="page-thumb" href="careers.html">
+          <div class="shot" style="background-image:url('screens/desktop-careers.png')"></div>
+          <div class="body"><b>Careers</b><span>Culture, open roles, hiring process.</span></div>
+        </a>
+      </div>
+      <h3 class="eyebrow" style="margin:28px 0 14px">Conversion</h3>
+      <div class="grid grid-3">
+        <a class="page-thumb" href="contact.html">
+          <div class="shot" style="background-image:url('screens/desktop-contact.png')"></div>
+          <div class="body"><b>Start a project / Contact</b><span>Three-step qualifying enquiry form + booking + direct contact.</span></div>
+        </a>
+      </div>
+      <h3 class="eyebrow" style="margin:28px 0 14px">System</h3>
+      <div class="grid grid-3">
+        <a class="page-thumb" href="style-guide.html">
+          <div class="shot" style="background-image:url('screens/desktop-style-guide.png')"></div>
+          <div class="body"><b>Style guide</b><span>Colours, type, components for developer hand-off.</span></div>
+        </a>
+      </div>
+  </div>
+</section>
+
+<section class="section-sm">
+  <div class="container">
+    <div class="section-head  ">
+<span class="eyebrow">From brief to design</span>  <h2 class="balance">How the design answers the discussion</h2>
+</div>
+    <div class="table-wrap">
+      <table class="req">
+        <thead><tr><th>Requirement from the discussion</th><th>Where & how it's addressed</th></tr></thead>
+        <tbody>
+          <tr><td>Updated services (Shopify development, support, AI automation, SEO/AEO/GEO/LLMO, custom web)</td><td>Mega menu, home <a href="index.html#services">services grid</a>, <a href="services.html">services overview</a> with a “start from your goal” picker, and one detail page per service with problems, deliverables, process, case study and FAQ.</td></tr>
+          <tr><td>New product: XocialAI</td><td>Site-wide announcement bar, Products dropdown, home <a href="index.html#products">products section</a> and the <a href="products.html#xocialai">Products page</a> (copy aligned with xocialai.com).</td></tr>
+          <tr><td>Niche change</td><td>New positioning (“Reliable engineering for Shopify brands, startups & agencies”) and an <a href="about.html">About story</a> that frames the shift positively.</td></tr>
+          <tr><td>Prove reliability and trust, not just code</td><td>Store health hero visual, six written <a href="index.html#why">commitments</a>, <a href="index.html#work">case studies</a> with measured results, <a href="index.html#reviews">client reviews</a>, a <a href="index.html#process">clear process</a> and FAQ on ownership and guarantees.</td></tr>
+          <tr><td>Show store maintenance / renovation details on the landing page</td><td>Interactive <a href="index.html#care">before/after renovation slider</a> plus a monthly maintenance log, linked to support plans.</td></tr>
+          <tr><td>Toki chatbot as live chat</td><td>Chat widget on every page with quick replies and human handoff (visual demo — the real widget comes from Toki's embed code).</td></tr>
+          <tr><td>Target startups, direct clients and agency owners</td><td>“Who we work with” section on home, <a href="service-custom-web.html">Custom web</a> page for startups and a dedicated <a href="agencies.html">For agencies</a> partner page.</td></tr>
+          <tr><td>Market shift: agencies shrinking; work still available from high-end merchants & agencies</td><td>White-label partnership models (project, monthly hours, overflow), a low-risk pilot task, and a note on NDA work.</td></tr>
+          <tr><td>Lead capture from the 6-month plan</td><td>3-step <a href="contact.html">enquiry form</a> collects project type, store URL, problem, timing, budget, role and lead source. Includes booking and a “what happens next” panel.</td></tr>
+          <tr><td>No promises without evidence</td><td>SEO page states “no guaranteed rankings or AI citations”. All numbers, logos and reviews are flagged as sample content to replace with approved data.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section-sm section-surface" id="questions">
+  <div class="container">
+    <div class="split split-5-7" style="align-items:start">
+      <div class="section-head  ">
+<span class="eyebrow">Decisions needed</span>  <h2 class="balance">Questions for you</h2>
+<p class="lead pretty">Answers to these let us replace sample content and finalise the design before development.</p></div>
+      <ol class="q-list">
+        <li><div><b>Accent colour</b><span>Signal blue, Emerald or Volt? (Try them in the Review panel.)</span></div></li>
+        <li><div><b>Case studies we can publish</b><span>Which projects, client names and logos do we have permission to show? Any results or screenshots we can use?</span></div></li>
+        <li><div><b>Reviews & ratings</b><span>Real client quotes, plus Shopify App Store / Clutch / Google ratings we can link to.</span></div></li>
+        <li><div><b>Company numbers</b><span>Year founded, projects delivered, team size, stores supported, agency partners.</span></div></li>
+        <li><div><b>Support plan details</b><span>Prices, hours, response targets, notice period and whether unused hours roll over.</span></div></li>
+        <li><div><b>Agency partnership terms</b><span>Minimum hours, rates, and working hours / time-zone overlap to promise.</span></div></li>
+        <li><div><b>“Copyright-related services”</b><span>The discussion mentions this. We assumed it means <i>copywriting</i> and included it in Custom Web and SEO. Please confirm, or tell us if it's a separate service.</span></div></li>
+        <li><div><b>Toki chatbot</b><span>Confirm the provider and whether human handoff should go to email, Slack or WhatsApp.</span></div></li>
+        <li><div><b>Contact details</b><span>Office address, phone, and whether enquiries go to support@ or a separate sales address (e.g. hello@).</span></div></li>
+        <li><div><b>Team photos</b><span>Real photos and names for the About page — one of the strongest trust signals.</span></div></li>
+        <li><div><b>Booking tool</b><span>Cal.com, Calendly or Google Calendar for the “Book a call” button?</span></div></li>
+        <li><div><b>Shopify Partner status</b><span>Can we show a Shopify Partner badge / Partner Directory profile?</span></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="section-sm">
+  <div class="container">
+    <div class="cta-band">
+      <div><h2 class="balance">After approval</h2><p class="lead">We collect real content, apply your feedback, then build the pages in the existing Next.js 16 + Tailwind v4 codebase (contact form, careers and admin keep working). The <a href="style-guide.html" class="link">style guide</a> maps every token to the build.</p></div>
+      <div class="cta-side"><a class="btn btn-primary btn-lg" href="index.html">Open the prototype <svg class="icon icon-arrow-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a><a class="btn btn-outline btn-lg" href="style-guide.html">View style guide</a></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer-bottom container" style="color:var(--muted);border-top:1px solid var(--line)">
+  <span>© 2026 Xubitar Soft · Prototype for internal review — not the live website.</span>
+  <span>14 Nov 2026</span>
+</footer>
+</body>
+</html>
