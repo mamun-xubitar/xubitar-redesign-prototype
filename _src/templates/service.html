@@ -22,7 +22,7 @@
         <li>{{ icon('check-circle', 17) }} Best for: {{ svc.audience }}</li>
       </ul>
     </div>
-    <aside class="svc-hero-card reveal" data-note="Hero summary card: a visual hint of the service plus the 4 most important deliverables, so a skimming visitor understands the offer in seconds.">
+    <aside class="svc-hero-card reveal reveal-scale reveal-d2" data-note="Hero summary card: a visual hint of the service plus the 4 most important deliverables, so a skimming visitor understands the offer in seconds.">
       <div class="row-between"><span class="icon-box">{{ icon(svc.icon, 22) }}</span><span class="badge badge-soft">{{ svc.tagline }}</span></div>
       {{ m.svc_visual(svc.visual) }}
       <div>
@@ -46,22 +46,59 @@
         <a class="link mt-1" href="contact.html">Tell us about yours {{ icon('arrow-right', 16) }}</a>
       </div>
       <ul class="problem-list" data-note="Problem-first copy: visitors recognise their own situation before reading about features. Copy is written from the target personas in the 6-month plan.">
-        {% for p in svc.problems %}<li class="reveal {{ 'reveal-d%d' % loop.index0 if loop.index0 < 5 }}">{{ icon('alert', 18) }}<span>{{ p }}</span></li>{% endfor %}
+        {% for p in svc.problems %}<li class="reveal reveal-right {{ 'reveal-d%d' % loop.index0 if loop.index0 < 5 }}">{{ icon('alert', 18) }}<span>{{ p }}</span></li>{% endfor %}
       </ul>
     </div>
   </div>
 </section>
 
-{# ---------- SEO-specific explainer ---------- #}
+{# ---------- SEO-specific interactive explainer ---------- #}
 {% if svc.slug == 'seo-ai-search' %}
 <section class="section">
   <div class="container">
-    {{ m.section_head('How people find you now', 'Search has split into four channels', 'Customers still search Google — but they also ask assistants and read AI summaries. We optimise for all four, on the same solid foundation.') }}
-    <div class="disc-grid" data-note="Plain-English explainer of SEO / AEO / GEO / LLMO. These acronyms are new to most buyers, so the page teaches before it sells.">
-      <div class="disc reveal"><span class="abbr">SEO</span><span class="where">Google · Bing</span><p>Rank in traditional search results for the queries your customers type.</p></div>
-      <div class="disc reveal reveal-d1"><span class="abbr">AEO</span><span class="where">Snippets · Voice</span><p>Give clear, direct answers that search engines can lift into answer boxes.</p></div>
-      <div class="disc reveal reveal-d2"><span class="abbr">GEO</span><span class="where">AI Overviews · Perplexity</span><p>Structure content so generative engines can understand and cite it.</p></div>
-      <div class="disc reveal reveal-d3"><span class="abbr">LLMO</span><span class="where">ChatGPT · Claude · Gemini</span><p>Help language models describe your brand, products and expertise accurately.</p></div>
+    {{ m.section_head('How people find you now', 'One question. Four places to be the answer.', 'Customers still search Google — but they also read answer boxes, AI Overviews and chat assistants. Click through to see what each type of optimisation targets.') }}
+    <div class="seo-demo" data-tabs data-autoplay="6000" data-note="Interactive explainer: each tab shows the same buyer question answered in a different place (search results, answer box, AI Overview, chat assistant). It auto-advances while in view and stops when the visitor clicks. SEO/AEO/GEO/LLMO are new terms for most buyers, so the page shows them instead of only describing them.">
+      <div class="seo-tabs" role="tablist" aria-label="Search channels">
+        {% for key, abbr, where, desc in [
+          ('seo','SEO','Google · Bing','Rank in classic search results for the queries your customers type.'),
+          ('aeo','AEO','Answer boxes · Voice','Give direct answers that search engines lift into featured snippets.'),
+          ('geo','GEO','AI Overviews · Perplexity','Structure content so generative engines understand and cite it.'),
+          ('llmo','LLMO','ChatGPT · Claude · Gemini','Help language models describe your brand and products accurately.'),
+        ] %}
+        <button class="seo-tab" role="tab" id="tab-{{ key }}" aria-controls="panel-{{ key }}" aria-selected="{{ 'true' if loop.first else 'false' }}">
+          <span class="abbr">{{ abbr }} <span class="badge badge-soft" style="height:22px;font-family:var(--font)">0{{ loop.index }}</span></span>
+          <span class="where">{{ where }}</span>
+          <p>{{ desc }}</p>
+          <i class="tab-progress"></i>
+        </button>
+        {% endfor %}
+      </div>
+      <div class="seo-stage">
+        <div class="stage-top"><span class="traffic"><i></i><i></i><i></i></span><span class="console-url">“best breathable workwear for summer”</span></div>
+        <div class="seo-panel is-active" role="tabpanel" id="panel-seo" aria-labelledby="tab-seo">
+          <div class="sq">{{ icon('search', 16) }} best breathable workwear for summer</div>
+          <div class="sr me"><span class="site"><i></i> yourbrand.com › summer-workwear <span class="rank">#1</span></span><span class="t">Breathable Summer Workwear — Lightweight &amp; Durable | YourBrand</span><p>Shop ripstop shirts and vented trousers built for hot job sites. Free returns, ships in 24h.</p></div>
+          <div class="sr"><span class="site"><i></i> competitor.com › workwear</span><span class="t">Summer Work Clothes | Competitor</span><p>Browse our range of work clothing for every season…</p></div>
+          <div class="sr"><span class="site"><i></i> reviews.example › best-workwear</span><span class="t">The 9 Best Workwear Brands of 2026</span><p>We tested 40 pairs of work trousers in 35°C heat…</p></div>
+        </div>
+        <div class="seo-panel" role="tabpanel" id="panel-aeo" aria-labelledby="tab-aeo" hidden>
+          <div class="sq">{{ icon('search', 16) }} what fabric is most breathable for workwear?</div>
+          <div class="snippet"><span class="eyebrow">Featured snippet</span><span class="big">Lightweight cotton-ripstop and polyester mesh blends</span><p class="small muted">They let heat escape while staying tear-resistant. Look for vented panels under the arms and behind the knees.</p><span class="site small" style="display:flex;gap:8px;align-items:center"><span class="dot" style="background:var(--accent)"></span> yourbrand.com › guides › breathable-fabrics</span></div>
+          <div class="paa"><div>Is linen good for work clothes? {{ icon('chevron-down', 16) }}</div><div>How do I keep cool on a construction site? {{ icon('chevron-down', 16) }}</div></div>
+        </div>
+        <div class="seo-panel" role="tabpanel" id="panel-geo" aria-labelledby="tab-geo" hidden>
+          <div class="sq">{{ icon('search', 16) }} best breathable workwear for summer</div>
+          <div class="ai-ov"><span class="lbl">{{ icon('sparkles', 16) }} AI Overview</span><p>For hot conditions, choose lightweight ripstop fabrics with ventilation panels. Brands such as <b>YourBrand</b> offer vented trousers and moisture-wicking shirts designed for summer job sites, with sizes for men and women.</p>
+            <div class="cites"><div class="me"><b>yourbrand.com</b><span class="muted">Summer workwear guide</span></div><div><b>reviews.example</b><span class="muted">Best workwear 2026</span></div><div><b>forum.example</b><span class="muted">Trades discussion</span></div></div>
+          </div>
+        </div>
+        <div class="seo-panel" role="tabpanel" id="panel-llmo" aria-labelledby="tab-llmo" hidden>
+          <div class="llm">
+            <div class="u">Which brands make good workwear for hot weather?</div>
+            <div class="a"><span class="av">{{ icon('sparkles', 15) }}</span><div class="stack-sm"><p>A few well-regarded options:</p><p><mark>YourBrand</mark> — known for vented ripstop trousers and fast-drying shirts; popular with landscapers and site crews.</p><p class="small muted">Sources: yourbrand.com, reviews.example</p></div></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -73,7 +110,7 @@
     {{ m.section_head('What’s included', 'Our ' + svc.short + ' services', None) }}
     <div class="included-grid">
       {% for ic, t, d in svc.included %}
-      <div class="included-item reveal {{ 'reveal-d%d' % (loop.index0 % 3) if loop.index0 % 3 }}">
+      <div class="included-item reveal reveal-scale {{ 'reveal-d%d' % (loop.index0 % 3) if loop.index0 % 3 }}">
         <span class="icon-box">{{ icon(ic, 20) }}</span>
         <h4>{{ t }}</h4>
         <p>{{ d }}</p>
@@ -125,15 +162,57 @@
 </section>
 {% endif %}
 
+{% if svc.slug == 'ai-automation' %}
+<section class="section" id="calculator">
+  <div class="container">
+    {{ m.section_head('Savings calculator', 'How much time could automation give back?', 'Move the sliders to match your team. It’s a rough estimate — we’ll give you a real one after a short call.') }}
+    <div class="calc reveal" data-calc data-note="Interactive savings calculator: a practical lead magnet for startups and ops teams. Numbers update live and animate. Formula: people × hours/week × share automated × 4.33 weeks.">
+      <div class="calc-inputs">
+        <div class="stack-sm"><div class="range-label"><label for="c-people">People doing repetitive work</label><output data-out="people-v">4 people</output></div><input class="range" id="c-people" type="range" min="1" max="25" value="4" data-in="people"></div>
+        <div class="stack-sm"><div class="range-label"><label for="c-hours">Manual hours per person, per week</label><output data-out="hours-v">6 hrs / week</output></div><input class="range" id="c-hours" type="range" min="1" max="20" value="6" data-in="hours"></div>
+        <div class="stack-sm"><div class="range-label"><label for="c-share">Share of that work we could automate</label><output data-out="share-v">50%</output></div><input class="range" id="c-share" type="range" min="20" max="80" step="5" value="50" data-in="share"></div>
+        <div class="stack-sm"><div class="range-label"><label for="c-rate">Average hourly cost</label><output data-out="rate-v">$25 / hr</output></div><input class="range" id="c-rate" type="range" min="10" max="100" step="5" value="25" data-in="rate"></div>
+        <p class="xs subtle">Estimate only. Typical automation covers 30–70% of repetitive tasks; results depend on your tools and processes.</p>
+      </div>
+      <div class="calc-out" aria-live="polite">
+        <div class="stack-sm"><span class="eyebrow">Estimated time saved</span><div><span class="calc-big" data-out="month">52</span> <span class="lead" style="color:var(--on-dark-muted)">hours / month</span></div><div class="calc-bar"><i></i></div></div>
+        <div class="calc-grid">
+          <div><b data-out="year">624</b><span>hours a year</span></div>
+          <div><b data-out="days">78</b><span>working days a year</span></div>
+          <div style="grid-column:1/-1"><b data-out="money">$15,600</b><span>in team time each year</span></div>
+        </div>
+        <a class="btn btn-primary btn-lg" href="contact.html?type=ai">Get a real estimate {{ icon('arrow-right', 18) }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}
+
 {# ---------- SUPPORT PLANS ---------- #}
 {% if svc.slug == 'shopify-support' %}
 <section class="section section-surface" id="plans">
   <div class="container">
     {{ m.section_head('Monthly plans', 'Choose a plan based on your workload', 'Every plan includes agreed development hours, response targets and a monthly report. Change or cancel with 30 days’ notice.', center=True) }}
+    <div class="card finder reveal" data-plan-finder data-note="Plan finder: visitors describe their workload and the matching plan below lights up. Turns 'choose a plan based on your workload' (from the service copy) into a 10-second decision.">
+      <div class="finder-body">
+        <h4>Not sure which plan? Describe your workload.</h4>
+        <div class="stack-sm"><div class="range-label"><label for="pf-hours">Development work you expect each month</label><output data-out-hours>20 hrs / month</output></div>
+          <input class="range" id="pf-hours" type="range" min="4" max="80" value="20" data-hours>
+          <div class="range-scale"><span>4</span><span>20</span><span>40</span><span>60</span><span>80+</span></div></div>
+        <label class="check-row"><input type="checkbox" data-critical> We need same-day response for critical issues</label>
+        <label class="check-row"><input type="checkbox" data-multi> We manage several stores (or we’re an agency)</label>
+      </div>
+      <div class="finder-result" aria-live="polite">
+        <span class="eyebrow">Recommended plan</span>
+        <b data-out-plan>Growth</b>
+        <p data-out-note>25 hrs included · 1 business day response · Slack</p>
+      </div>
+    </div>
     <div class="plans" data-ph data-note="Support plans with hours + response targets, as described in the service copy. Prices, hours and notice period are SAMPLE values for discussion — Xubitar to confirm.">
       {% for p in SUPPORT_PLANS %}
-      <div class="card plan {{ 'popular' if p.popular }} reveal {{ 'reveal-d%d' % loop.index0 if loop.index0 }}">
+      <div class="card plan {{ 'popular' if p.popular }} reveal {{ 'reveal-d%d' % loop.index0 if loop.index0 }}" data-plan="{{ p.name }}">
         {% if p.popular %}<span class="badge badge-dark plan-tag">Most popular</span>{% endif %}
+        <span class="badge badge-accent rec-tag">{{ icon('check', 13) }} Recommended for you</span>
         <div><h3>{{ p.name }}</h3><p class="muted small mt-1">{{ p.for }}</p></div>
         <div class="plan-price"><b>{{ p.price }}</b><span>/ month</span></div>
         <div class="plan-specs">

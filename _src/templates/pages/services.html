@@ -61,7 +61,7 @@
 <section class="section {{ 'section-line' if not loop.first }}" id="{{ s.slug }}">
   <div class="container">
     <div class="split" style="align-items:center">
-      <div class="stack-lg {{ '' if loop.index is odd else 'order-2' }}">
+      <div class="stack-lg reveal {{ 'reveal-left' if loop.index is odd else 'order-2 reveal-right' }}">
         <div class="stack">
           <span class="svc-num">0{{ loop.index }} / 05</span>
           <h2 class="balance" style="font-size:clamp(1.8rem,3vw,2.5rem)">{{ s.name }}</h2>
@@ -75,7 +75,7 @@
           <a class="btn btn-ghost" href="contact.html">Get a quote</a>
         </div>
       </div>
-      <div class="svc-hero-card reveal">
+      <div class="svc-hero-card reveal reveal-scale reveal-d1">
         <div class="row-between"><span class="icon-box">{{ icon(s.icon, 22) }}</span><span class="badge badge-soft">{{ s.tagline }}</span></div>
         {{ m.svc_visual(s.visual) }}
         <div class="plan-specs">

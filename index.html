@@ -11,7 +11,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400..600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
-<script>document.documentElement.classList.remove('no-js');try{var a=localStorage.getItem('xb-accent');if(a)document.documentElement.dataset.accent=a;}catch(e){}</script>
+<link rel="stylesheet" href="css/motion.css">
+<script>document.documentElement.classList.remove('no-js');if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('motion');try{var a=localStorage.getItem('xb-accent');if(a)document.documentElement.dataset.accent=a;}catch(e){}</script>
 </head>
 <body class="page-home">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -81,21 +82,21 @@
     <div class="header-cta">
       <a class="btn btn-ghost btn-sm hide-md" href="contact.html#book"><svg class="icon icon-calendar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M8 3v4"/><path d="M16 3v4"/></svg> Book a call</a>
       <a class="btn btn-primary btn-sm" href="contact.html">Start a project <svg class="icon icon-arrow-right" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
-      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" data-menu-toggle><svg class="icon icon-menu" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></svg></button>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" data-menu-toggle><span class="burger" aria-hidden="true"><i></i><i></i><i></i></span></button>
     </div>
   </div>
-  <div class="mobile-menu" data-mobile-menu hidden>
+  <div class="mobile-menu" data-mobile-menu data-lenis-prevent hidden>
     <div class="m-group">
-      <div class="m-title">Services</div>
-<a class="m-link" href="service-shopify-development.html">Shopify Development &amp; Integrations <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a><a class="m-link" href="service-shopify-support.html">Support &amp; Maintenance <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a><a class="m-link" href="service-ai-automation.html">AI Automation &amp; Workflows <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a><a class="m-link" href="service-seo-ai-search.html">SEO &amp; AI Search Visibility <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a><a class="m-link" href="service-custom-web.html">Custom Web Solutions <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>      <a class="m-link" href="services.html">All services <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+      <div class="m-title" style="--i:1">Services</div>
+<a class="m-link" style="--i:1" href="service-shopify-development.html">Shopify Development &amp; Integrations <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a><a class="m-link" style="--i:2" href="service-shopify-support.html">Support &amp; Maintenance <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a><a class="m-link" style="--i:3" href="service-ai-automation.html">AI Automation &amp; Workflows <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a><a class="m-link" style="--i:4" href="service-seo-ai-search.html">SEO &amp; AI Search Visibility <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a><a class="m-link" style="--i:5" href="service-custom-web.html">Custom Web Solutions <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>      <a class="m-link" style="--i:7" href="services.html">All services <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
     </div>
     <div class="m-group">
-      <div class="m-title">Company</div>
-      <a class="m-link" href="work.html">Work <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
-      <a class="m-link" href="products.html">Products <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
-      <a class="m-link" href="agencies.html">For agencies <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
-      <a class="m-link" href="about.html">About <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
-      <a class="m-link" href="careers.html">Careers <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+      <div class="m-title" style="--i:8">Company</div>
+      <a class="m-link" style="--i:9" href="work.html">Work <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+      <a class="m-link" style="--i:10" href="products.html">Products <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+      <a class="m-link" style="--i:11" href="agencies.html">For agencies <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+      <a class="m-link" style="--i:12" href="about.html">About <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+      <a class="m-link" style="--i:13" href="careers.html">Careers <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
     </div>
     <div class="m-cta">
       <a class="btn btn-primary btn-lg" href="contact.html">Start a project <svg class="icon icon-arrow-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
@@ -106,13 +107,14 @@
 
 <main id="main">
 
-<section class="hero">
+<section class="hero" data-hero>
   <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-spot" aria-hidden="true"></div>
   <div class="hero-glow" aria-hidden="true"></div>
   <div class="container hero-grid">
     <div class="hero-copy" data-note="Headline leads with the main promise from the discussion: reliability and trust, not just code. It names all three target audiences (merchants, startups, agencies).">
       <span class="eyebrow reveal">Shopify · AI automation · Web · Search visibility</span>
-      <h1 class="balance reveal reveal-d1"><em class="hl">Reliable</em> engineering for Shopify brands, startups &amp; agencies.</h1>
+      <h1 class="balance" data-split><em class="hl hl-swoosh">Reliable<svg class="swoosh" viewBox="0 0 200 14" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M3 10 C 55 3, 125 1, 197 6"/></svg></em> engineering for Shopify brands, startups &amp; agencies.</h1>
       <p class="lead reveal reveal-d2">We build custom Shopify apps, integrations, AI automations and websites — and keep them running after launch. Clear written scope, honest timelines and a reply from a real engineer within one business day.</p>
       <div class="hero-cta reveal reveal-d3">
         <a class="btn btn-primary btn-lg" href="contact.html">Start a project <svg class="icon icon-arrow-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
@@ -132,7 +134,7 @@
       </div>
     </div>
 
-    <div class="hero-visual reveal reveal-d2" data-note="Hero visual is an illustrative 'store health' console. It shows integrations running, support tickets resolved and performance scores, so the visual itself says 'we keep things running'.">
+    <div class="hero-visual reveal reveal-scale reveal-d2" data-tilt data-note="Hero visual is an illustrative, LIVE 'store health' console: rows boot up, the inventory sync runs every few seconds, AI drafts tick up and resolved tickets rotate. It tilts gently with the cursor. The visual itself says 'we keep things running'.">
       <div class="console" aria-hidden="true">
         <div class="console-top"><span class="traffic"><i></i><i></i><i></i></span><span class="console-url">care.xubitar.com / northwind-outdoor</span></div>
         <div class="console-body">
@@ -141,20 +143,24 @@
             <span class="status-ok"><span class="dot dot-pulse"></span> All systems normal</span>
           </div>
           <ul class="console-rows">
-            <li><svg class="icon icon-refresh" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11a8 8 0 0 0-14.6-4.5L3.5 9"/><path d="M3.5 4v5h5"/><path d="M4 13a8 8 0 0 0 14.6 4.5l1.9-2.5"/><path d="M20.5 20v-5h-5"/></svg><span>NetSuite inventory sync</span><span class="val">2 min ago</span><span class="dot"></span></li>
+            <li data-live="sync"><svg class="icon icon-refresh" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11a8 8 0 0 0-14.6-4.5L3.5 9"/><path d="M3.5 4v5h5"/><path d="M4 13a8 8 0 0 0 14.6 4.5l1.9-2.5"/><path d="M20.5 20v-5h-5"/></svg><span>NetSuite inventory sync</span><span class="val">2 min ago</span><span class="dot"></span></li>
             <li><svg class="icon icon-zap" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L4.5 14H11l-1 8L18.5 10H12z"/></svg><span>Order webhooks</span><span class="val">99.98% delivered</span><span class="dot"></span></li>
             <li><svg class="icon icon-layers" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 12.5l9 5 9-5"/><path d="M3 17l9 5 9-5"/></svg><span>Checkout extension</span><span class="val">v2.4 · live</span><span class="dot"></span></li>
-            <li><svg class="icon icon-sparkles" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 3l1.9 5.1L18 10l-5.1 1.9L11 17l-1.9-5.1L4 10l5.1-1.9z"/><path d="M18.5 14.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/></svg><span>AI support triage</span><span class="val">38 drafts today</span><span class="dot"></span></li>
+            <li data-live="drafts"><svg class="icon icon-sparkles" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 3l1.9 5.1L18 10l-5.1 1.9L11 17l-1.9-5.1L4 10l5.1-1.9z"/><path d="M18.5 14.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/></svg><span>AI support triage</span><span class="val"><span data-n>38</span> drafts today</span><span class="dot"></span></li>
           </ul>
           <div class="console-chart">
             <div class="row-between"><span>Orders synced · last 14 days</span><span class="mono">+18%</span></div>
-            <div class="bars"><i class="" style="height:38%"></i><i class="" style="height:52%"></i><i class="" style="height:44%"></i><i class="" style="height:60%"></i><i class="" style="height:48%"></i><i class="" style="height:66%"></i><i class="" style="height:58%"></i><i class="" style="height:72%"></i><i class="" style="height:63%"></i><i class="" style="height:70%"></i><i class="on" style="height:78%"></i><i class="on" style="height:68%"></i><i class="on" style="height:84%"></i><i class="on" style="height:92%"></i></div>
+            <div class="bars"><i class="" style="height:38%;--i:0"></i><i class="" style="height:52%;--i:1"></i><i class="" style="height:44%;--i:2"></i><i class="" style="height:60%;--i:3"></i><i class="" style="height:48%;--i:4"></i><i class="" style="height:66%;--i:5"></i><i class="" style="height:58%;--i:6"></i><i class="" style="height:72%;--i:7"></i><i class="" style="height:63%;--i:8"></i><i class="" style="height:70%;--i:9"></i><i class="on" style="height:78%;--i:10"></i><i class="on" style="height:68%;--i:11"></i><i class="on" style="height:84%;--i:12"></i><i class="on" style="height:92%;--i:13"></i></div>
           </div>
         </div>
       </div>
       <div class="float-card fc-ticket" aria-hidden="true">
         <span class="icon-box" style="background:var(--success-soft);color:var(--success)"><svg class="icon icon-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg></span>
-        <div><strong>#482 Bundle discount not applying</strong><span>Resolved in 3h 12m · root cause documented</span></div>
+        <div class="ticker" data-ticker>
+          <div class="ticker-item is-active"><strong>#482 Bundle discount not applying</strong><span>Resolved in 3h 12m · root cause documented</span></div>
+          <div class="ticker-item"><strong>#487 Klaviyo flow stopped after app update</strong><span>Resolved in 1h 05m · vendor notified</span></div>
+          <div class="ticker-item"><strong>#491 Checkout error on Safari 18</strong><span>Resolved in 2h 40m · regression test added</span></div>
+        </div>
       </div>
       <div class="float-card fc-score" aria-hidden="true">
         <span class="ring" style="--p:96"><b>96</b></span>
@@ -164,19 +170,21 @@
   </div>
 </section>
 
-<section class="logos" aria-label="Clients" data-note="Client logo strip. Replace with real logos only where the client has given permission (per the 6-month plan).">
+<section class="logos" aria-label="Clients" data-note="Client logos scroll in a slow marquee (pauses on hover). Replace with real logos only where the client has given permission (per the 6-month plan).">
   <div class="container">
     <p class="logos-label">Trusted by Shopify merchants, startups and agencies</p>
-    <div class="logo-row" data-ph>
-<span class="logo-word lw-1">NORTHWIND</span><span class="logo-word lw-2">luma</span><span class="logo-word lw-3">Atlas&amp;Co.</span><span class="logo-word lw-4">BRIGHTSIDE</span><span class="logo-word lw-5">mono/home</span><span class="logo-word lw-6">Peak Supply</span><span class="logo-word lw-7">fieldnote</span><span class="logo-word lw-8">KESTREL</span>    </div>
+    <div class="marquee" data-ph>
+      <div class="marquee-track">
+<span class="logo-word lw-1">NORTHWIND</span><span class="logo-word lw-2">luma</span><span class="logo-word lw-3">Atlas&amp;Co.</span><span class="logo-word lw-4">BRIGHTSIDE</span><span class="logo-word lw-5">mono/home</span><span class="logo-word lw-6">Peak Supply</span><span class="logo-word lw-7">fieldnote</span><span class="logo-word lw-8">KESTREL</span><span class="logo-word lw-1" aria-hidden="true">NORTHWIND</span><span class="logo-word lw-2" aria-hidden="true">luma</span><span class="logo-word lw-3" aria-hidden="true">Atlas&amp;Co.</span><span class="logo-word lw-4" aria-hidden="true">BRIGHTSIDE</span><span class="logo-word lw-5" aria-hidden="true">mono/home</span><span class="logo-word lw-6" aria-hidden="true">Peak Supply</span><span class="logo-word lw-7" aria-hidden="true">fieldnote</span><span class="logo-word lw-8" aria-hidden="true">KESTREL</span>      </div>
+    </div>
   </div>
 </section>
 
 <section class="section" id="who">
   <div class="container">
-    <div class="section-head  ">
-<span class="eyebrow">Who we work with</span>  <h2 class="balance">Built for teams who can’t afford unreliable developers</h2>
-<p class="lead pretty">Many development shops only write code. We take responsibility for the result — whether you run a store, launch a startup or deliver for your own clients.</p></div>
+    <div class="section-head  " data-stagger>
+<span class="eyebrow reveal">Who we work with</span>  <h2 class="balance reveal">Built for teams who can’t afford unreliable developers</h2>
+<p class="lead pretty reveal">Many development shops only write code. We take responsibility for the result — whether you run a store, launch a startup or deliver for your own clients.</p></div>
     <div class="grid grid-3" data-note="Audience split based on the new strategy: merchants, startups / direct clients, and agencies. Each card links to the most relevant page, so visitors pick their own path.">
       <article class="card card-hover audience-card reveal">
         <div class="audience-top"><span class="icon-box"><svg class="icon icon-store" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 9.5L5 4h14l1.5 5.5"/><path d="M3.5 9.5a2.8 2.8 0 0 0 5.6 0 2.9 2.9 0 0 0 5.8 0 2.8 2.8 0 0 0 5.6 0"/><path d="M5 12v8h14v-8"/><path d="M10 20v-4.5h4V20"/></svg></span><span class="badge">Merchants & brands</span></div>
@@ -203,9 +211,9 @@
 <section class="section section-surface" id="services">
   <div class="container">
     <div class="section-head-row">
-      <div class="section-head  ">
-<span class="eyebrow">Services</span>  <h2 class="balance">Everything your store and business need to run well</h2>
-<p class="lead pretty">Five focused services, delivered by one accountable team.</p></div>
+      <div class="section-head  " data-stagger>
+<span class="eyebrow reveal">Services</span>  <h2 class="balance reveal">Everything your store and business need to run well</h2>
+<p class="lead pretty reveal">Five focused services, delivered by one accountable team.</p></div>
       <a class="btn btn-outline" href="services.html">Compare all services <svg class="icon icon-arrow-right" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
     </div>
     <div class="bento" data-note="Services shown as a bento grid: the main revenue service (Shopify development) gets the largest tile. Each tile has a small visual hint of what the service does, plus a link to its own page.">
@@ -216,11 +224,11 @@
         <ul class="svc-list">
 <li><svg class="icon icon-check" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Custom Shopify app development</li><li><svg class="icon icon-check" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Admin API, GraphQL &amp; webhooks</li><li><svg class="icon icon-check" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg>ERP, CRM, inventory &amp; fulfilment</li><li><svg class="icon icon-check" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Shopify Functions &amp; app extensions</li><li><svg class="icon icon-check" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Shipping, bundles, preorders &amp; subscriptions</li><li><svg class="icon icon-check" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Custom theme development</li>        </ul>
         <div class="mini-visual">
-  <div class="flow" style="justify-content:space-between">
+  <div class="flow flow-h">
     <span class="flow-node"><svg class="icon icon-shopping-bag" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 7.5h13l1 12.5h-15z"/><path d="M9 7.5V6.5a3 3 0 0 1 6 0v1"/></svg> Shopify</span>
-    <span class="flow-arrow"><svg class="icon icon-refresh" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11a8 8 0 0 0-14.6-4.5L3.5 9"/><path d="M3.5 4v5h5"/><path d="M4 13a8 8 0 0 0 14.6 4.5l1.9-2.5"/><path d="M20.5 20v-5h-5"/></svg></span>
+    <span class="wire" aria-hidden="true"><i class="pkt"></i><i class="pkt rev"></i></span>
     <span class="flow-node ai"><svg class="icon icon-code" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 8l-4 4 4 4"/><path d="M16 8l4 4-4 4"/><path d="M13.5 5l-3 14"/></svg> Custom app</span>
-    <span class="flow-arrow"><svg class="icon icon-refresh" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11a8 8 0 0 0-14.6-4.5L3.5 9"/><path d="M3.5 4v5h5"/><path d="M4 13a8 8 0 0 0 14.6 4.5l1.9-2.5"/><path d="M20.5 20v-5h-5"/></svg></span>
+    <span class="wire" aria-hidden="true"><i class="pkt"></i><i class="pkt rev"></i></span>
     <span class="flow-node"><svg class="icon icon-database" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5.5" rx="8" ry="2.8"/><path d="M4 5.5v13c0 1.6 3.6 2.8 8 2.8s8-1.2 8-2.8v-13"/><path d="M4 12c0 1.6 3.6 2.8 8 2.8s8-1.2 8-2.8"/></svg> ERP / CRM</span>
   </div>
 </div>
@@ -231,7 +239,7 @@
         <h3><a class="card-link" href="service-shopify-support.html">Support &amp; Maintenance</a></h3>
         <p>Monthly plans with agreed hours and response targets — a development partner without a full-time hire.</p>
         <div class="svc-foot"><div class="mini-visual">
-  <ul class="ticket-mini">
+  <ul class="ticket-mini" data-feed>
     <li><span class="t"><span class="dot"></span><span>Checkout script conflict fixed</span></span><span class="mono">3h 12m</span></li>
     <li><span class="t"><span class="dot"></span><span>Webhook retries resolved</span></span><span class="mono">1h 40m</span></li>
     <li><span class="t"><span class="dot" style="background:var(--warn)"></span><span>Theme update on staging</span></span><span class="mono">in review</span></li>
@@ -244,12 +252,12 @@
         <h3><a class="card-link" href="service-ai-automation.html">AI Automation &amp; Workflows</a></h3>
         <p>n8n and AI workflows for leads, support, orders and reporting.</p>
         <div class="svc-foot"><div class="mini-visual">
-  <div class="flow" style="justify-content:space-between">
-    <span class="flow-node"><svg class="icon icon-mail" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 7l8.5 6 8.5-6"/></svg> New lead</span>
-    <span class="flow-arrow"><svg class="icon icon-arrow-right" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></span>
-    <span class="flow-node ai"><svg class="icon icon-sparkles" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 3l1.9 5.1L18 10l-5.1 1.9L11 17l-1.9-5.1L4 10l5.1-1.9z"/><path d="M18.5 14.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/></svg> AI qualify</span>
-    <span class="flow-arrow"><svg class="icon icon-arrow-right" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></span>
-    <span class="flow-node"><svg class="icon icon-users" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8"/><path d="M18.5 14.2A6.5 6.5 0 0 1 21.5 20"/></svg> CRM + Slack</span>
+  <div class="flow-v">
+    <span class="flow-node"><svg class="icon icon-mail" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 7l8.5 6 8.5-6"/></svg> New lead arrives</span>
+    <span class="wire wire-v" aria-hidden="true"><i class="pkt"></i></span>
+    <span class="flow-node ai"><svg class="icon icon-sparkles" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 3l1.9 5.1L18 10l-5.1 1.9L11 17l-1.9-5.1L4 10l5.1-1.9z"/><path d="M18.5 14.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/></svg> AI scores & summarises</span>
+    <span class="wire wire-v" aria-hidden="true"><i class="pkt" style="animation-delay:-1.3s"></i></span>
+    <span class="flow-node"><svg class="icon icon-users" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8"/><path d="M18.5 14.2A6.5 6.5 0 0 1 21.5 20"/></svg> CRM + Slack alert</span>
   </div>
 </div>
 </div>
@@ -258,8 +266,8 @@
         <div class="row-between"><span class="icon-box"><svg class="icon icon-search" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg></span><span class="svc-num">04</span></div>
         <h3><a class="card-link" href="service-seo-ai-search.html">SEO &amp; AI Search Visibility</a></h3>
         <p>SEO, AEO, GEO and LLMO — be found on Google and in AI answers.</p>
-        <div class="svc-foot"><div class="mini-visual answer-mock">
-  <div class="answer-q"><svg class="icon icon-sparkles" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 3l1.9 5.1L18 10l-5.1 1.9L11 17l-1.9-5.1L4 10l5.1-1.9z"/><path d="M18.5 14.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/></svg> Who builds custom Shopify integrations?</div>
+        <div class="svc-foot"><div class="mini-visual answer-mock" data-answer>
+  <div class="answer-q"><svg class="icon icon-sparkles" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 3l1.9 5.1L18 10l-5.1 1.9L11 17l-1.9-5.1L4 10l5.1-1.9z"/><path d="M18.5 14.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/></svg> <span class="q-text" data-type="Who builds custom Shopify integrations?">Who builds custom Shopify integrations?</span></div>
   <div class="answer-a">
     <div class="ln" style="width:94%"></div><div class="ln" style="width:78%"></div>
     <div class="answer-src"><span class="me">yourbrand.com</span><span>google.com</span><span>reddit.com</span></div>
@@ -284,9 +292,9 @@
 <section class="section" id="work">
   <div class="container">
     <div class="section-head-row">
-      <div class="section-head  ">
-<span class="eyebrow">Case studies</span>  <h2 class="balance">Proof, not promises</h2>
-<p class="lead pretty">Real problems, the work we did, and what changed. Every result here is measured, not estimated.</p></div>
+      <div class="section-head  " data-stagger>
+<span class="eyebrow reveal">Case studies</span>  <h2 class="balance reveal">Proof, not promises</h2>
+<p class="lead pretty reveal">Real problems, the work we did, and what changed. Every result here is measured, not estimated.</p></div>
       <a class="btn btn-outline" href="work.html">View all work <svg class="icon icon-arrow-right" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
     </div>
     <div class="case-grid" data-note="Case studies are the main trust signal. Each card shows problem → result with 3 measured numbers. All content here is SAMPLE and must be replaced with approved client work (with permission for names/logos).">
@@ -350,11 +358,11 @@
 
 <section class="section section-surface" id="care">
   <div class="container">
-    <div class="section-head center ">
-<span class="eyebrow">Store renovation &amp; ongoing care</span>  <h2 class="balance">Renovate your store. Then keep it healthy.</h2>
-<p class="lead pretty">From a full theme rebuild to the small fixes that never seem to get done — see the difference a renovation makes, and what a month of support actually looks like.</p></div>
+    <div class="section-head center " data-stagger>
+<span class="eyebrow reveal">Store renovation &amp; ongoing care</span>  <h2 class="balance reveal">Renovate your store. Then keep it healthy.</h2>
+<p class="lead pretty reveal">From a full theme rebuild to the small fixes that never seem to get done — see the difference a renovation makes, and what a month of support actually looks like.</p></div>
     <div class="split split-7-5" style="align-items:start;gap:clamp(32px,4vw,56px)">
-      <div class="stack reveal" data-note="Interactive before/after slider (drag it). Shows a store renovation at a glance, which was requested in the discussion. Swap these mock screens for real client screenshots.">
+      <div class="stack reveal" data-note="Interactive before/after slider. When it scrolls into view it demonstrates itself once (sweeps left and right), then the visitor drags it. Shows a store renovation at a glance, as requested in the discussion. Swap these mock screens for real client screenshots.">
         <div class="ba" data-ba>
           <div class="ba-pane ba-after">
             <div class="new-store">
@@ -377,19 +385,20 @@
           </div>
           <div class="ba-metric l"><span class="ba-label l">Before</span><span class="bad">Load 6.8s</span><span class="bad">Mobile 31</span></div>
           <div class="ba-metric r"><span class="good">Load 1.9s</span><span class="good">Mobile 94</span><span class="ba-label r">After</span></div>
-          <div class="ba-handle"><svg class="icon icon-chevrons-lr" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 7l-5 5 5 5"/><path d="M15 7l5 5-5 5"/></svg></div>
+          <div class="ba-handle"><svg class="icon icon-chevrons-lr" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 7l-5 5 5 5"/><path d="M15 7l5 5-5 5"/></svg><span class="ba-hint">Drag to compare</span></div>
           <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after" data-ba-range>
         </div>
         <p class="xs subtle center">Drag to compare · Sample renovation for illustration</p>
       </div>
 
       <div class="stack-lg reveal reveal-d1">
-        <div class="log" data-ph data-note="A 'maintenance log' makes ongoing support tangible: real task types, time to resolve and a monthly summary. This mirrors the monthly report clients on a support plan would receive.">
+        <div class="log" data-ph data-note="A live 'maintenance log' makes ongoing support tangible (rows log in one by one, the in-progress task animates, totals count up): real task types, time to resolve and a monthly summary. This mirrors the monthly report clients on a support plan would receive.">
           <div class="log-head">
             <div><span class="eyebrow">Support plan · October</span><h4 style="margin-top:6px">This month at Mono Home</h4></div>
             <span class="badge badge-success"><i class="dot"></i> Healthy</span>
           </div>
           <ul class="log-list">
+            <li class="log-live"><span class="tag tag-live"><span class="dot dot-pulse"></span>Live</span><span>Lazy-loading product videos on mobile<span class="log-progress"><i></i></span></span><span class="time">in progress</span></li>
             <li><span class="tag tag-fix">Fix</span><span>Cart drawer showed rounded prices on multi-currency</span><span class="time">2h 10m</span></li>
             <li><span class="tag tag-int">Integration</span><span>Klaviyo back-in-stock flow reconnected after app update</span><span class="time">1 day</span></li>
             <li><span class="tag tag-imp">Improvement</span><span>Collection filters now load 3× faster</span><span class="time">3 days</span></li>
@@ -431,9 +440,9 @@
 
 <section class="section">
   <div class="container">
-    <div class="section-head  ">
-<span class="eyebrow">What you can count on</span>  <h2 class="balance">Six commitments we put in writing</h2>
-<p class="lead pretty">These are the things clients tell us they couldn’t get from previous developers. They’re part of every project and support plan.</p></div>
+    <div class="section-head  " data-stagger>
+<span class="eyebrow reveal">What you can count on</span>  <h2 class="balance reveal">Six commitments we put in writing</h2>
+<p class="lead pretty reveal">These are the things clients tell us they couldn’t get from previous developers. They’re part of every project and support plan.</p></div>
     <div class="commit-grid" data-note="Trust commitments turn 'reliability' into specific promises a buyer can check. Taken from the plan: written scope, response within one business day, clear handoffs.">
       <div class="commit reveal ">
         <span class="icon-box"><svg class="icon icon-clock" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg></span>
@@ -471,10 +480,10 @@
 
 <section class="section section-surface" id="process">
   <div class="container">
-    <div class="section-head  ">
-<span class="eyebrow">How we work</span>  <h2 class="balance">A clear process from first call to long-term support</h2>
-<p class="lead pretty">No surprises. You always know what’s happening, what it costs and what comes next.</p></div>
-    <ol class="process">
+    <div class="section-head  " data-stagger>
+<span class="eyebrow reveal">How we work</span>  <h2 class="balance reveal">A clear process from first call to long-term support</h2>
+<p class="lead pretty reveal">No surprises. You always know what’s happening, what it costs and what comes next.</p></div>
+    <ol class="process" data-inview>
   <li class="step reveal reveal-d0">
     <span class="step-num">01</span>
     <h4>Discovery call</h4>
@@ -506,10 +515,10 @@
 
 <section class="section" id="reviews">
   <div class="container">
-    <div class="section-head  ">
-<span class="eyebrow">Client reviews</span>  <h2 class="balance">What clients say about working with us</h2>
+    <div class="section-head  " data-stagger>
+<span class="eyebrow reveal">Client reviews</span>  <h2 class="balance reveal">What clients say about working with us</h2>
 </div>
-    <div class="t-grid" data-note="Reviews from clients plus a summary card with the overall rating and review sources. Placeholder names; link to real review sources (Shopify App Store, Clutch, Google) when available.">
+    <div class="t-grid" data-carousel data-note="Reviews from clients plus a summary card with the overall rating and review sources. Placeholder names; link to real review sources (Shopify App Store, Clutch, Google) when available.">
       <figure class="card t-card reveal " data-ph>
   <div class="row-between"><span class="stars" aria-label="5 out of 5 stars"><svg class="icon icon-star" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.6l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.5l-5.9 3.1 1.2-6.5L2.5 9.5l6.6-.9z"/></svg><svg class="icon icon-star" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.6l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.5l-5.9 3.1 1.2-6.5L2.5 9.5l6.6-.9z"/></svg><svg class="icon icon-star" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.6l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.5l-5.9 3.1 1.2-6.5L2.5 9.5l6.6-.9z"/></svg><svg class="icon icon-star" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.6l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.5l-5.9 3.1 1.2-6.5L2.5 9.5l6.6-.9z"/></svg><svg class="icon icon-star" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.6l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.5l-5.9 3.1 1.2-6.5L2.5 9.5l6.6-.9z"/></svg></span><span class="q-icon"><svg class="icon icon-quote" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.5 6.5H5.5a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h3c0 2.5-1 4-3.5 5"/><path d="M19.5 6.5h-4a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h3c0 2.5-1 4-3.5 5"/></svg></span></div>
   <blockquote>“Xubitar replaced a fragile nightly import with an integration we never have to think about. They explained every decision in plain language.”</blockquote>
@@ -543,15 +552,16 @@
         <figcaption class="who"><span class="avatar av-4">PN</span><div><b>Priya Nair</b><span>Co-founder &amp; CEO, Fieldnote Studio</span></div></figcaption>
       </figure>
     </div>
+    <div class="t-dots" data-t-dots aria-hidden="true"></div>
   </div>
 </section>
 
 <section class="section section-dark" id="products">
   <div class="container">
     <div class="section-head-row">
-      <div class="section-head  ">
-<span class="eyebrow">Our products</span>  <h2 class="balance">We build and run our own software, too</h2>
-<p class="lead pretty">Running our own products keeps us sharp on the things clients care about: uptime, support and steady improvement.</p></div>
+      <div class="section-head  " data-stagger>
+<span class="eyebrow reveal">Our products</span>  <h2 class="balance reveal">We build and run our own software, too</h2>
+<p class="lead pretty reveal">Running our own products keeps us sharp on the things clients care about: uptime, support and steady improvement.</p></div>
       <a class="btn btn-outline" href="products.html">Explore products <svg class="icon icon-arrow-right" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
     </div>
     <div class="grid grid-2" data-note="Products moved from a single XPreOrder card to a two-product showcase including the new XocialAI. Owning products is used as proof of long-term reliability.">
@@ -562,7 +572,7 @@
               <div class="pp-head"><i></i><div><b style="font-size:.8rem">Kitefield Studio</b><div class="muted" style="font-size:.68rem">Scheduled · Tue 10:00</div></div></div>
               <div style="font-size:.78rem">We shipped a booking app for a clinic. Patients book in under a minute now.</div>
               <div class="pp-img"></div>
-              <div class="pm-nets"><span>Facebook ✓</span><span>Instagram ✓</span><span>LinkedIn ✓</span><span>Threads ✓</span><span>+5</span></div>
+              <div class="pm-nets" data-sequence><span data-seq>Facebook ✓</span><span data-seq>Instagram ✓</span><span data-seq>LinkedIn ✓</span><span data-seq>Threads ✓</span><span data-seq>+5</span></div>
             </div>
           </div>
         </div>
@@ -594,9 +604,9 @@
   <div class="container">
     <div class="split split-5-7" style="align-items:start">
       <div class="stack-lg" style="position:sticky;top:calc(var(--header-h) + 32px)">
-        <div class="section-head  mb-0">
-<span class="eyebrow">FAQ</span>  <h2 class="balance">Questions we hear often</h2>
-<p class="lead pretty">Can’t find what you’re looking for? Ask Toki in the chat, or email us directly.</p></div>
+        <div class="section-head  mb-0" data-stagger>
+<span class="eyebrow reveal">FAQ</span>  <h2 class="balance reveal">Questions we hear often</h2>
+<p class="lead pretty reveal">Can’t find what you’re looking for? Ask Toki in the chat, or email us directly.</p></div>
         <div class="row">
           <a class="btn btn-outline" href="mailto:support@xubitar.com"><svg class="icon icon-mail" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 7l8.5 6 8.5-6"/></svg> support@xubitar.com</a>
         </div>
@@ -725,7 +735,7 @@
         <span>Real engineers join when you need them</span>
       </div>
     </div>
-    <div class="chat-body" data-chat-body>
+    <div class="chat-body" data-chat-body data-lenis-prevent>
       <div class="msg system">Today</div>
       <div class="msg bot">Hi, I'm Toki. I can answer questions about Xubitar's services, pricing and process — or connect you with an engineer.</div>
       <div class="msg bot">What can I help you with?</div>
@@ -743,14 +753,19 @@
     </form>
     <div class="chat-foot">Powered by Toki · AI assistant with human handoff</div>
   </div>
+  <div class="chat-nudge" data-chat-nudge role="status" hidden>
+    <button class="nudge-x" aria-label="Dismiss" data-nudge-close><svg class="icon icon-x" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12"/><path d="M18 6L6 18"/></svg></button>
+    <b>Questions about a project?</b>
+    <span class="muted">Ask Toki about services, pricing or timelines — real engineers join when needed.</span>
+  </div>
   <button class="chat-launcher" data-chat-toggle aria-label="Chat with us" aria-expanded="false">
-    <span class="cl-icon"><svg class="icon icon-message-circle" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.6L3 20.5l1.4-5.2A8.5 8.5 0 1 1 21 11.5z"/></svg></span>
+    <span class="cl-icon"><svg class="icon icon-message-circle" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.6L3 20.5l1.4-5.2A8.5 8.5 0 1 1 21 11.5z"/></svg><span class="cl-badge" data-chat-badge hidden>1</span></span>
     <span class="cl-label">Chat with us</span>
   </button>
 </div>
 
 <div class="review" data-review>
-  <div class="review-panel" hidden data-review-panel>
+  <div class="review-panel" hidden data-review-panel data-lenis-prevent>
     <div class="row-between"><strong style="font-size:.95rem">Design review</strong><span class="badge">Prototype v1</span></div>
     <div>
       <h6>Jump to page</h6>
@@ -779,7 +794,10 @@
   <button class="review-fab" data-review-toggle aria-expanded="false"><svg class="icon icon-eye" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 12S6 5 12 5s9.5 7 9.5 7-3.5 7-9.5 7-9.5-7-9.5-7z"/><circle cx="12" cy="12" r="3"/></svg> <span class="lbl">Review</span> <span class="cnt" data-notes-count>0</span></button>
 </div>
 
+<script src="js/vendor/lenis.min.js"></script>
 <script src="js/main.js"></script>
+<script src="js/motion.js"></script>
+<script src="js/widgets.js"></script>
 <script src="js/review.js"></script>
 </body>
 </html>

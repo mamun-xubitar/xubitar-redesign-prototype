@@ -10,6 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400..600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/motion.css">
 <style>
   .hub-hero { background: var(--ink); color: #fff; padding: clamp(48px,7vw,96px) 0 clamp(40px,6vw,72px); position: relative; overflow: hidden; }
   .hub-hero::after { content:""; position:absolute; inset:0; background-image: linear-gradient(to right, rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,.05) 1px, transparent 1px); background-size: 56px 56px; mask-image: radial-gradient(ellipse 60% 80% at 85% 10%, #000, transparent 70%); -webkit-mask-image: radial-gradient(ellipse 60% 80% at 85% 10%, #000, transparent 70%); pointer-events:none; }
@@ -58,11 +59,11 @@
 <main>
 <section class="section-sm">
   <div class="container">
-    <div class="section-head  ">
-<span class="eyebrow">How to review</span>  <h2 class="balance">Four ways to review the prototype</h2>
+    <div class="section-head  " data-stagger>
+<span class="eyebrow reveal">How to review</span>  <h2 class="balance reveal">Four ways to review the prototype</h2>
 </div>
     <div class="how">
-      <div class="card"><span class="icon-box"><svg class="icon icon-monitor" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8"/><path d="M12 16v4"/></svg></span><h4>1. Click through</h4><p class="small muted">Every page and link works. Try the menu, the before/after slider, the case-study filters, the enquiry form and the chat.</p></div>
+      <div class="card"><span class="icon-box"><svg class="icon icon-monitor" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8"/><path d="M12 16v4"/></svg></span><h4>1. Click through</h4><p class="small muted">Every page, link and tool works, with animation as it will appear on the live site. See the list of interactions to try below.</p></div>
       <div class="card"><span class="icon-box"><svg class="icon icon-eye" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 12S6 5 12 5s9.5 7 9.5 7-3.5 7-9.5 7-9.5-7-9.5-7z"/><circle cx="12" cy="12" r="3"/></svg></span><h4>2. Read the design notes</h4><p class="small muted">Click the yellow <span class="fake-fab"><svg class="icon icon-eye" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 12S6 5 12 5s9.5 7 9.5 7-3.5 7-9.5 7-9.5-7-9.5-7z"/><circle cx="12" cy="12" r="3"/></svg> Review</span> button (bottom-left) and switch on <b>Show design notes</b>. Numbered pins explain each design decision.</p></div>
       <div class="card"><span class="icon-box"><svg class="icon icon-alert" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5l9.5 16.5h-19z"/><path d="M12 10v4.5"/><path d="M12 17.4v.2"/></svg></span><h4>3. Spot sample content</h4><p class="small muted">Switch on <b>Highlight sample content</b>. Case studies, reviews, logos and numbers are placeholders until you share real, approved data.</p></div>
       <div class="card"><span class="icon-box"><svg class="icon icon-target" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg></span><h4>4. Choose an accent colour</h4><p class="small muted">In the same panel, compare <b>Signal blue</b>, <b>Emerald</b> and <b>Volt</b>. Your choice is remembered across pages.</p></div>
@@ -71,11 +72,34 @@
   </div>
 </section>
 
-<section class="section-sm section-surface">
+<section class="section-sm section-surface" id="try">
   <div class="container">
-    <div class="section-head  ">
-<span class="eyebrow">Pages</span>  <h2 class="balance">All pages in the prototype</h2>
-<p class="lead pretty">Click any page to open it.</p></div>
+    <div class="section-head  " data-stagger>
+<span class="eyebrow reveal">Interactions to try</span>  <h2 class="balance reveal">Animation and interactivity, where it helps</h2>
+<p class="lead pretty reveal">Motion is used to show reliability (live data), teach (hints) and help visitors decide (tools). It turns off automatically for visitors who prefer reduced motion.</p></div>
+    <div class="grid grid-3">
+      <a class="card card-hover stack-sm" href="index.html"><span class="icon-box"><svg class="icon icon-monitor" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8"/><path d="M12 16v4"/></svg></span><h4 class="mt-1">Home hero</h4><p class="small muted">Move your mouse over it. The headline rises, the console tilts and shows live sync, AI drafts and resolved tickets.</p></a>
+      <a class="card card-hover stack-sm" href="index.html#care"><span class="icon-box"><svg class="icon icon-layers" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 12.5l9 5 9-5"/><path d="M3 17l9 5 9-5"/></svg></span><h4 class="mt-1">Before / after renovation</h4><p class="small muted">The slider shows itself once, then drag it. The maintenance log logs tasks live.</p></a>
+      <a class="card card-hover stack-sm" href="service-shopify-support.html#plans"><span class="icon-box"><svg class="icon icon-life-buoy" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.8"/><path d="M5.6 5.6l3.7 3.7"/><path d="M14.7 14.7l3.7 3.7"/><path d="M18.4 5.6l-3.7 3.7"/><path d="M9.3 14.7l-3.7 3.7"/></svg></span><h4 class="mt-1">Support plan finder</h4><p class="small muted">Set your monthly workload and the matching plan lights up.</p></a>
+      <a class="card card-hover stack-sm" href="service-ai-automation.html#calculator"><span class="icon-box"><svg class="icon icon-sparkles" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 3l1.9 5.1L18 10l-5.1 1.9L11 17l-1.9-5.1L4 10l5.1-1.9z"/><path d="M18.5 14.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/></svg></span><h4 class="mt-1">AI savings calculator</h4><p class="small muted">Estimate the hours and money automation could save, live.</p></a>
+      <a class="card card-hover stack-sm" href="service-seo-ai-search.html"><span class="icon-box"><svg class="icon icon-search" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg></span><h4 class="mt-1">SEO / AEO / GEO / LLMO demo</h4><p class="small muted">One question answered in four places, which auto-advances until you click.</p></a>
+      <a class="card card-hover stack-sm" href="work.html"><span class="icon-box"><svg class="icon icon-filter" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 5h17l-6.5 8v6l-4 2v-8z"/></svg></span><h4 class="mt-1">Case-study filters</h4><p class="small muted">Cards fade out and the matching ones rise in.</p></a>
+      <a class="card card-hover stack-sm" href="case-study.html"><span class="icon-box"><svg class="icon icon-file-text" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6"/><path d="M9 17h6"/></svg></span><h4 class="mt-1">Case study</h4><p class="small muted">Reading-progress bar, highlighted contents and a live integration diagram.</p></a>
+      <a class="card card-hover stack-sm" href="contact.html"><span class="icon-box"><svg class="icon icon-send" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.5 2.5L10.5 13.5"/><path d="M21.5 2.5l-7 19-4-8-8-4z"/></svg></span><h4 class="mt-1">Enquiry form &amp; booking</h4><p class="small muted">Three steps with validation, then book a call and confirm it.</p></a>
+      <a class="card card-hover stack-sm" href="agencies.html"><span class="icon-box"><svg class="icon icon-handshake" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 17l2 2a1.4 1.4 0 0 0 2-2"/><path d="M14 14l2.5 2.5a1.4 1.4 0 0 0 2-2L15 11"/><path d="M21 9.5L18 6.5h-5l-3.2 3.2a1.4 1.4 0 0 0 2 2L14 9.5l4.5 4.5L21 12"/><path d="M3 9.5l3-3h4"/><path d="M3 12l5.2 5.2a1.4 1.4 0 0 0 2-2"/></svg></span><h4 class="mt-1">Agency diagram</h4><p class="small muted">Requests and delivered work flow through the partnership.</p></a>
+      <a class="card card-hover stack-sm" href="products.html"><span class="icon-box"><svg class="icon icon-package" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 7.5l-9-4.5-9 4.5 9 4.5z"/><path d="M3 7.5v9l9 4.5 9-4.5v-9"/><path d="M12 12v9"/></svg></span><h4 class="mt-1">Products</h4><p class="small muted">XocialAI runs its pipeline, and XPreOrder counts new pre-orders.</p></a>
+      <a class="card card-hover stack-sm" href="index.html"><span class="icon-box"><svg class="icon icon-message-circle" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.6L3 20.5l1.4-5.2A8.5 8.5 0 1 1 21 11.5z"/></svg></span><h4 class="mt-1">Toki chat</h4><p class="small muted">Bottom-right on every page: a nudge after 7s, quick replies, typing indicator.</p></a>
+      <a class="card card-hover stack-sm" href="style-guide.html#motion"><span class="icon-box"><svg class="icon icon-target" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg></span><h4 class="mt-1">Motion system</h4><p class="small muted">Replay each animation preset used in the build.</p></a>
+    </div>
+    <p class="small muted mt-3">On a phone, also try the animated menu and swipe through the client reviews.</p>
+  </div>
+</section>
+
+<section class="section-sm">
+  <div class="container">
+    <div class="section-head  " data-stagger>
+<span class="eyebrow reveal">Pages</span>  <h2 class="balance reveal">All pages in the prototype</h2>
+<p class="lead pretty reveal">Click any page to open it.</p></div>
       <h3 class="eyebrow" style="margin:28px 0 14px">Core</h3>
       <div class="grid grid-3">
         <a class="page-thumb" href="index.html">
@@ -157,10 +181,10 @@
   </div>
 </section>
 
-<section class="section-sm">
+<section class="section-sm section-surface">
   <div class="container">
-    <div class="section-head  ">
-<span class="eyebrow">From brief to design</span>  <h2 class="balance">How the design answers the discussion</h2>
+    <div class="section-head  " data-stagger>
+<span class="eyebrow reveal">From brief to design</span>  <h2 class="balance reveal">How the design answers the discussion</h2>
 </div>
     <div class="table-wrap">
       <table class="req">
@@ -182,12 +206,12 @@
   </div>
 </section>
 
-<section class="section-sm section-surface" id="questions">
+<section class="section-sm" id="questions">
   <div class="container">
     <div class="split split-5-7" style="align-items:start">
-      <div class="section-head  ">
-<span class="eyebrow">Decisions needed</span>  <h2 class="balance">Questions for you</h2>
-<p class="lead pretty">Answers to these let us replace sample content and finalise the design before development.</p></div>
+      <div class="section-head  " data-stagger>
+<span class="eyebrow reveal">Decisions needed</span>  <h2 class="balance reveal">Questions for you</h2>
+<p class="lead pretty reveal">Answers to these let us replace sample content and finalise the design before development.</p></div>
       <ol class="q-list">
         <li><div><b>Accent colour</b><span>Signal blue, Emerald or Volt? (Try them in the Review panel.)</span></div></li>
         <li><div><b>Case studies we can publish</b><span>Which projects, client names and logos do we have permission to show? Any results or screenshots we can use?</span></div></li>

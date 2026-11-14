@@ -94,6 +94,42 @@
         <div class="card stack-sm"><b>Radius</b><span class="small muted">10 · 14 · 20 · 28px · full for buttons</span></div>
       </div>
     </div>
+
+    <div class="stack-lg" id="motion">
+      {{ m.section_head('08 · Motion', 'Motion system', 'Motion explains and reassures. It is not decoration. Presets match <code class="mono">lib/motion/presets.ts</code> (motion/react), smooth scrolling uses Lenis like the app, and everything switches off when a visitor prefers reduced motion.', cls='mb-0') }}
+      <div class="demo-grid">
+        {% for key, name, spec in [('fadeUp','fadeUp','y 24px → 0 · 600ms · ease-out-expo'),('stagger','stagger','children 100ms apart'),('scaleIn','scaleIn','scale .95 → 1 · 400ms'),('slideDown','slideDown','y −8px → 0 · 250ms (menus)')] %}
+        <div class="card demo">
+          <div class="demo-stage play-{{ key }}">{% if key == 'stagger' %}<div class="demo-row"><span class="demo-box"></span><span class="demo-box"></span><span class="demo-box"></span><span class="demo-box"></span></div>{% else %}<span class="demo-box"></span>{% endif %}</div>
+          <div class="row-between"><b>{{ name }}</b><button class="btn btn-outline btn-sm" type="button" data-replay="{{ key }}">Replay</button></div>
+          <span class="mono">{{ spec }}</span>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="grid grid-3">
+        <div class="card stack-sm"><b>Easing</b><span class="small muted">ease-out <code class="mono">cubic-bezier(.16,1,.3,1)</code> for entrances · ease-in-out <code class="mono">(.65,0,.35,1)</code> for lines & loops · spring <code class="mono">(.34,1.56,.64,1)</code> for small pops</span></div>
+        <div class="card stack-sm"><b>Durations</b><span class="small muted">150 · 250 · 400 · 600 · 900ms. UI feedback ≤ 250ms, entrances 400–600ms, data loops 2–8s.</span></div>
+        <div class="card stack-sm"><b>Rules</b><span class="small muted">Animate once on scroll. Loops run only while on screen. Never block reading or input. Respect reduced motion.</span></div>
+      </div>
+      <div class="table-wrap" style="border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden">
+        <table class="req" style="width:100%;border-collapse:collapse;font-size:.92rem">
+          <tbody>
+          {% for where, what, why in [
+            ('Every section','Scroll reveal: fadeUp / scaleIn with 100ms stagger','Guides the eye through each section in order'),
+            ('Home hero','Headline rises word by word · swoosh draws · cursor spotlight grid · console tilts with depth','A confident first impression that echoes the logo'),
+            ('Live data','Store-health console, support ticket feed, data packets on integrations, XocialAI pipeline, pre-order counter','Shows reliability as something happening, not a claim'),
+            ('Numbers','Count-up on stats and results when they enter view','Makes proof points noticeable'),
+            ('Teaching hints','Before/after slider sweeps once; SEO demo auto-advances until clicked','Shows visitors how to use the interaction'),
+            ('Decision tools','Plan finder, savings calculator, search-channel demo','Helps buyers choose, and creates qualified enquiries'),
+            ('Micro-interactions','Buttons, chips, FAQ height, menus, burger morph, form steps, field shake, success check','Clear feedback for every action'),
+            ('Navigation','Header hides on scroll down and returns on scroll up · page transitions · Lenis smooth scroll','More room for content, smoother browsing'),
+          ] %}
+            <tr><td style="padding:14px 16px;border-bottom:1px solid var(--line);font-weight:560;width:18%">{{ where }}</td><td style="padding:14px 16px;border-bottom:1px solid var(--line)">{{ what }}</td><td style="padding:14px 16px;border-bottom:1px solid var(--line);color:var(--muted)">{{ why }}</td></tr>
+          {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 </section>
 {% endblock %}

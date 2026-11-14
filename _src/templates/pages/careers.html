@@ -28,12 +28,12 @@
     <div class="section-head-row">
       {{ m.section_head('Open roles', 'Current openings', 'Roles are published from the admin panel. This layout replaces the current job list.', cls='mb-0') }}
       <div class="filters" style="margin:0">
-        <button class="chip is-active">All teams</button><button class="chip">Engineering</button><button class="chip">Automation</button><button class="chip">Growth</button>
+        <button class="chip is-active" data-team-filter="all" aria-pressed="true">All teams</button><button class="chip" data-team-filter="Engineering" aria-pressed="false">Engineering</button><button class="chip" data-team-filter="Automation" aria-pressed="false">Automation</button><button class="chip" data-team-filter="Growth" aria-pressed="false">Growth</button>
       </div>
     </div>
     <div class="job-list" data-ph data-note="Job list keeps the existing careers feature (admin-managed jobs, apply form) with a cleaner row layout: title, tags, team, type and location.">
       {% for j in JOBS %}
-      <a class="job" href="#">
+      <a class="job" href="#" data-team="{{ j.team }}">
         <div><h3>{{ j.title }}</h3><div class="pills">{% for t in j.tags %}<span class="pill">{{ t }}</span>{% endfor %}</div></div>
         <span class="meta hide-sm">{{ icon('briefcase', 16) }} {{ j.team }} · {{ j.type }}</span>
         <span class="meta hide-sm">{{ icon('map-pin', 16) }} {{ j.location }}</span>
@@ -41,6 +41,7 @@
       </a>
       {% endfor %}
     </div>
+    <p class="muted center mt-3" data-team-empty hidden>No open roles in this team right now — send an open application below.</p>
   </div>
 </section>
 

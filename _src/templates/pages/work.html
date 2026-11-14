@@ -27,10 +27,10 @@
 
 <section class="section" style="padding-top:clamp(40px,5vw,64px)">
   <div class="container">
-    <div class="filters" role="toolbar" aria-label="Filter case studies" data-note="Filters let each audience find relevant proof quickly: merchants look for integrations/renovation, startups for web, agencies for white-label work.">
+    <div class="filters" role="toolbar" aria-label="Filter case studies" data-note="Animated filters (cards fade out, then the matching ones rise in) let each audience find relevant proof quickly: merchants look for integrations/renovation, startups for web, agencies for white-label work.">
       {% for key, label in CASE_FILTERS %}
       {% set n = CASES | length if key == 'all' else CASES | selectattr('cat', 'equalto', key) | list | length %}
-      <button class="chip {{ 'is-active' if key == 'all' }}" data-filter="{{ key }}">{{ label }}<span class="count">{{ n }}</span></button>
+      <button class="chip {{ 'is-active' if key == 'all' }}" data-filter="{{ key }}" aria-pressed="{{ 'true' if key == 'all' else 'false' }}">{{ label }}<span class="count">{{ n }}</span></button>
       {% endfor %}
     </div>
     <div class="case-grid">

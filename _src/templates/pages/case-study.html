@@ -5,6 +5,7 @@
 {% set page_id = 'case' %}
 {% set nav = 'work' %}
 {% block content %}
+<div class="read-progress" data-read-progress aria-hidden="true"></div>
 
 <section class="page-hero" style="border-bottom:0;padding-bottom:32px">
   <div class="hero-bg" aria-hidden="true"></div>
@@ -32,14 +33,14 @@
 
 <section class="section" style="padding-top:clamp(32px,4vw,56px)">
   <div class="container">
-    <div class="cs-layout">
+    <div class="cs-layout" data-article>
       <aside><nav class="toc" aria-label="On this page">
         <a href="#challenge">The challenge</a><a href="#approach">Our approach</a><a href="#solution">The solution</a><a href="#results">Results</a><a href="#stack">Tech stack</a>
         <div class="card card-surface mt-3 stack-sm" style="padding:18px"><strong class="small">Facing something similar?</strong><a class="btn btn-primary btn-sm mt-1" href="contact.html">Talk to us</a></div>
       </nav></aside>
 
       <div class="cs-content">
-        <div class="cs-block" id="challenge" data-note="Story structure: Challenge → Approach → Solution → Results. It's the format recommended in the 6-month plan (problem, work, result) and is easy to reuse for every project.">
+        <div class="cs-block" id="challenge" data-note="A reading-progress bar runs along the top and the table of contents highlights the current section. Story structure: Challenge → Approach → Solution → Results. It's the format recommended in the 6-month plan (problem, work, result) and is easy to reuse for every project.">
           <span class="eyebrow">The challenge</span>
           <h2>A nightly CSV import couldn’t keep up with three warehouses</h2>
           <div class="prose">
@@ -68,11 +69,11 @@
           <span class="eyebrow">The solution</span>
           <h2>A custom app that keeps every channel in sync</h2>
           <div class="prose"><p>We built a private Shopify app that listens to Shopify and NetSuite events, updates stock within two minutes and retries automatically when either side is unavailable. A simple dashboard shows sync health, and the team gets a Slack alert if anything needs attention.</p></div>
-          <div class="arch">
+          <div class="arch" data-note="Architecture diagram with live data packets travelling both ways, showing the real-time sync instead of describing it.">
             <div class="arch-node"><span class="icon-box" style="background:#e9f3dc;color:#3d6b1f">{{ icon('shopping-bag', 18) }}</span><b>Shopify Plus</b><span>Orders, refunds, inventory</span></div>
-            <div class="arch-arrow">{{ icon('refresh', 18) }}webhooks</div>
+            <div class="arch-arrow"><span class="wire"><i class="pkt"></i><i class="pkt rev"></i></span>webhooks</div>
             <div class="arch-node core"><span class="icon-box">{{ icon('code', 18) }}</span><b>Xubitar sync app</b><span>Queue · retries · logs</span></div>
-            <div class="arch-arrow">{{ icon('refresh', 18) }}REST / SuiteQL</div>
+            <div class="arch-arrow"><span class="wire"><i class="pkt" style="animation-delay:-.6s"></i><i class="pkt rev"></i></span>REST / SuiteQL</div>
             <div class="arch-node"><span class="icon-box" style="background:#e6eefc;color:#1f4fa8">{{ icon('database', 18) }}</span><b>NetSuite ERP</b><span>3 warehouses</span></div>
           </div>
         </div>

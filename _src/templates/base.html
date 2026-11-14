@@ -12,7 +12,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400..600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
-<script>document.documentElement.classList.remove('no-js');try{var a=localStorage.getItem('xb-accent');if(a)document.documentElement.dataset.accent=a;}catch(e){}</script>
+<link rel="stylesheet" href="css/motion.css">
+<script>document.documentElement.classList.remove('no-js');if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('motion');try{var a=localStorage.getItem('xb-accent');if(a)document.documentElement.dataset.accent=a;}catch(e){}</script>
 </head>
 <body class="page-{{ page_id }}">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -68,22 +69,22 @@
     <div class="header-cta">
       <a class="btn btn-ghost btn-sm hide-md" href="contact.html#book">{{ icon('calendar', 16) }} Book a call</a>
       <a class="btn btn-primary btn-sm" href="contact.html">Start a project {{ icon('arrow-right', 16) }}</a>
-      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" data-menu-toggle>{{ icon('menu', 20) }}</button>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" data-menu-toggle><span class="burger" aria-hidden="true"><i></i><i></i><i></i></span></button>
     </div>
   </div>
-  <div class="mobile-menu" data-mobile-menu hidden>
+  <div class="mobile-menu" data-mobile-menu data-lenis-prevent hidden>
     <div class="m-group">
-      <div class="m-title">Services</div>
-      {% for s in SERVICES %}<a class="m-link" href="{{ s.file }}">{{ s.short }} {{ icon('chevron-right', 18) }}</a>{% endfor %}
-      <a class="m-link" href="services.html">All services {{ icon('chevron-right', 18) }}</a>
+      <div class="m-title" style="--i:1">Services</div>
+      {% for s in SERVICES %}<a class="m-link" style="--i:{{ loop.index }}" href="{{ s.file }}">{{ s.short }} {{ icon('chevron-right', 18) }}</a>{% endfor %}
+      <a class="m-link" style="--i:7" href="services.html">All services {{ icon('chevron-right', 18) }}</a>
     </div>
     <div class="m-group">
-      <div class="m-title">Company</div>
-      <a class="m-link" href="work.html">Work {{ icon('chevron-right', 18) }}</a>
-      <a class="m-link" href="products.html">Products {{ icon('chevron-right', 18) }}</a>
-      <a class="m-link" href="agencies.html">For agencies {{ icon('chevron-right', 18) }}</a>
-      <a class="m-link" href="about.html">About {{ icon('chevron-right', 18) }}</a>
-      <a class="m-link" href="careers.html">Careers {{ icon('chevron-right', 18) }}</a>
+      <div class="m-title" style="--i:8">Company</div>
+      <a class="m-link" style="--i:9" href="work.html">Work {{ icon('chevron-right', 18) }}</a>
+      <a class="m-link" style="--i:10" href="products.html">Products {{ icon('chevron-right', 18) }}</a>
+      <a class="m-link" style="--i:11" href="agencies.html">For agencies {{ icon('chevron-right', 18) }}</a>
+      <a class="m-link" style="--i:12" href="about.html">About {{ icon('chevron-right', 18) }}</a>
+      <a class="m-link" style="--i:13" href="careers.html">Careers {{ icon('chevron-right', 18) }}</a>
     </div>
     <div class="m-cta">
       <a class="btn btn-primary btn-lg" href="contact.html">Start a project {{ icon('arrow-right', 18) }}</a>
@@ -169,7 +170,7 @@
         <span>Real engineers join when you need them</span>
       </div>
     </div>
-    <div class="chat-body" data-chat-body>
+    <div class="chat-body" data-chat-body data-lenis-prevent>
       <div class="msg system">Today</div>
       <div class="msg bot">Hi, I'm Toki. I can answer questions about Xubitar's services, pricing and process — or connect you with an engineer.</div>
       <div class="msg bot">What can I help you with?</div>
@@ -187,15 +188,20 @@
     </form>
     <div class="chat-foot">Powered by Toki · AI assistant with human handoff</div>
   </div>
+  <div class="chat-nudge" data-chat-nudge role="status" hidden>
+    <button class="nudge-x" aria-label="Dismiss" data-nudge-close>{{ icon('x', 14) }}</button>
+    <b>Questions about a project?</b>
+    <span class="muted">Ask Toki about services, pricing or timelines — real engineers join when needed.</span>
+  </div>
   <button class="chat-launcher" data-chat-toggle aria-label="Chat with us" aria-expanded="false">
-    <span class="cl-icon">{{ icon('message-circle', 20) }}</span>
+    <span class="cl-icon">{{ icon('message-circle', 20) }}<span class="cl-badge" data-chat-badge hidden>1</span></span>
     <span class="cl-label">Chat with us</span>
   </button>
 </div>
 
 {# ---------------- Review toolbar (prototype only) ---------------- #}
 <div class="review" data-review>
-  <div class="review-panel" hidden data-review-panel>
+  <div class="review-panel" hidden data-review-panel data-lenis-prevent>
     <div class="row-between"><strong style="font-size:.95rem">Design review</strong><span class="badge">{{ SITE.version }}</span></div>
     <div>
       <h6>Jump to page</h6>
@@ -225,7 +231,10 @@
   <button class="review-fab" data-review-toggle aria-expanded="false">{{ icon('eye', 16) }} <span class="lbl">Review</span> <span class="cnt" data-notes-count>0</span></button>
 </div>
 
+<script src="js/vendor/lenis.min.js"></script>
 <script src="js/main.js"></script>
+<script src="js/motion.js"></script>
+<script src="js/widgets.js"></script>
 <script src="js/review.js"></script>
 </body>
 </html>

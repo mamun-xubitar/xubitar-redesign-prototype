@@ -20,7 +20,7 @@
 {# ---------- XocialAI ---------- #}
 <section class="section" id="xocialai">
   <div class="container">
-    <div class="split" data-note="XocialAI gets a full feature block. Copy is taken from xocialai.com so the two sites stay consistent.">
+    <div class="split" data-note="XocialAI gets a full feature block, and its mock-up plays the real pipeline (topic, caption, image, posted to each network). Copy is taken from xocialai.com so the two sites stay consistent.">
       <div class="stack-lg">
         <div class="product-logo"><span class="pl pl-xocial">X</span><div><span class="eyebrow">New · AI social media manager</span><h2 style="font-size:clamp(2rem,3.4vw,2.8rem)">XocialAI</h2></div></div>
         <p class="lead">Social media on autopilot. XocialAI writes posts that sound like you, makes the images, and publishes them on the days you choose. Want to check each one first? Turn on email approval.</p>
@@ -40,10 +40,10 @@
               <div class="pp-head"><i></i><div><b style="font-size:.8rem">Your business</b><div class="muted" style="font-size:.68rem">Tue 10:00 · hands-free</div></div></div>
               <div style="font-size:.8rem">New rye sourdough, on the counter now. Crackly crust, soft middle. It usually sells out by noon.</div>
               <div class="pp-img" style="height:96px"></div>
-              <div class="pm-nets"><span>Facebook ✓</span><span>Instagram ✓</span><span>LinkedIn ✓</span><span>Threads ✓</span><span>Pinterest ✓</span><span>+4</span></div>
+              <div class="pm-nets" data-sequence><span data-seq>Facebook ✓</span><span data-seq>Instagram ✓</span><span data-seq>LinkedIn ✓</span><span data-seq>Threads ✓</span><span data-seq>Pinterest ✓</span><span data-seq>+4</span></div>
             </div>
-            <div class="flow" style="justify-content:space-between;font-size:.7rem">
-              <span class="badge badge-success" style="height:22px">Topic ✓</span><span class="badge badge-success" style="height:22px">Caption ✓</span><span class="badge badge-success" style="height:22px">Image ✓</span><span class="badge badge-success" style="height:22px">Posted ✓</span>
+            <div class="flow" style="justify-content:space-between;font-size:.7rem" data-sequence>
+              <span class="badge badge-success" style="height:22px" data-seq>Topic ✓</span><span class="badge badge-success" style="height:22px" data-seq>Caption ✓</span><span class="badge badge-success" style="height:22px" data-seq>Image ✓</span><span class="badge badge-success" style="height:22px" data-seq>Posted ✓</span>
             </div>
           </div>
         </div>
@@ -58,12 +58,12 @@
     <div class="split">
       <div class="product-card reveal" style="border-color:var(--line)">
         <div class="product-visual pv-xpre" style="aspect-ratio:4/3.4">
-          <div class="pm-panel">
+          <div class="pm-panel" data-tickup-host style="position:relative">
             <div class="pm-product"><i></i><div><b>Trail Runner GTX</b><div class="muted">$149.00</div><div class="pm-note" style="margin-top:4px">{{ icon('clock', 13) }} Expected to ship 12 Dec</div></div></div>
             <span class="pm-btn">Pre-order now</span>
             <div class="plan-specs" style="font-size:.74rem;padding:10px">
               <div><span>Stock</span><b>0 available</b></div>
-              <div><span>Pre-orders</span><b>128 reserved</b></div>
+              <div><span>Pre-orders</span><b><span data-tickup="+1 pre-order">128</span> reserved</b></div>
             </div>
           </div>
         </div>

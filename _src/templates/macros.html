@@ -3,10 +3,10 @@
    ====================================================================== #}
 
 {% macro section_head(eyebrow, title, lead=None, center=False, cls='') -%}
-<div class="section-head {{ 'center' if center }} {{ cls }}">
-  {% if eyebrow %}<span class="eyebrow">{{ eyebrow }}</span>{% endif %}
-  <h2 class="balance">{{ title | safe }}</h2>
-  {% if lead %}<p class="lead pretty">{{ lead | safe }}</p>{% endif %}
+<div class="section-head {{ 'center' if center }} {{ cls }}" data-stagger>
+  {% if eyebrow %}<span class="eyebrow reveal">{{ eyebrow }}</span>{% endif %}
+  <h2 class="balance reveal">{{ title | safe }}</h2>
+  {% if lead %}<p class="lead pretty reveal">{{ lead | safe }}</p>{% endif %}
 </div>
 {%- endmacro %}
 
@@ -94,17 +94,17 @@
 {% macro svc_visual(kind) -%}
 {% if kind == 'sync' %}
 <div class="mini-visual">
-  <div class="flow" style="justify-content:space-between">
+  <div class="flow flow-h">
     <span class="flow-node">{{ icon('shopping-bag', 14) }} Shopify</span>
-    <span class="flow-arrow">{{ icon('refresh', 16) }}</span>
+    <span class="wire" aria-hidden="true"><i class="pkt"></i><i class="pkt rev"></i></span>
     <span class="flow-node ai">{{ icon('code', 14) }} Custom app</span>
-    <span class="flow-arrow">{{ icon('refresh', 16) }}</span>
+    <span class="wire" aria-hidden="true"><i class="pkt"></i><i class="pkt rev"></i></span>
     <span class="flow-node">{{ icon('database', 14) }} ERP / CRM</span>
   </div>
 </div>
 {% elif kind == 'tickets' %}
 <div class="mini-visual">
-  <ul class="ticket-mini">
+  <ul class="ticket-mini" data-feed>
     <li><span class="t"><span class="dot"></span><span>Checkout script conflict fixed</span></span><span class="mono">3h 12m</span></li>
     <li><span class="t"><span class="dot"></span><span>Webhook retries resolved</span></span><span class="mono">1h 40m</span></li>
     <li><span class="t"><span class="dot" style="background:var(--warn)"></span><span>Theme update on staging</span></span><span class="mono">in review</span></li>
@@ -112,17 +112,17 @@
 </div>
 {% elif kind == 'flow' %}
 <div class="mini-visual">
-  <div class="flow" style="justify-content:space-between">
-    <span class="flow-node">{{ icon('mail', 14) }} New lead</span>
-    <span class="flow-arrow">{{ icon('arrow-right', 14) }}</span>
-    <span class="flow-node ai">{{ icon('sparkles', 14) }} AI qualify</span>
-    <span class="flow-arrow">{{ icon('arrow-right', 14) }}</span>
-    <span class="flow-node">{{ icon('users', 14) }} CRM + Slack</span>
+  <div class="flow-v">
+    <span class="flow-node">{{ icon('mail', 14) }} New lead arrives</span>
+    <span class="wire wire-v" aria-hidden="true"><i class="pkt"></i></span>
+    <span class="flow-node ai">{{ icon('sparkles', 14) }} AI scores & summarises</span>
+    <span class="wire wire-v" aria-hidden="true"><i class="pkt" style="animation-delay:-1.3s"></i></span>
+    <span class="flow-node">{{ icon('users', 14) }} CRM + Slack alert</span>
   </div>
 </div>
 {% elif kind == 'answer' %}
-<div class="mini-visual answer-mock">
-  <div class="answer-q">{{ icon('sparkles', 14) }} Who builds custom Shopify integrations?</div>
+<div class="mini-visual answer-mock" data-answer>
+  <div class="answer-q">{{ icon('sparkles', 14) }} <span class="q-text" data-type="Who builds custom Shopify integrations?">Who builds custom Shopify integrations?</span></div>
   <div class="answer-a">
     <div class="ln" style="width:94%"></div><div class="ln" style="width:78%"></div>
     <div class="answer-src"><span class="me">yourbrand.com</span><span>google.com</span><span>reddit.com</span></div>
@@ -156,7 +156,7 @@
 {%- endmacro %}
 
 {% macro process(steps) -%}
-<ol class="process">
+<ol class="process" data-inview>
   {% for n, t, d in steps %}
   <li class="step reveal reveal-d{{ loop.index0 if loop.index0 < 5 else 4 }}">
     <span class="step-num">{{ n }}</span>

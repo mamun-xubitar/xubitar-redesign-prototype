@@ -23,13 +23,13 @@
         <li>{{ icon('check-circle', 17) }} Start with a small pilot task</li>
       </ul>
     </div>
-    <div class="svc-hero-card reveal" data-note="Visual shows how we plug into an agency's workflow: their client, their PM tool, our engineers behind the scenes.">
+    <div class="svc-hero-card reveal" data-note="Live diagram: requests flow down from the client through the agency to Xubitar, and finished work flows back up. Shows how we plug into an agency's workflow, with our engineers behind the scenes.">
       <div class="row-between"><strong>How the partnership looks</strong><span class="badge badge-soft">White-label</span></div>
       <div class="arch" style="grid-template-columns:1fr;gap:8px;padding:16px">
         <div class="arch-node" style="grid-template-columns:auto 1fr;justify-items:start;text-align:left;align-items:center;column-gap:12px"><span class="icon-box" style="grid-row:span 2">{{ icon('store', 18) }}</span><b>Your client</b><span>Sees only your agency</span></div>
-        <div class="arch-arrow" style="transform:none">{{ icon('arrow-down', 16) }}</div>
+        <span class="wire wire-v" aria-hidden="true" style="height:26px"><i class="pkt"></i><i class="pkt rev"></i></span>
         <div class="arch-node" style="grid-template-columns:auto 1fr;justify-items:start;text-align:left;align-items:center;column-gap:12px"><span class="icon-box" style="grid-row:span 2">{{ icon('briefcase', 18) }}</span><b>Your agency</b><span>Owns the relationship & strategy</span></div>
-        <div class="arch-arrow" style="transform:none">{{ icon('arrow-down', 16) }}</div>
+        <span class="wire wire-v" aria-hidden="true" style="height:26px"><i class="pkt"></i><i class="pkt rev"></i></span>
         <div class="arch-node core" style="grid-template-columns:auto 1fr;justify-items:start;text-align:left;align-items:center;column-gap:12px"><span class="icon-box" style="grid-row:span 2">{{ icon('code', 18) }}</span><b>Xubitar engineers</b><span>Build, test & document — in your Slack, Jira or Linear</span></div>
       </div>
     </div>

@@ -11,7 +11,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400..600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
-<script>document.documentElement.classList.remove('no-js');try{var a=localStorage.getItem('xb-accent');if(a)document.documentElement.dataset.accent=a;}catch(e){}</script>
+<link rel="stylesheet" href="css/motion.css">
+<script>document.documentElement.classList.remove('no-js');if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('motion');try{var a=localStorage.getItem('xb-accent');if(a)document.documentElement.dataset.accent=a;}catch(e){}</script>
 </head>
 <body class="page-services">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -81,21 +82,21 @@
     <div class="header-cta">
       <a class="btn btn-ghost btn-sm hide-md" href="contact.html#book"><svg class="icon icon-calendar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M8 3v4"/><path d="M16 3v4"/></svg> Book a call</a>
       <a class="btn btn-primary btn-sm" href="contact.html">Start a project <svg class="icon icon-arrow-right" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
-      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" data-menu-toggle><svg class="icon icon-menu" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></svg></button>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" data-menu-toggle><span class="burger" aria-hidden="true"><i></i><i></i><i></i></span></button>
     </div>
   </div>
-  <div class="mobile-menu" data-mobile-menu hidden>
+  <div class="mobile-menu" data-mobile-menu data-lenis-prevent hidden>
     <div class="m-group">
-      <div class="m-title">Services</div>
-<a class="m-link" href="service-shopify-development.html">Shopify Development &amp; Integrations <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a><a class="m-link" href="service-shopify-support.html">Support &amp; Maintenance <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a><a class="m-link" href="service-ai-automation.html">AI Automation &amp; Workflows <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a><a class="m-link" href="service-seo-ai-search.html">SEO &amp; AI Search Visibility <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a><a class="m-link" href="service-custom-web.html">Custom Web Solutions <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>      <a class="m-link" href="services.html">All services <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+      <div class="m-title" style="--i:1">Services</div>
+<a class="m-link" style="--i:1" href="service-shopify-development.html">Shopify Development &amp; Integrations <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a><a class="m-link" style="--i:2" href="service-shopify-support.html">Support &amp; Maintenance <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a><a class="m-link" style="--i:3" href="service-ai-automation.html">AI Automation &amp; Workflows <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a><a class="m-link" style="--i:4" href="service-seo-ai-search.html">SEO &amp; AI Search Visibility <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a><a class="m-link" style="--i:5" href="service-custom-web.html">Custom Web Solutions <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>      <a class="m-link" style="--i:7" href="services.html">All services <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
     </div>
     <div class="m-group">
-      <div class="m-title">Company</div>
-      <a class="m-link" href="work.html">Work <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
-      <a class="m-link" href="products.html">Products <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
-      <a class="m-link" href="agencies.html">For agencies <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
-      <a class="m-link" href="about.html">About <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
-      <a class="m-link" href="careers.html">Careers <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+      <div class="m-title" style="--i:8">Company</div>
+      <a class="m-link" style="--i:9" href="work.html">Work <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+      <a class="m-link" style="--i:10" href="products.html">Products <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+      <a class="m-link" style="--i:11" href="agencies.html">For agencies <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+      <a class="m-link" style="--i:12" href="about.html">About <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+      <a class="m-link" style="--i:13" href="careers.html">Careers <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
     </div>
     <div class="m-cta">
       <a class="btn btn-primary btn-lg" href="contact.html">Start a project <svg class="icon icon-arrow-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
@@ -131,9 +132,9 @@
 
 <section class="section-sm section-surface" id="goal">
   <div class="container">
-    <div class="section-head  ">
-<span class="eyebrow">Start from your goal</span>  <h2 class="balance">Not sure which service you need?</h2>
-<p class="lead pretty">Pick the sentence that sounds most like you.</p></div>
+    <div class="section-head  " data-stagger>
+<span class="eyebrow reveal">Start from your goal</span>  <h2 class="balance reveal">Not sure which service you need?</h2>
+<p class="lead pretty reveal">Pick the sentence that sounds most like you.</p></div>
     <div class="grid grid-3" data-note="'Start from your goal' helps buyers who don't know the technical name of what they need (common for startups). Each goal maps to one service.">
       <a class="card card-hover row-between reveal " href="#shopify-development" style="align-items:center">
         <div class="stack-sm"><strong style="font-size:1.02rem;letter-spacing:-.01em">“I need a feature no Shopify app provides”</strong><span class="small muted">Shopify Development &amp; Integrations</span></div>
@@ -166,7 +167,7 @@
 <section class="section " id="shopify-development">
   <div class="container">
     <div class="split" style="align-items:center">
-      <div class="stack-lg ">
+      <div class="stack-lg reveal reveal-left">
         <div class="stack">
           <span class="svc-num">01 / 05</span>
           <h2 class="balance" style="font-size:clamp(1.8rem,3vw,2.5rem)">Shopify Custom Development &amp; Integrations</h2>
@@ -179,14 +180,14 @@
           <a class="btn btn-ghost" href="contact.html">Get a quote</a>
         </div>
       </div>
-      <div class="svc-hero-card reveal">
+      <div class="svc-hero-card reveal reveal-scale reveal-d1">
         <div class="row-between"><span class="icon-box"><svg class="icon icon-code" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 8l-4 4 4 4"/><path d="M16 8l4 4-4 4"/><path d="M13.5 5l-3 14"/></svg></span><span class="badge badge-soft">When standard features and existing apps aren&#39;t enough.</span></div>
         <div class="mini-visual">
-  <div class="flow" style="justify-content:space-between">
+  <div class="flow flow-h">
     <span class="flow-node"><svg class="icon icon-shopping-bag" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 7.5h13l1 12.5h-15z"/><path d="M9 7.5V6.5a3 3 0 0 1 6 0v1"/></svg> Shopify</span>
-    <span class="flow-arrow"><svg class="icon icon-refresh" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11a8 8 0 0 0-14.6-4.5L3.5 9"/><path d="M3.5 4v5h5"/><path d="M4 13a8 8 0 0 0 14.6 4.5l1.9-2.5"/><path d="M20.5 20v-5h-5"/></svg></span>
+    <span class="wire" aria-hidden="true"><i class="pkt"></i><i class="pkt rev"></i></span>
     <span class="flow-node ai"><svg class="icon icon-code" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 8l-4 4 4 4"/><path d="M16 8l4 4-4 4"/><path d="M13.5 5l-3 14"/></svg> Custom app</span>
-    <span class="flow-arrow"><svg class="icon icon-refresh" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11a8 8 0 0 0-14.6-4.5L3.5 9"/><path d="M3.5 4v5h5"/><path d="M4 13a8 8 0 0 0 14.6 4.5l1.9-2.5"/><path d="M20.5 20v-5h-5"/></svg></span>
+    <span class="wire" aria-hidden="true"><i class="pkt"></i><i class="pkt rev"></i></span>
     <span class="flow-node"><svg class="icon icon-database" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5.5" rx="8" ry="2.8"/><path d="M4 5.5v13c0 1.6 3.6 2.8 8 2.8s8-1.2 8-2.8v-13"/><path d="M4 12c0 1.6 3.6 2.8 8 2.8s8-1.2 8-2.8"/></svg> ERP / CRM</span>
   </div>
 </div>
@@ -202,7 +203,7 @@
 <section class="section section-line" id="shopify-support">
   <div class="container">
     <div class="split" style="align-items:center">
-      <div class="stack-lg order-2">
+      <div class="stack-lg reveal order-2 reveal-right">
         <div class="stack">
           <span class="svc-num">02 / 05</span>
           <h2 class="balance" style="font-size:clamp(1.8rem,3vw,2.5rem)">Shopify Technical Support &amp; Maintenance</h2>
@@ -215,10 +216,10 @@
           <a class="btn btn-ghost" href="contact.html">Get a quote</a>
         </div>
       </div>
-      <div class="svc-hero-card reveal">
+      <div class="svc-hero-card reveal reveal-scale reveal-d1">
         <div class="row-between"><span class="icon-box"><svg class="icon icon-life-buoy" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.8"/><path d="M5.6 5.6l3.7 3.7"/><path d="M14.7 14.7l3.7 3.7"/><path d="M18.4 5.6l-3.7 3.7"/><path d="M9.3 14.7l-3.7 3.7"/></svg></span><span class="badge badge-soft">A development partner on call — without a full-time hire.</span></div>
         <div class="mini-visual">
-  <ul class="ticket-mini">
+  <ul class="ticket-mini" data-feed>
     <li><span class="t"><span class="dot"></span><span>Checkout script conflict fixed</span></span><span class="mono">3h 12m</span></li>
     <li><span class="t"><span class="dot"></span><span>Webhook retries resolved</span></span><span class="mono">1h 40m</span></li>
     <li><span class="t"><span class="dot" style="background:var(--warn)"></span><span>Theme update on staging</span></span><span class="mono">in review</span></li>
@@ -236,7 +237,7 @@
 <section class="section section-line" id="ai-automation">
   <div class="container">
     <div class="split" style="align-items:center">
-      <div class="stack-lg ">
+      <div class="stack-lg reveal reveal-left">
         <div class="stack">
           <span class="svc-num">03 / 05</span>
           <h2 class="balance" style="font-size:clamp(1.8rem,3vw,2.5rem)">AI Automation &amp; Business Workflow Integration</h2>
@@ -249,15 +250,15 @@
           <a class="btn btn-ghost" href="contact.html">Get a quote</a>
         </div>
       </div>
-      <div class="svc-hero-card reveal">
+      <div class="svc-hero-card reveal reveal-scale reveal-d1">
         <div class="row-between"><span class="icon-box"><svg class="icon icon-sparkles" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 3l1.9 5.1L18 10l-5.1 1.9L11 17l-1.9-5.1L4 10l5.1-1.9z"/><path d="M18.5 14.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/></svg></span><span class="badge badge-soft">Less copy-paste. More time for the work that matters.</span></div>
         <div class="mini-visual">
-  <div class="flow" style="justify-content:space-between">
-    <span class="flow-node"><svg class="icon icon-mail" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 7l8.5 6 8.5-6"/></svg> New lead</span>
-    <span class="flow-arrow"><svg class="icon icon-arrow-right" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></span>
-    <span class="flow-node ai"><svg class="icon icon-sparkles" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 3l1.9 5.1L18 10l-5.1 1.9L11 17l-1.9-5.1L4 10l5.1-1.9z"/><path d="M18.5 14.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/></svg> AI qualify</span>
-    <span class="flow-arrow"><svg class="icon icon-arrow-right" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></span>
-    <span class="flow-node"><svg class="icon icon-users" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8"/><path d="M18.5 14.2A6.5 6.5 0 0 1 21.5 20"/></svg> CRM + Slack</span>
+  <div class="flow-v">
+    <span class="flow-node"><svg class="icon icon-mail" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 7l8.5 6 8.5-6"/></svg> New lead arrives</span>
+    <span class="wire wire-v" aria-hidden="true"><i class="pkt"></i></span>
+    <span class="flow-node ai"><svg class="icon icon-sparkles" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 3l1.9 5.1L18 10l-5.1 1.9L11 17l-1.9-5.1L4 10l5.1-1.9z"/><path d="M18.5 14.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/></svg> AI scores & summarises</span>
+    <span class="wire wire-v" aria-hidden="true"><i class="pkt" style="animation-delay:-1.3s"></i></span>
+    <span class="flow-node"><svg class="icon icon-users" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8"/><path d="M18.5 14.2A6.5 6.5 0 0 1 21.5 20"/></svg> CRM + Slack alert</span>
   </div>
 </div>
 
@@ -272,7 +273,7 @@
 <section class="section section-line" id="seo-ai-search">
   <div class="container">
     <div class="split" style="align-items:center">
-      <div class="stack-lg order-2">
+      <div class="stack-lg reveal order-2 reveal-right">
         <div class="stack">
           <span class="svc-num">04 / 05</span>
           <h2 class="balance" style="font-size:clamp(1.8rem,3vw,2.5rem)">SEO, AEO, GEO, LLMO &amp; AI SEO</h2>
@@ -285,10 +286,10 @@
           <a class="btn btn-ghost" href="contact.html">Get a quote</a>
         </div>
       </div>
-      <div class="svc-hero-card reveal">
+      <div class="svc-hero-card reveal reveal-scale reveal-d1">
         <div class="row-between"><span class="icon-box"><svg class="icon icon-search" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg></span><span class="badge badge-soft">Be easy to find, understand and reference.</span></div>
-        <div class="mini-visual answer-mock">
-  <div class="answer-q"><svg class="icon icon-sparkles" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 3l1.9 5.1L18 10l-5.1 1.9L11 17l-1.9-5.1L4 10l5.1-1.9z"/><path d="M18.5 14.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/></svg> Who builds custom Shopify integrations?</div>
+        <div class="mini-visual answer-mock" data-answer>
+  <div class="answer-q"><svg class="icon icon-sparkles" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 3l1.9 5.1L18 10l-5.1 1.9L11 17l-1.9-5.1L4 10l5.1-1.9z"/><path d="M18.5 14.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/></svg> <span class="q-text" data-type="Who builds custom Shopify integrations?">Who builds custom Shopify integrations?</span></div>
   <div class="answer-a">
     <div class="ln" style="width:94%"></div><div class="ln" style="width:78%"></div>
     <div class="answer-src"><span class="me">yourbrand.com</span><span>google.com</span><span>reddit.com</span></div>
@@ -306,7 +307,7 @@
 <section class="section section-line" id="custom-web">
   <div class="container">
     <div class="split" style="align-items:center">
-      <div class="stack-lg ">
+      <div class="stack-lg reveal reveal-left">
         <div class="stack">
           <span class="svc-num">05 / 05</span>
           <h2 class="balance" style="font-size:clamp(1.8rem,3vw,2.5rem)">Custom Web Solutions</h2>
@@ -319,7 +320,7 @@
           <a class="btn btn-ghost" href="contact.html">Get a quote</a>
         </div>
       </div>
-      <div class="svc-hero-card reveal">
+      <div class="svc-hero-card reveal reveal-scale reveal-d1">
         <div class="row-between"><span class="icon-box"><svg class="icon icon-monitor" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8"/><path d="M12 16v4"/></svg></span><span class="badge badge-soft">A website that earns trust before the first call.</span></div>
         <div class="browser-mock">
   <div class="bm-top"><i></i><i></i><i></i></div>
@@ -337,9 +338,9 @@
 
 <section class="section section-dark">
   <div class="container">
-    <div class="section-head  ">
-<span class="eyebrow">Ways to work together</span>  <h2 class="balance">Pick the engagement that fits how you work</h2>
-<p class="lead pretty">Every engagement starts with a free discovery call and a written scope.</p></div>
+    <div class="section-head  " data-stagger>
+<span class="eyebrow reveal">Ways to work together</span>  <h2 class="balance reveal">Pick the engagement that fits how you work</h2>
+<p class="lead pretty reveal">Every engagement starts with a free discovery call and a written scope.</p></div>
     <div class="grid grid-3" data-note="Engagement models make buying easier: a buyer can see how they'd pay before they contact us. Matches the plan's fixed scope / monthly plan / agency partner offers.">
       <div class="card engage reveal ">
         <span class="icon-box"><svg class="icon icon-file-text" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6"/><path d="M9 17h6"/></svg></span>
@@ -365,10 +366,10 @@
 
 <section class="section">
   <div class="container">
-    <div class="section-head  ">
-<span class="eyebrow">How we work</span>  <h2 class="balance">The same clear process for every service</h2>
+    <div class="section-head  " data-stagger>
+<span class="eyebrow reveal">How we work</span>  <h2 class="balance reveal">The same clear process for every service</h2>
 </div>
-    <ol class="process">
+    <ol class="process" data-inview>
   <li class="step reveal reveal-d0">
     <span class="step-num">01</span>
     <h4>Discovery call</h4>
@@ -490,7 +491,7 @@
         <span>Real engineers join when you need them</span>
       </div>
     </div>
-    <div class="chat-body" data-chat-body>
+    <div class="chat-body" data-chat-body data-lenis-prevent>
       <div class="msg system">Today</div>
       <div class="msg bot">Hi, I'm Toki. I can answer questions about Xubitar's services, pricing and process — or connect you with an engineer.</div>
       <div class="msg bot">What can I help you with?</div>
@@ -508,14 +509,19 @@
     </form>
     <div class="chat-foot">Powered by Toki · AI assistant with human handoff</div>
   </div>
+  <div class="chat-nudge" data-chat-nudge role="status" hidden>
+    <button class="nudge-x" aria-label="Dismiss" data-nudge-close><svg class="icon icon-x" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12"/><path d="M18 6L6 18"/></svg></button>
+    <b>Questions about a project?</b>
+    <span class="muted">Ask Toki about services, pricing or timelines — real engineers join when needed.</span>
+  </div>
   <button class="chat-launcher" data-chat-toggle aria-label="Chat with us" aria-expanded="false">
-    <span class="cl-icon"><svg class="icon icon-message-circle" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.6L3 20.5l1.4-5.2A8.5 8.5 0 1 1 21 11.5z"/></svg></span>
+    <span class="cl-icon"><svg class="icon icon-message-circle" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.6L3 20.5l1.4-5.2A8.5 8.5 0 1 1 21 11.5z"/></svg><span class="cl-badge" data-chat-badge hidden>1</span></span>
     <span class="cl-label">Chat with us</span>
   </button>
 </div>
 
 <div class="review" data-review>
-  <div class="review-panel" hidden data-review-panel>
+  <div class="review-panel" hidden data-review-panel data-lenis-prevent>
     <div class="row-between"><strong style="font-size:.95rem">Design review</strong><span class="badge">Prototype v1</span></div>
     <div>
       <h6>Jump to page</h6>
@@ -544,7 +550,10 @@
   <button class="review-fab" data-review-toggle aria-expanded="false"><svg class="icon icon-eye" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 12S6 5 12 5s9.5 7 9.5 7-3.5 7-9.5 7-9.5-7-9.5-7z"/><circle cx="12" cy="12" r="3"/></svg> <span class="lbl">Review</span> <span class="cnt" data-notes-count>0</span></button>
 </div>
 
+<script src="js/vendor/lenis.min.js"></script>
 <script src="js/main.js"></script>
+<script src="js/motion.js"></script>
+<script src="js/widgets.js"></script>
 <script src="js/review.js"></script>
 </body>
 </html>

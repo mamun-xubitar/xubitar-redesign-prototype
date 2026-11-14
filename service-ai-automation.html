@@ -11,7 +11,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400..600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
-<script>document.documentElement.classList.remove('no-js');try{var a=localStorage.getItem('xb-accent');if(a)document.documentElement.dataset.accent=a;}catch(e){}</script>
+<link rel="stylesheet" href="css/motion.css">
+<script>document.documentElement.classList.remove('no-js');if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('motion');try{var a=localStorage.getItem('xb-accent');if(a)document.documentElement.dataset.accent=a;}catch(e){}</script>
 </head>
 <body class="page-service">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -81,21 +82,21 @@
     <div class="header-cta">
       <a class="btn btn-ghost btn-sm hide-md" href="contact.html#book"><svg class="icon icon-calendar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M8 3v4"/><path d="M16 3v4"/></svg> Book a call</a>
       <a class="btn btn-primary btn-sm" href="contact.html">Start a project <svg class="icon icon-arrow-right" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
-      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" data-menu-toggle><svg class="icon icon-menu" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></svg></button>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" data-menu-toggle><span class="burger" aria-hidden="true"><i></i><i></i><i></i></span></button>
     </div>
   </div>
-  <div class="mobile-menu" data-mobile-menu hidden>
+  <div class="mobile-menu" data-mobile-menu data-lenis-prevent hidden>
     <div class="m-group">
-      <div class="m-title">Services</div>
-<a class="m-link" href="service-shopify-development.html">Shopify Development &amp; Integrations <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a><a class="m-link" href="service-shopify-support.html">Support &amp; Maintenance <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a><a class="m-link" href="service-ai-automation.html">AI Automation &amp; Workflows <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a><a class="m-link" href="service-seo-ai-search.html">SEO &amp; AI Search Visibility <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a><a class="m-link" href="service-custom-web.html">Custom Web Solutions <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>      <a class="m-link" href="services.html">All services <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+      <div class="m-title" style="--i:1">Services</div>
+<a class="m-link" style="--i:1" href="service-shopify-development.html">Shopify Development &amp; Integrations <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a><a class="m-link" style="--i:2" href="service-shopify-support.html">Support &amp; Maintenance <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a><a class="m-link" style="--i:3" href="service-ai-automation.html">AI Automation &amp; Workflows <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a><a class="m-link" style="--i:4" href="service-seo-ai-search.html">SEO &amp; AI Search Visibility <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a><a class="m-link" style="--i:5" href="service-custom-web.html">Custom Web Solutions <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>      <a class="m-link" style="--i:7" href="services.html">All services <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
     </div>
     <div class="m-group">
-      <div class="m-title">Company</div>
-      <a class="m-link" href="work.html">Work <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
-      <a class="m-link" href="products.html">Products <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
-      <a class="m-link" href="agencies.html">For agencies <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
-      <a class="m-link" href="about.html">About <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
-      <a class="m-link" href="careers.html">Careers <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+      <div class="m-title" style="--i:8">Company</div>
+      <a class="m-link" style="--i:9" href="work.html">Work <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+      <a class="m-link" style="--i:10" href="products.html">Products <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+      <a class="m-link" style="--i:11" href="agencies.html">For agencies <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+      <a class="m-link" style="--i:12" href="about.html">About <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+      <a class="m-link" style="--i:13" href="careers.html">Careers <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
     </div>
     <div class="m-cta">
       <a class="btn btn-primary btn-lg" href="contact.html">Start a project <svg class="icon icon-arrow-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
@@ -122,15 +123,15 @@
         <li><svg class="icon icon-check-circle" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.2l2.4 2.4 4.6-4.8"/></svg> Best for: Operations teams, startups and ecommerce brands</li>
       </ul>
     </div>
-    <aside class="svc-hero-card reveal" data-note="Hero summary card: a visual hint of the service plus the 4 most important deliverables, so a skimming visitor understands the offer in seconds.">
+    <aside class="svc-hero-card reveal reveal-scale reveal-d2" data-note="Hero summary card: a visual hint of the service plus the 4 most important deliverables, so a skimming visitor understands the offer in seconds.">
       <div class="row-between"><span class="icon-box"><svg class="icon icon-sparkles" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 3l1.9 5.1L18 10l-5.1 1.9L11 17l-1.9-5.1L4 10l5.1-1.9z"/><path d="M18.5 14.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/></svg></span><span class="badge badge-soft">Less copy-paste. More time for the work that matters.</span></div>
       <div class="mini-visual">
-  <div class="flow" style="justify-content:space-between">
-    <span class="flow-node"><svg class="icon icon-mail" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 7l8.5 6 8.5-6"/></svg> New lead</span>
-    <span class="flow-arrow"><svg class="icon icon-arrow-right" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></span>
-    <span class="flow-node ai"><svg class="icon icon-sparkles" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 3l1.9 5.1L18 10l-5.1 1.9L11 17l-1.9-5.1L4 10l5.1-1.9z"/><path d="M18.5 14.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/></svg> AI qualify</span>
-    <span class="flow-arrow"><svg class="icon icon-arrow-right" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></span>
-    <span class="flow-node"><svg class="icon icon-users" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8"/><path d="M18.5 14.2A6.5 6.5 0 0 1 21.5 20"/></svg> CRM + Slack</span>
+  <div class="flow-v">
+    <span class="flow-node"><svg class="icon icon-mail" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 7l8.5 6 8.5-6"/></svg> New lead arrives</span>
+    <span class="wire wire-v" aria-hidden="true"><i class="pkt"></i></span>
+    <span class="flow-node ai"><svg class="icon icon-sparkles" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 3l1.9 5.1L18 10l-5.1 1.9L11 17l-1.9-5.1L4 10l5.1-1.9z"/><path d="M18.5 14.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/></svg> AI scores & summarises</span>
+    <span class="wire wire-v" aria-hidden="true"><i class="pkt" style="animation-delay:-1.3s"></i></span>
+    <span class="flow-node"><svg class="icon icon-users" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8"/><path d="M18.5 14.2A6.5 6.5 0 0 1 21.5 20"/></svg> CRM + Slack alert</span>
   </div>
 </div>
 
@@ -153,7 +154,7 @@
         <a class="link mt-1" href="contact.html">Tell us about yours <svg class="icon icon-arrow-right" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
       </div>
       <ul class="problem-list" data-note="Problem-first copy: visitors recognise their own situation before reading about features. Copy is written from the target personas in the 6-month plan.">
-<li class="reveal reveal-d0"><svg class="icon icon-alert" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5l9.5 16.5h-19z"/><path d="M12 10v4.5"/><path d="M12 17.4v.2"/></svg><span>Your team copies data between tools every day</span></li><li class="reveal reveal-d1"><svg class="icon icon-alert" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5l9.5 16.5h-19z"/><path d="M12 10v4.5"/><path d="M12 17.4v.2"/></svg><span>Leads sit in inboxes before anyone follows up</span></li><li class="reveal reveal-d2"><svg class="icon icon-alert" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5l9.5 16.5h-19z"/><path d="M12 10v4.5"/><path d="M12 17.4v.2"/></svg><span>Support answers the same questions again and again</span></li><li class="reveal reveal-d3"><svg class="icon icon-alert" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5l9.5 16.5h-19z"/><path d="M12 10v4.5"/><path d="M12 17.4v.2"/></svg><span>Reports take hours to put together every week</span></li><li class="reveal reveal-d4"><svg class="icon icon-alert" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5l9.5 16.5h-19z"/><path d="M12 10v4.5"/><path d="M12 17.4v.2"/></svg><span>Content and social posting is always behind schedule</span></li>      </ul>
+<li class="reveal reveal-right reveal-d0"><svg class="icon icon-alert" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5l9.5 16.5h-19z"/><path d="M12 10v4.5"/><path d="M12 17.4v.2"/></svg><span>Your team copies data between tools every day</span></li><li class="reveal reveal-right reveal-d1"><svg class="icon icon-alert" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5l9.5 16.5h-19z"/><path d="M12 10v4.5"/><path d="M12 17.4v.2"/></svg><span>Leads sit in inboxes before anyone follows up</span></li><li class="reveal reveal-right reveal-d2"><svg class="icon icon-alert" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5l9.5 16.5h-19z"/><path d="M12 10v4.5"/><path d="M12 17.4v.2"/></svg><span>Support answers the same questions again and again</span></li><li class="reveal reveal-right reveal-d3"><svg class="icon icon-alert" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5l9.5 16.5h-19z"/><path d="M12 10v4.5"/><path d="M12 17.4v.2"/></svg><span>Reports take hours to put together every week</span></li><li class="reveal reveal-right reveal-d4"><svg class="icon icon-alert" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5l9.5 16.5h-19z"/><path d="M12 10v4.5"/><path d="M12 17.4v.2"/></svg><span>Content and social posting is always behind schedule</span></li>      </ul>
     </div>
   </div>
 </section>
@@ -161,46 +162,46 @@
 
 <section class="section " id="included">
   <div class="container">
-    <div class="section-head  ">
-<span class="eyebrow">What’s included</span>  <h2 class="balance">Our AI Automation & Workflows services</h2>
+    <div class="section-head  " data-stagger>
+<span class="eyebrow reveal">What’s included</span>  <h2 class="balance reveal">Our AI Automation & Workflows services</h2>
 </div>
     <div class="included-grid">
-      <div class="included-item reveal ">
+      <div class="included-item reveal reveal-scale ">
         <span class="icon-box"><svg class="icon icon-workflow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><path d="M10 6.5h4.5a3 3 0 0 1 3 3V14"/></svg></span>
         <h4>AI-powered workflow automation</h4>
         <p>Combine AI with clear business rules and human approval steps.</p>
       </div>
-      <div class="included-item reveal reveal-d1">
+      <div class="included-item reveal reveal-scale reveal-d1">
         <span class="icon-box"><svg class="icon icon-git-branch" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="5.5" r="2.2"/><circle cx="6" cy="18.5" r="2.2"/><circle cx="18" cy="8" r="2.2"/><path d="M6 7.7v8.6"/><path d="M18 10.2c0 4-6.2 3.6-11 6.6"/></svg></span>
         <h4>n8n workflow development</h4>
         <p>Self-hosted or cloud n8n workflows, documented and monitored.</p>
       </div>
-      <div class="included-item reveal reveal-d2">
+      <div class="included-item reveal reveal-scale reveal-d2">
         <span class="icon-box"><svg class="icon icon-users" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8"/><path d="M18.5 14.2A6.5 6.5 0 0 1 21.5 20"/></svg></span>
         <h4>Lead management &amp; CRM automation</h4>
         <p>Capture, score, route and follow up on leads automatically.</p>
       </div>
-      <div class="included-item reveal ">
+      <div class="included-item reveal reveal-scale ">
         <span class="icon-box"><svg class="icon icon-mail" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 7l8.5 6 8.5-6"/></svg></span>
         <h4>Customer support &amp; email workflows</h4>
         <p>Triage, tag and draft replies for your team to approve.</p>
       </div>
-      <div class="included-item reveal reveal-d1">
+      <div class="included-item reveal reveal-scale reveal-d1">
         <span class="icon-box"><svg class="icon icon-shopping-bag" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 7.5h13l1 12.5h-15z"/><path d="M9 7.5V6.5a3 3 0 0 1 6 0v1"/></svg></span>
         <h4>Shopify order &amp; inventory automation</h4>
         <p>Order routing, stock alerts, tagging and fulfilment flows.</p>
       </div>
-      <div class="included-item reveal reveal-d2">
+      <div class="included-item reveal reveal-scale reveal-d2">
         <span class="icon-box"><svg class="icon icon-pen" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></span>
         <h4>AI content &amp; social scheduling</h4>
         <p>Drafts and schedules on-brand posts — or use our product XocialAI.</p>
       </div>
-      <div class="included-item reveal ">
+      <div class="included-item reveal reveal-scale ">
         <span class="icon-box"><svg class="icon icon-trending-up" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span>
         <h4>Automated reporting &amp; data processing</h4>
         <p>Daily and weekly reports delivered where your team works.</p>
       </div>
-      <div class="included-item reveal reveal-d1">
+      <div class="included-item reveal reveal-scale reveal-d1">
         <span class="icon-box"><svg class="icon icon-plug" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 2.5v5"/><path d="M15 2.5v5"/><path d="M6 7.5h12v3.5a6 6 0 0 1-12 0z"/><path d="M12 17v4.5"/></svg></span>
         <h4>Custom API &amp; webhook integrations</h4>
         <p>When there&#39;s no ready-made connector, we build one.</p>
@@ -223,9 +224,9 @@
 
 <section class="section section-surface">
   <div class="container">
-    <div class="section-head  ">
-<span class="eyebrow">Example workflows</span>  <h2 class="balance">Automations our clients use every day</h2>
-<p class="lead pretty">Every workflow is documented, monitored and has a human approval step where it matters.</p></div>
+    <div class="section-head  " data-stagger>
+<span class="eyebrow reveal">Example workflows</span>  <h2 class="balance reveal">Automations our clients use every day</h2>
+<p class="lead pretty reveal">Every workflow is documented, monitored and has a human approval step where it matters.</p></div>
     <div class="grid grid-2" data-note="Concrete automation examples help non-technical buyers picture the result. Each shows trigger → AI step → action, plus the time saved (sample figures).">
       <div class="card reveal " data-ph>
         <div class="row-between"><h4>Lead qualification</h4><span class="badge badge-success">6 hrs / week</span></div>
@@ -263,13 +264,39 @@
   </div>
 </section>
 
+<section class="section" id="calculator">
+  <div class="container">
+    <div class="section-head  " data-stagger>
+<span class="eyebrow reveal">Savings calculator</span>  <h2 class="balance reveal">How much time could automation give back?</h2>
+<p class="lead pretty reveal">Move the sliders to match your team. It’s a rough estimate — we’ll give you a real one after a short call.</p></div>
+    <div class="calc reveal" data-calc data-note="Interactive savings calculator: a practical lead magnet for startups and ops teams. Numbers update live and animate. Formula: people × hours/week × share automated × 4.33 weeks.">
+      <div class="calc-inputs">
+        <div class="stack-sm"><div class="range-label"><label for="c-people">People doing repetitive work</label><output data-out="people-v">4 people</output></div><input class="range" id="c-people" type="range" min="1" max="25" value="4" data-in="people"></div>
+        <div class="stack-sm"><div class="range-label"><label for="c-hours">Manual hours per person, per week</label><output data-out="hours-v">6 hrs / week</output></div><input class="range" id="c-hours" type="range" min="1" max="20" value="6" data-in="hours"></div>
+        <div class="stack-sm"><div class="range-label"><label for="c-share">Share of that work we could automate</label><output data-out="share-v">50%</output></div><input class="range" id="c-share" type="range" min="20" max="80" step="5" value="50" data-in="share"></div>
+        <div class="stack-sm"><div class="range-label"><label for="c-rate">Average hourly cost</label><output data-out="rate-v">$25 / hr</output></div><input class="range" id="c-rate" type="range" min="10" max="100" step="5" value="25" data-in="rate"></div>
+        <p class="xs subtle">Estimate only. Typical automation covers 30–70% of repetitive tasks; results depend on your tools and processes.</p>
+      </div>
+      <div class="calc-out" aria-live="polite">
+        <div class="stack-sm"><span class="eyebrow">Estimated time saved</span><div><span class="calc-big" data-out="month">52</span> <span class="lead" style="color:var(--on-dark-muted)">hours / month</span></div><div class="calc-bar"><i></i></div></div>
+        <div class="calc-grid">
+          <div><b data-out="year">624</b><span>hours a year</span></div>
+          <div><b data-out="days">78</b><span>working days a year</span></div>
+          <div style="grid-column:1/-1"><b data-out="money">$15,600</b><span>in team time each year</span></div>
+        </div>
+        <a class="btn btn-primary btn-lg" href="contact.html?type=ai">Get a real estimate <svg class="icon icon-arrow-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <section class="section">
   <div class="container">
-    <div class="section-head  ">
-<span class="eyebrow">How it works</span>  <h2 class="balance">From first call to launch — and beyond</h2>
+    <div class="section-head  " data-stagger>
+<span class="eyebrow reveal">How it works</span>  <h2 class="balance reveal">From first call to launch — and beyond</h2>
 </div>
-    <ol class="process">
+    <ol class="process" data-inview>
   <li class="step reveal reveal-d0">
     <span class="step-num">01</span>
     <h4>Discovery call</h4>
@@ -302,8 +329,8 @@
 <section class="section section-surface">
   <div class="container">
     <div class="section-head-row">
-      <div class="section-head  ">
-<span class="eyebrow">Case study</span>  <h2 class="balance">See it in practice</h2>
+      <div class="section-head  " data-stagger>
+<span class="eyebrow reveal">Case study</span>  <h2 class="balance reveal">See it in practice</h2>
 </div>
       <a class="btn btn-outline" href="work.html">All case studies <svg class="icon icon-arrow-right" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
     </div>
@@ -347,9 +374,9 @@
 <section class="section section-surface">
   <div class="container">
     <div class="split split-5-7" style="align-items:start">
-      <div class="section-head  ">
-<span class="eyebrow">FAQ</span>  <h2 class="balance">Common questions</h2>
-<p class="lead pretty">Something else on your mind? Ask Toki in the chat or email support@xubitar.com.</p></div>
+      <div class="section-head  " data-stagger>
+<span class="eyebrow reveal">FAQ</span>  <h2 class="balance reveal">Common questions</h2>
+<p class="lead pretty reveal">Something else on your mind? Ask Toki in the chat or email support@xubitar.com.</p></div>
       <div class="faq">
   <details open>
     <summary>Is it safe to let AI handle customer messages?<span class="pm"><svg class="icon icon-plus" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"/><path d="M5 12h14"/></svg></span></summary>
@@ -374,8 +401,8 @@
 
 <section class="section">
   <div class="container">
-    <div class="section-head  ">
-<span class="eyebrow">More services</span>  <h2 class="balance">Often combined with</h2>
+    <div class="section-head  " data-stagger>
+<span class="eyebrow reveal">More services</span>  <h2 class="balance reveal">Often combined with</h2>
 </div>
     <div class="grid grid-4">
       <a class="card card-hover stack" href="service-shopify-development.html">
@@ -498,7 +525,7 @@
         <span>Real engineers join when you need them</span>
       </div>
     </div>
-    <div class="chat-body" data-chat-body>
+    <div class="chat-body" data-chat-body data-lenis-prevent>
       <div class="msg system">Today</div>
       <div class="msg bot">Hi, I'm Toki. I can answer questions about Xubitar's services, pricing and process — or connect you with an engineer.</div>
       <div class="msg bot">What can I help you with?</div>
@@ -516,14 +543,19 @@
     </form>
     <div class="chat-foot">Powered by Toki · AI assistant with human handoff</div>
   </div>
+  <div class="chat-nudge" data-chat-nudge role="status" hidden>
+    <button class="nudge-x" aria-label="Dismiss" data-nudge-close><svg class="icon icon-x" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12"/><path d="M18 6L6 18"/></svg></button>
+    <b>Questions about a project?</b>
+    <span class="muted">Ask Toki about services, pricing or timelines — real engineers join when needed.</span>
+  </div>
   <button class="chat-launcher" data-chat-toggle aria-label="Chat with us" aria-expanded="false">
-    <span class="cl-icon"><svg class="icon icon-message-circle" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.6L3 20.5l1.4-5.2A8.5 8.5 0 1 1 21 11.5z"/></svg></span>
+    <span class="cl-icon"><svg class="icon icon-message-circle" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.6L3 20.5l1.4-5.2A8.5 8.5 0 1 1 21 11.5z"/></svg><span class="cl-badge" data-chat-badge hidden>1</span></span>
     <span class="cl-label">Chat with us</span>
   </button>
 </div>
 
 <div class="review" data-review>
-  <div class="review-panel" hidden data-review-panel>
+  <div class="review-panel" hidden data-review-panel data-lenis-prevent>
     <div class="row-between"><strong style="font-size:.95rem">Design review</strong><span class="badge">Prototype v1</span></div>
     <div>
       <h6>Jump to page</h6>
@@ -552,7 +584,10 @@
   <button class="review-fab" data-review-toggle aria-expanded="false"><svg class="icon icon-eye" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 12S6 5 12 5s9.5 7 9.5 7-3.5 7-9.5 7-9.5-7-9.5-7z"/><circle cx="12" cy="12" r="3"/></svg> <span class="lbl">Review</span> <span class="cnt" data-notes-count>0</span></button>
 </div>
 
+<script src="js/vendor/lenis.min.js"></script>
 <script src="js/main.js"></script>
+<script src="js/motion.js"></script>
+<script src="js/widgets.js"></script>
 <script src="js/review.js"></script>
 </body>
 </html>

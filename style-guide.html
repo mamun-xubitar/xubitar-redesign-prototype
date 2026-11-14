@@ -11,7 +11,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400..600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
-<script>document.documentElement.classList.remove('no-js');try{var a=localStorage.getItem('xb-accent');if(a)document.documentElement.dataset.accent=a;}catch(e){}</script>
+<link rel="stylesheet" href="css/motion.css">
+<script>document.documentElement.classList.remove('no-js');if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('motion');try{var a=localStorage.getItem('xb-accent');if(a)document.documentElement.dataset.accent=a;}catch(e){}</script>
 </head>
 <body class="page-styleguide">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -81,21 +82,21 @@
     <div class="header-cta">
       <a class="btn btn-ghost btn-sm hide-md" href="contact.html#book"><svg class="icon icon-calendar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M8 3v4"/><path d="M16 3v4"/></svg> Book a call</a>
       <a class="btn btn-primary btn-sm" href="contact.html">Start a project <svg class="icon icon-arrow-right" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
-      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" data-menu-toggle><svg class="icon icon-menu" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></svg></button>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" data-menu-toggle><span class="burger" aria-hidden="true"><i></i><i></i><i></i></span></button>
     </div>
   </div>
-  <div class="mobile-menu" data-mobile-menu hidden>
+  <div class="mobile-menu" data-mobile-menu data-lenis-prevent hidden>
     <div class="m-group">
-      <div class="m-title">Services</div>
-<a class="m-link" href="service-shopify-development.html">Shopify Development &amp; Integrations <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a><a class="m-link" href="service-shopify-support.html">Support &amp; Maintenance <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a><a class="m-link" href="service-ai-automation.html">AI Automation &amp; Workflows <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a><a class="m-link" href="service-seo-ai-search.html">SEO &amp; AI Search Visibility <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a><a class="m-link" href="service-custom-web.html">Custom Web Solutions <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>      <a class="m-link" href="services.html">All services <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+      <div class="m-title" style="--i:1">Services</div>
+<a class="m-link" style="--i:1" href="service-shopify-development.html">Shopify Development &amp; Integrations <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a><a class="m-link" style="--i:2" href="service-shopify-support.html">Support &amp; Maintenance <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a><a class="m-link" style="--i:3" href="service-ai-automation.html">AI Automation &amp; Workflows <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a><a class="m-link" style="--i:4" href="service-seo-ai-search.html">SEO &amp; AI Search Visibility <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a><a class="m-link" style="--i:5" href="service-custom-web.html">Custom Web Solutions <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>      <a class="m-link" style="--i:7" href="services.html">All services <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
     </div>
     <div class="m-group">
-      <div class="m-title">Company</div>
-      <a class="m-link" href="work.html">Work <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
-      <a class="m-link" href="products.html">Products <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
-      <a class="m-link" href="agencies.html">For agencies <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
-      <a class="m-link" href="about.html">About <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
-      <a class="m-link" href="careers.html">Careers <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+      <div class="m-title" style="--i:8">Company</div>
+      <a class="m-link" style="--i:9" href="work.html">Work <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+      <a class="m-link" style="--i:10" href="products.html">Products <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+      <a class="m-link" style="--i:11" href="agencies.html">For agencies <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+      <a class="m-link" style="--i:12" href="about.html">About <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+      <a class="m-link" style="--i:13" href="careers.html">Careers <svg class="icon icon-chevron-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
     </div>
     <div class="m-cta">
       <a class="btn btn-primary btn-lg" href="contact.html">Start a project <svg class="icon icon-arrow-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
@@ -121,9 +122,9 @@
   <div class="container stack-lg" style="gap:72px">
 
     <div class="stack-lg">
-      <div class="section-head  mb-0">
-<span class="eyebrow">01 · Logo</span>  <h2 class="balance">Logo usage</h2>
-<p class="lead pretty">Keep the existing wordmark. Use black on light backgrounds and white on dark. Minimum height 22px on screen.</p></div>
+      <div class="section-head  mb-0" data-stagger>
+<span class="eyebrow reveal">01 · Logo</span>  <h2 class="balance reveal">Logo usage</h2>
+<p class="lead pretty reveal">Keep the existing wordmark. Use black on light backgrounds and white on dark. Minimum height 22px on screen.</p></div>
       <div class="grid grid-2">
         <div class="card" style="display:grid;place-items:center;min-height:200px"><img src="assets/xubitar-logo.png" alt="Xubitar logo on light" style="height:48px"></div>
         <div class="card" style="display:grid;place-items:center;min-height:200px;background:var(--ink)"><img src="assets/xubitar-logo.png" alt="Xubitar logo on dark" style="height:48px;filter:invert(1)"></div>
@@ -131,9 +132,9 @@
     </div>
 
     <div class="stack-lg">
-      <div class="section-head  mb-0">
-<span class="eyebrow">02 · Colour</span>  <h2 class="balance">Colour palette</h2>
-<p class="lead pretty">A monochrome base taken from the logo, with one accent colour for actions and highlights. Three accent options are offered for review.</p></div>
+      <div class="section-head  mb-0" data-stagger>
+<span class="eyebrow reveal">02 · Colour</span>  <h2 class="balance reveal">Colour palette</h2>
+<p class="lead pretty reveal">A monochrome base taken from the logo, with one accent colour for actions and highlights. Three accent options are offered for review.</p></div>
       <div class="grid grid-4">
         <div class="card" style="padding:0;overflow:hidden"><div style="height:88px;background:var(--ink);border-bottom:1px solid var(--line)"></div><div style="padding:14px 16px"><b class="small">Ink</b><div class="mono xs muted">--ink · #0B0C0F</div></div></div>
         <div class="card" style="padding:0;overflow:hidden"><div style="height:88px;background:var(--ink-2);border-bottom:1px solid var(--line)"></div><div style="padding:14px 16px"><b class="small">Ink 2</b><div class="mono xs muted">--ink-2 · #15171C</div></div></div>
@@ -153,9 +154,9 @@
     </div>
 
     <div class="stack-lg">
-      <div class="section-head  mb-0">
-<span class="eyebrow">03 · Typography</span>  <h2 class="balance">Type scale</h2>
-<p class="lead pretty">Geist (sans) for everything, Geist Mono for small labels and data. Both are free and built into Next.js via next/font.</p></div>
+      <div class="section-head  mb-0" data-stagger>
+<span class="eyebrow reveal">03 · Typography</span>  <h2 class="balance reveal">Type scale</h2>
+<p class="lead pretty reveal">Geist (sans) for everything, Geist Mono for small labels and data. Both are free and built into Next.js via next/font.</p></div>
       <div class="card stack-lg">
         <div class="row-between" style="align-items:baseline;flex-wrap:wrap"><span class="display" style="font-size:3.9rem">Display / H1</span><span class="mono xs muted">62px · 620 · −4.2%</span></div>
         <div class="row-between" style="align-items:baseline;flex-wrap:wrap"><span class="h2">Heading 2</span><span class="mono xs muted">48px · 600 · −3.5%</span></div>
@@ -167,8 +168,8 @@
     </div>
 
     <div class="stack-lg">
-      <div class="section-head  mb-0">
-<span class="eyebrow">04 · Components</span>  <h2 class="balance">Buttons, badges & links</h2>
+      <div class="section-head  mb-0" data-stagger>
+<span class="eyebrow reveal">04 · Components</span>  <h2 class="balance reveal">Buttons, badges & links</h2>
 </div>
       <div class="card stack-lg">
         <div class="row"><a class="btn btn-primary btn-lg" href="#">Primary large <svg class="icon icon-arrow-right" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a><a class="btn btn-primary" href="#">Primary</a><a class="btn btn-dark" href="#">Dark</a><a class="btn btn-outline" href="#">Outline</a><a class="btn btn-ghost" href="#">Ghost</a><a class="btn btn-primary btn-sm" href="#">Small</a></div>
@@ -177,8 +178,8 @@
     </div>
 
     <div class="stack-lg">
-      <div class="section-head  mb-0">
-<span class="eyebrow">05 · Forms</span>  <h2 class="balance">Form fields</h2>
+      <div class="section-head  mb-0" data-stagger>
+<span class="eyebrow reveal">05 · Forms</span>  <h2 class="balance reveal">Form fields</h2>
 </div>
       <div class="card"><div class="form-grid">
         <div class="field"><label>Default input</label><input class="input" placeholder="Placeholder text"></div>
@@ -189,9 +190,9 @@
     </div>
 
     <div class="stack-lg">
-      <div class="section-head  mb-0">
-<span class="eyebrow">06 · Cards &amp; icons</span>  <h2 class="balance">Cards and iconography</h2>
-<p class="lead pretty">Icons follow the Lucide style already used in the codebase (1.75px stroke).</p></div>
+      <div class="section-head  mb-0" data-stagger>
+<span class="eyebrow reveal">06 · Cards &amp; icons</span>  <h2 class="balance reveal">Cards and iconography</h2>
+<p class="lead pretty reveal">Icons follow the Lucide style already used in the codebase (1.75px stroke).</p></div>
       <div class="grid grid-3">
         <div class="card stack"><span class="icon-box"><svg class="icon icon-code" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 8l-4 4 4 4"/><path d="M16 8l4 4-4 4"/><path d="M13.5 5l-3 14"/></svg></span><h4>Default card</h4><p class="small muted">White, 1px line, 20px radius.</p></div>
         <div class="card card-hover stack"><span class="icon-box"><svg class="icon icon-sparkles" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 3l1.9 5.1L18 10l-5.1 1.9L11 17l-1.9-5.1L4 10l5.1-1.9z"/><path d="M18.5 14.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/></svg></span><h4>Hover card</h4><p class="small muted">Lifts 3px with a soft shadow.</p></div>
@@ -230,13 +231,60 @@
     </div>
 
     <div class="stack-lg">
-      <div class="section-head  mb-0">
-<span class="eyebrow">07 · Layout</span>  <h2 class="balance">Spacing, radius & grid</h2>
+      <div class="section-head  mb-0" data-stagger>
+<span class="eyebrow reveal">07 · Layout</span>  <h2 class="balance reveal">Spacing, radius & grid</h2>
 </div>
       <div class="grid grid-3">
         <div class="card stack-sm"><b>Container</b><span class="small muted">1200px max + 20–32px gutters</span></div>
         <div class="card stack-sm"><b>Section spacing</b><span class="small muted">72–120px vertical (fluid)</span></div>
         <div class="card stack-sm"><b>Radius</b><span class="small muted">10 · 14 · 20 · 28px · full for buttons</span></div>
+      </div>
+    </div>
+
+    <div class="stack-lg" id="motion">
+      <div class="section-head  mb-0" data-stagger>
+<span class="eyebrow reveal">08 · Motion</span>  <h2 class="balance reveal">Motion system</h2>
+<p class="lead pretty reveal">Motion explains and reassures. It is not decoration. Presets match <code class="mono">lib/motion/presets.ts</code> (motion/react), smooth scrolling uses Lenis like the app, and everything switches off when a visitor prefers reduced motion.</p></div>
+      <div class="demo-grid">
+        <div class="card demo">
+          <div class="demo-stage play-fadeUp"><span class="demo-box"></span></div>
+          <div class="row-between"><b>fadeUp</b><button class="btn btn-outline btn-sm" type="button" data-replay="fadeUp">Replay</button></div>
+          <span class="mono">y 24px → 0 · 600ms · ease-out-expo</span>
+        </div>
+        <div class="card demo">
+          <div class="demo-stage play-stagger"><div class="demo-row"><span class="demo-box"></span><span class="demo-box"></span><span class="demo-box"></span><span class="demo-box"></span></div></div>
+          <div class="row-between"><b>stagger</b><button class="btn btn-outline btn-sm" type="button" data-replay="stagger">Replay</button></div>
+          <span class="mono">children 100ms apart</span>
+        </div>
+        <div class="card demo">
+          <div class="demo-stage play-scaleIn"><span class="demo-box"></span></div>
+          <div class="row-between"><b>scaleIn</b><button class="btn btn-outline btn-sm" type="button" data-replay="scaleIn">Replay</button></div>
+          <span class="mono">scale .95 → 1 · 400ms</span>
+        </div>
+        <div class="card demo">
+          <div class="demo-stage play-slideDown"><span class="demo-box"></span></div>
+          <div class="row-between"><b>slideDown</b><button class="btn btn-outline btn-sm" type="button" data-replay="slideDown">Replay</button></div>
+          <span class="mono">y −8px → 0 · 250ms (menus)</span>
+        </div>
+      </div>
+      <div class="grid grid-3">
+        <div class="card stack-sm"><b>Easing</b><span class="small muted">ease-out <code class="mono">cubic-bezier(.16,1,.3,1)</code> for entrances · ease-in-out <code class="mono">(.65,0,.35,1)</code> for lines & loops · spring <code class="mono">(.34,1.56,.64,1)</code> for small pops</span></div>
+        <div class="card stack-sm"><b>Durations</b><span class="small muted">150 · 250 · 400 · 600 · 900ms. UI feedback ≤ 250ms, entrances 400–600ms, data loops 2–8s.</span></div>
+        <div class="card stack-sm"><b>Rules</b><span class="small muted">Animate once on scroll. Loops run only while on screen. Never block reading or input. Respect reduced motion.</span></div>
+      </div>
+      <div class="table-wrap" style="border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden">
+        <table class="req" style="width:100%;border-collapse:collapse;font-size:.92rem">
+          <tbody>
+            <tr><td style="padding:14px 16px;border-bottom:1px solid var(--line);font-weight:560;width:18%">Every section</td><td style="padding:14px 16px;border-bottom:1px solid var(--line)">Scroll reveal: fadeUp / scaleIn with 100ms stagger</td><td style="padding:14px 16px;border-bottom:1px solid var(--line);color:var(--muted)">Guides the eye through each section in order</td></tr>
+            <tr><td style="padding:14px 16px;border-bottom:1px solid var(--line);font-weight:560;width:18%">Home hero</td><td style="padding:14px 16px;border-bottom:1px solid var(--line)">Headline rises word by word · swoosh draws · cursor spotlight grid · console tilts with depth</td><td style="padding:14px 16px;border-bottom:1px solid var(--line);color:var(--muted)">A confident first impression that echoes the logo</td></tr>
+            <tr><td style="padding:14px 16px;border-bottom:1px solid var(--line);font-weight:560;width:18%">Live data</td><td style="padding:14px 16px;border-bottom:1px solid var(--line)">Store-health console, support ticket feed, data packets on integrations, XocialAI pipeline, pre-order counter</td><td style="padding:14px 16px;border-bottom:1px solid var(--line);color:var(--muted)">Shows reliability as something happening, not a claim</td></tr>
+            <tr><td style="padding:14px 16px;border-bottom:1px solid var(--line);font-weight:560;width:18%">Numbers</td><td style="padding:14px 16px;border-bottom:1px solid var(--line)">Count-up on stats and results when they enter view</td><td style="padding:14px 16px;border-bottom:1px solid var(--line);color:var(--muted)">Makes proof points noticeable</td></tr>
+            <tr><td style="padding:14px 16px;border-bottom:1px solid var(--line);font-weight:560;width:18%">Teaching hints</td><td style="padding:14px 16px;border-bottom:1px solid var(--line)">Before/after slider sweeps once; SEO demo auto-advances until clicked</td><td style="padding:14px 16px;border-bottom:1px solid var(--line);color:var(--muted)">Shows visitors how to use the interaction</td></tr>
+            <tr><td style="padding:14px 16px;border-bottom:1px solid var(--line);font-weight:560;width:18%">Decision tools</td><td style="padding:14px 16px;border-bottom:1px solid var(--line)">Plan finder, savings calculator, search-channel demo</td><td style="padding:14px 16px;border-bottom:1px solid var(--line);color:var(--muted)">Helps buyers choose, and creates qualified enquiries</td></tr>
+            <tr><td style="padding:14px 16px;border-bottom:1px solid var(--line);font-weight:560;width:18%">Micro-interactions</td><td style="padding:14px 16px;border-bottom:1px solid var(--line)">Buttons, chips, FAQ height, menus, burger morph, form steps, field shake, success check</td><td style="padding:14px 16px;border-bottom:1px solid var(--line);color:var(--muted)">Clear feedback for every action</td></tr>
+            <tr><td style="padding:14px 16px;border-bottom:1px solid var(--line);font-weight:560;width:18%">Navigation</td><td style="padding:14px 16px;border-bottom:1px solid var(--line)">Header hides on scroll down and returns on scroll up · page transitions · Lenis smooth scroll</td><td style="padding:14px 16px;border-bottom:1px solid var(--line);color:var(--muted)">More room for content, smoother browsing</td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
@@ -315,7 +363,7 @@
         <span>Real engineers join when you need them</span>
       </div>
     </div>
-    <div class="chat-body" data-chat-body>
+    <div class="chat-body" data-chat-body data-lenis-prevent>
       <div class="msg system">Today</div>
       <div class="msg bot">Hi, I'm Toki. I can answer questions about Xubitar's services, pricing and process — or connect you with an engineer.</div>
       <div class="msg bot">What can I help you with?</div>
@@ -333,14 +381,19 @@
     </form>
     <div class="chat-foot">Powered by Toki · AI assistant with human handoff</div>
   </div>
+  <div class="chat-nudge" data-chat-nudge role="status" hidden>
+    <button class="nudge-x" aria-label="Dismiss" data-nudge-close><svg class="icon icon-x" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12"/><path d="M18 6L6 18"/></svg></button>
+    <b>Questions about a project?</b>
+    <span class="muted">Ask Toki about services, pricing or timelines — real engineers join when needed.</span>
+  </div>
   <button class="chat-launcher" data-chat-toggle aria-label="Chat with us" aria-expanded="false">
-    <span class="cl-icon"><svg class="icon icon-message-circle" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.6L3 20.5l1.4-5.2A8.5 8.5 0 1 1 21 11.5z"/></svg></span>
+    <span class="cl-icon"><svg class="icon icon-message-circle" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.6L3 20.5l1.4-5.2A8.5 8.5 0 1 1 21 11.5z"/></svg><span class="cl-badge" data-chat-badge hidden>1</span></span>
     <span class="cl-label">Chat with us</span>
   </button>
 </div>
 
 <div class="review" data-review>
-  <div class="review-panel" hidden data-review-panel>
+  <div class="review-panel" hidden data-review-panel data-lenis-prevent>
     <div class="row-between"><strong style="font-size:.95rem">Design review</strong><span class="badge">Prototype v1</span></div>
     <div>
       <h6>Jump to page</h6>
@@ -369,7 +422,10 @@
   <button class="review-fab" data-review-toggle aria-expanded="false"><svg class="icon icon-eye" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 12S6 5 12 5s9.5 7 9.5 7-3.5 7-9.5 7-9.5-7-9.5-7z"/><circle cx="12" cy="12" r="3"/></svg> <span class="lbl">Review</span> <span class="cnt" data-notes-count>0</span></button>
 </div>
 
+<script src="js/vendor/lenis.min.js"></script>
 <script src="js/main.js"></script>
+<script src="js/motion.js"></script>
+<script src="js/widgets.js"></script>
 <script src="js/review.js"></script>
 </body>
 </html>

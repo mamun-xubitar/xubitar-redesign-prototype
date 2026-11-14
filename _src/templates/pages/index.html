@@ -6,13 +6,14 @@
 {% block content %}
 
 {# ======================= HERO ======================= #}
-<section class="hero">
+<section class="hero" data-hero>
   <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-spot" aria-hidden="true"></div>
   <div class="hero-glow" aria-hidden="true"></div>
   <div class="container hero-grid">
     <div class="hero-copy" data-note="Headline leads with the main promise from the discussion: reliability and trust, not just code. It names all three target audiences (merchants, startups, agencies).">
       <span class="eyebrow reveal">Shopify · AI automation · Web · Search visibility</span>
-      <h1 class="balance reveal reveal-d1"><em class="hl">Reliable</em> engineering for Shopify brands, startups &amp; agencies.</h1>
+      <h1 class="balance" data-split><em class="hl hl-swoosh">Reliable<svg class="swoosh" viewBox="0 0 200 14" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M3 10 C 55 3, 125 1, 197 6"/></svg></em> engineering for Shopify brands, startups &amp; agencies.</h1>
       <p class="lead reveal reveal-d2">We build custom Shopify apps, integrations, AI automations and websites — and keep them running after launch. Clear written scope, honest timelines and a reply from a real engineer within one business day.</p>
       <div class="hero-cta reveal reveal-d3">
         <a class="btn btn-primary btn-lg" href="contact.html">Start a project {{ icon('arrow-right', 18) }}</a>
@@ -32,7 +33,7 @@
       </div>
     </div>
 
-    <div class="hero-visual reveal reveal-d2" data-note="Hero visual is an illustrative 'store health' console. It shows integrations running, support tickets resolved and performance scores, so the visual itself says 'we keep things running'.">
+    <div class="hero-visual reveal reveal-scale reveal-d2" data-tilt data-note="Hero visual is an illustrative, LIVE 'store health' console: rows boot up, the inventory sync runs every few seconds, AI drafts tick up and resolved tickets rotate. It tilts gently with the cursor. The visual itself says 'we keep things running'.">
       <div class="console" aria-hidden="true">
         <div class="console-top"><span class="traffic"><i></i><i></i><i></i></span><span class="console-url">care.xubitar.com / northwind-outdoor</span></div>
         <div class="console-body">
@@ -41,20 +42,24 @@
             <span class="status-ok"><span class="dot dot-pulse"></span> All systems normal</span>
           </div>
           <ul class="console-rows">
-            <li>{{ icon('refresh', 17) }}<span>NetSuite inventory sync</span><span class="val">2 min ago</span><span class="dot"></span></li>
+            <li data-live="sync">{{ icon('refresh', 17) }}<span>NetSuite inventory sync</span><span class="val">2 min ago</span><span class="dot"></span></li>
             <li>{{ icon('zap', 17) }}<span>Order webhooks</span><span class="val">99.98% delivered</span><span class="dot"></span></li>
             <li>{{ icon('layers', 17) }}<span>Checkout extension</span><span class="val">v2.4 · live</span><span class="dot"></span></li>
-            <li>{{ icon('sparkles', 17) }}<span>AI support triage</span><span class="val">38 drafts today</span><span class="dot"></span></li>
+            <li data-live="drafts">{{ icon('sparkles', 17) }}<span>AI support triage</span><span class="val"><span data-n>38</span> drafts today</span><span class="dot"></span></li>
           </ul>
           <div class="console-chart">
             <div class="row-between"><span>Orders synced · last 14 days</span><span class="mono">+18%</span></div>
-            <div class="bars">{% for h in [38,52,44,60,48,66,58,72,63,70,78,68,84,92] %}<i class="{{ 'on' if loop.index > 10 }}" style="height:{{ h }}%"></i>{% endfor %}</div>
+            <div class="bars">{% for h in [38,52,44,60,48,66,58,72,63,70,78,68,84,92] %}<i class="{{ 'on' if loop.index > 10 }}" style="height:{{ h }}%;--i:{{ loop.index0 }}"></i>{% endfor %}</div>
           </div>
         </div>
       </div>
       <div class="float-card fc-ticket" aria-hidden="true">
         <span class="icon-box" style="background:var(--success-soft);color:var(--success)">{{ icon('check', 18) }}</span>
-        <div><strong>#482 Bundle discount not applying</strong><span>Resolved in 3h 12m · root cause documented</span></div>
+        <div class="ticker" data-ticker>
+          <div class="ticker-item is-active"><strong>#482 Bundle discount not applying</strong><span>Resolved in 3h 12m · root cause documented</span></div>
+          <div class="ticker-item"><strong>#487 Klaviyo flow stopped after app update</strong><span>Resolved in 1h 05m · vendor notified</span></div>
+          <div class="ticker-item"><strong>#491 Checkout error on Safari 18</strong><span>Resolved in 2h 40m · regression test added</span></div>
+        </div>
       </div>
       <div class="float-card fc-score" aria-hidden="true">
         <span class="ring" style="--p:96"><b>96</b></span>
@@ -65,11 +70,14 @@
 </section>
 
 {# ======================= LOGOS ======================= #}
-<section class="logos" aria-label="Clients" data-note="Client logo strip. Replace with real logos only where the client has given permission (per the 6-month plan).">
+<section class="logos" aria-label="Clients" data-note="Client logos scroll in a slow marquee (pauses on hover). Replace with real logos only where the client has given permission (per the 6-month plan).">
   <div class="container">
     <p class="logos-label">Trusted by Shopify merchants, startups and agencies</p>
-    <div class="logo-row" data-ph>
-      {% for l in LOGOS %}<span class="logo-word lw-{{ loop.index }}">{{ l }}</span>{% endfor %}
+    <div class="marquee" data-ph>
+      <div class="marquee-track">
+        {% for l in LOGOS %}<span class="logo-word lw-{{ loop.index }}">{{ l }}</span>{% endfor %}
+        {% for l in LOGOS %}<span class="logo-word lw-{{ loop.index }}" aria-hidden="true">{{ l }}</span>{% endfor %}
+      </div>
     </div>
   </div>
 </section>
@@ -171,7 +179,7 @@
   <div class="container">
     {{ m.section_head('Store renovation & ongoing care', 'Renovate your store. Then keep it healthy.', 'From a full theme rebuild to the small fixes that never seem to get done — see the difference a renovation makes, and what a month of support actually looks like.', center=True) }}
     <div class="split split-7-5" style="align-items:start;gap:clamp(32px,4vw,56px)">
-      <div class="stack reveal" data-note="Interactive before/after slider (drag it). Shows a store renovation at a glance, which was requested in the discussion. Swap these mock screens for real client screenshots.">
+      <div class="stack reveal" data-note="Interactive before/after slider. When it scrolls into view it demonstrates itself once (sweeps left and right), then the visitor drags it. Shows a store renovation at a glance, as requested in the discussion. Swap these mock screens for real client screenshots.">
         <div class="ba" data-ba>
           <div class="ba-pane ba-after">
             <div class="new-store">
@@ -194,19 +202,20 @@
           </div>
           <div class="ba-metric l"><span class="ba-label l">Before</span><span class="bad">Load 6.8s</span><span class="bad">Mobile 31</span></div>
           <div class="ba-metric r"><span class="good">Load 1.9s</span><span class="good">Mobile 94</span><span class="ba-label r">After</span></div>
-          <div class="ba-handle">{{ icon('chevrons-lr', 18) }}</div>
+          <div class="ba-handle">{{ icon('chevrons-lr', 18) }}<span class="ba-hint">Drag to compare</span></div>
           <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after" data-ba-range>
         </div>
         <p class="xs subtle center">Drag to compare · Sample renovation for illustration</p>
       </div>
 
       <div class="stack-lg reveal reveal-d1">
-        <div class="log" data-ph data-note="A 'maintenance log' makes ongoing support tangible: real task types, time to resolve and a monthly summary. This mirrors the monthly report clients on a support plan would receive.">
+        <div class="log" data-ph data-note="A live 'maintenance log' makes ongoing support tangible (rows log in one by one, the in-progress task animates, totals count up): real task types, time to resolve and a monthly summary. This mirrors the monthly report clients on a support plan would receive.">
           <div class="log-head">
             <div><span class="eyebrow">Support plan · October</span><h4 style="margin-top:6px">This month at Mono Home</h4></div>
             <span class="badge badge-success"><i class="dot"></i> Healthy</span>
           </div>
           <ul class="log-list">
+            <li class="log-live"><span class="tag tag-live"><span class="dot dot-pulse"></span>Live</span><span>Lazy-loading product videos on mobile<span class="log-progress"><i></i></span></span><span class="time">in progress</span></li>
             <li><span class="tag tag-fix">Fix</span><span>Cart drawer showed rounded prices on multi-currency</span><span class="time">2h 10m</span></li>
             <li><span class="tag tag-int">Integration</span><span>Klaviyo back-in-stock flow reconnected after app update</span><span class="time">1 day</span></li>
             <li><span class="tag tag-imp">Improvement</span><span>Collection filters now load 3× faster</span><span class="time">3 days</span></li>
@@ -275,7 +284,7 @@
 <section class="section" id="reviews">
   <div class="container">
     {{ m.section_head('Client reviews', 'What clients say about working with us', None) }}
-    <div class="t-grid" data-note="Reviews from clients plus a summary card with the overall rating and review sources. Placeholder names; link to real review sources (Shopify App Store, Clutch, Google) when available.">
+    <div class="t-grid" data-carousel data-note="Reviews from clients plus a summary card with the overall rating and review sources. Placeholder names; link to real review sources (Shopify App Store, Clutch, Google) when available.">
       {{ m.testimonial(TESTIMONIALS[0], loop_index=1) }}
       {{ m.testimonial(TESTIMONIALS[1], 1, loop_index=2) }}
       <div class="card t-summary reveal reveal-d2" data-ph>
@@ -297,6 +306,7 @@
         <figcaption class="who"><span class="avatar av-4">{{ TESTIMONIALS[3].initials }}</span><div><b>{{ TESTIMONIALS[3].name }}</b><span>{{ TESTIMONIALS[3].role }}, {{ TESTIMONIALS[3].company }}</span></div></figcaption>
       </figure>
     </div>
+    <div class="t-dots" data-t-dots aria-hidden="true"></div>
   </div>
 </section>
 
@@ -315,7 +325,7 @@
               <div class="pp-head"><i></i><div><b style="font-size:.8rem">Kitefield Studio</b><div class="muted" style="font-size:.68rem">Scheduled · Tue 10:00</div></div></div>
               <div style="font-size:.78rem">We shipped a booking app for a clinic. Patients book in under a minute now.</div>
               <div class="pp-img"></div>
-              <div class="pm-nets"><span>Facebook ✓</span><span>Instagram ✓</span><span>LinkedIn ✓</span><span>Threads ✓</span><span>+5</span></div>
+              <div class="pm-nets" data-sequence><span data-seq>Facebook ✓</span><span data-seq>Instagram ✓</span><span data-seq>LinkedIn ✓</span><span data-seq>Threads ✓</span><span data-seq>+5</span></div>
             </div>
           </div>
         </div>

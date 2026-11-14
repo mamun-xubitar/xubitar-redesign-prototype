@@ -11,6 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400..600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/motion.css">
 <style>
   .hub-hero { background: var(--ink); color: #fff; padding: clamp(48px,7vw,96px) 0 clamp(40px,6vw,72px); position: relative; overflow: hidden; }
   .hub-hero::after { content:""; position:absolute; inset:0; background-image: linear-gradient(to right, rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,.05) 1px, transparent 1px); background-size: 56px 56px; mask-image: radial-gradient(ellipse 60% 80% at 85% 10%, #000, transparent 70%); -webkit-mask-image: radial-gradient(ellipse 60% 80% at 85% 10%, #000, transparent 70%); pointer-events:none; }
@@ -61,7 +62,7 @@
   <div class="container">
     {{ m.section_head('How to review', 'Four ways to review the prototype', None) }}
     <div class="how">
-      <div class="card"><span class="icon-box">{{ icon('monitor', 20) }}</span><h4>1. Click through</h4><p class="small muted">Every page and link works. Try the menu, the before/after slider, the case-study filters, the enquiry form and the chat.</p></div>
+      <div class="card"><span class="icon-box">{{ icon('monitor', 20) }}</span><h4>1. Click through</h4><p class="small muted">Every page, link and tool works, with animation as it will appear on the live site. See the list of interactions to try below.</p></div>
       <div class="card"><span class="icon-box">{{ icon('eye', 20) }}</span><h4>2. Read the design notes</h4><p class="small muted">Click the yellow <span class="fake-fab">{{ icon('eye', 13) }} Review</span> button (bottom-left) and switch on <b>Show design notes</b>. Numbered pins explain each design decision.</p></div>
       <div class="card"><span class="icon-box">{{ icon('alert', 20) }}</span><h4>3. Spot sample content</h4><p class="small muted">Switch on <b>Highlight sample content</b>. Case studies, reviews, logos and numbers are placeholders until you share real, approved data.</p></div>
       <div class="card"><span class="icon-box">{{ icon('target', 20) }}</span><h4>4. Choose an accent colour</h4><p class="small muted">In the same panel, compare <b>Signal blue</b>, <b>Emerald</b> and <b>Volt</b>. Your choice is remembered across pages.</p></div>
@@ -70,7 +71,32 @@
   </div>
 </section>
 
-<section class="section-sm section-surface">
+<section class="section-sm section-surface" id="try">
+  <div class="container">
+    {{ m.section_head('Interactions to try', 'Animation and interactivity, where it helps', 'Motion is used to show reliability (live data), teach (hints) and help visitors decide (tools). It turns off automatically for visitors who prefer reduced motion.') }}
+    <div class="grid grid-3">
+      {% for href, ic, t, d in [
+        ('index.html','monitor','Home hero','Move your mouse over it. The headline rises, the console tilts and shows live sync, AI drafts and resolved tickets.'),
+        ('index.html#care','layers','Before / after renovation','The slider shows itself once, then drag it. The maintenance log logs tasks live.'),
+        ('service-shopify-support.html#plans','life-buoy','Support plan finder','Set your monthly workload and the matching plan lights up.'),
+        ('service-ai-automation.html#calculator','sparkles','AI savings calculator','Estimate the hours and money automation could save, live.'),
+        ('service-seo-ai-search.html','search','SEO / AEO / GEO / LLMO demo','One question answered in four places, which auto-advances until you click.'),
+        ('work.html','filter','Case-study filters','Cards fade out and the matching ones rise in.'),
+        ('case-study.html','file-text','Case study','Reading-progress bar, highlighted contents and a live integration diagram.'),
+        ('contact.html','send','Enquiry form & booking','Three steps with validation, then book a call and confirm it.'),
+        ('agencies.html','handshake','Agency diagram','Requests and delivered work flow through the partnership.'),
+        ('products.html','package','Products','XocialAI runs its pipeline, and XPreOrder counts new pre-orders.'),
+        ('index.html','message-circle','Toki chat','Bottom-right on every page: a nudge after 7s, quick replies, typing indicator.'),
+        ('style-guide.html#motion','target','Motion system','Replay each animation preset used in the build.'),
+      ] %}
+      <a class="card card-hover stack-sm" href="{{ href }}"><span class="icon-box">{{ icon(ic, 20) }}</span><h4 class="mt-1">{{ t }}</h4><p class="small muted">{{ d }}</p></a>
+      {% endfor %}
+    </div>
+    <p class="small muted mt-3">On a phone, also try the animated menu and swipe through the client reviews.</p>
+  </div>
+</section>
+
+<section class="section-sm">
   <div class="container">
     {{ m.section_head('Pages', 'All pages in the prototype', 'Click any page to open it.') }}
     {% for group in ['Core', 'Services', 'Proof', 'Company', 'Conversion', 'System'] %}
@@ -87,7 +113,7 @@
   </div>
 </section>
 
-<section class="section-sm">
+<section class="section-sm section-surface">
   <div class="container">
     {{ m.section_head('From brief to design', 'How the design answers the discussion', None) }}
     <div class="table-wrap">
@@ -110,7 +136,7 @@
   </div>
 </section>
 
-<section class="section-sm section-surface" id="questions">
+<section class="section-sm" id="questions">
   <div class="container">
     <div class="split split-5-7" style="align-items:start">
       {{ m.section_head('Decisions needed', 'Questions for you', 'Answers to these let us replace sample content and finalise the design before development.') }}
