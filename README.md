@@ -5,6 +5,9 @@ discussion summary and the *Shopify Development Services 6-Month Plan*.
 
 **Live preview:** https://mamun-xubitar.github.io/xubitar-redesign-prototype/start-here.html
 
+> This `animated` branch is the **animated version**. GitHub Pages serves `main` (the previous version), so preview this branch locally:
+> `python3 -m http.server 4173` then open `http://localhost:4173/start-here.html`.
+
 ## How to review
 
 | What | Where |
